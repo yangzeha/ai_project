@@ -148,8 +148,8 @@ def run_training(model_class, model_name, model_type="full", epochs=5, tau=3, ep
                 batch = pos_interactions[i:i+BATCH_SIZE]
                 optimizer.zero_grad()
                 
-                users = torch.LongTensor([utils.u_map[x[0]] for x in batch]).to(device)
-                pos_items = torch.LongTensor([utils.v_map[x[1]] for x in batch]).to(device)
+                users = torch.LongTensor([x[0] for x in batch]).to(device)
+                pos_items = torch.LongTensor([x[1] for x in batch]).to(device)
                 neg_items = torch.randint(0, utils.num_items, (len(users),)).to(device)
                 
                 # Forward
