@@ -180,6 +180,11 @@ class DataUtils:
         output_filename = f"bicliques_{snapshot_id}_tau{tau}_eps{epsilon}.txt"
         output_file = os.path.join(self.temp_dir, output_filename)
         
+        # Check if file exists and is not empty
+        if os.path.exists(output_file) and os.path.getsize(output_file) > 0:
+            print(f"Snapshot {snapshot_id}: Biclique file already exists. Skipping mining.")
+            return output_file
+        
         # 2. Build Index
         # Execute in temp_dir
         cmd_build = [

@@ -64,7 +64,8 @@ def train():
         print(f"\n=== Time Snapshot {t+1}/{len(train_snapshots)} (Total Progress: {t+1}/{NUM_SNAPSHOTS}) ===")
         
         # A. 挖掘当前时刻的二团 (调用C++或模拟)
-        biclique_file = utils.run_msbe_mining(snapshot_data, t)
+        # 使用 tau=3, epsilon=0.1 以平衡挖掘速度和覆盖率
+        biclique_file = utils.run_msbe_mining(snapshot_data, t, tau=3, epsilon=0.1)
         H_v, H_u = utils.parse_bicliques(biclique_file)
         
         # 移动稀疏矩阵到 GPU

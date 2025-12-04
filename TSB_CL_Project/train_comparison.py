@@ -225,8 +225,8 @@ if __name__ == "__main__":
     baseline_res = run_experiment(enable_biclique=False, epochs=10)
     
     # Run Enhanced (TSB-CL)
-    # Using tau=2, epsilon=0.1 as verified to find bicliques
+    # Using tau=3, epsilon=0.1 for better performance/coverage balance
     print("\n=== Running TSB-CL (Biclique Enhanced) ===")
-    enhanced_res = run_experiment(enable_biclique=True, epochs=10, tau=2, epsilon=0.1)
+    enhanced_res = run_experiment(enable_biclique=True, epochs=10, tau=3, epsilon=0.1)
     
     plot_comparison(baseline_res, enhanced_res)
