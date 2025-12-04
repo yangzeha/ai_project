@@ -155,12 +155,12 @@ def train():
     torch.save(model.state_dict(), "tsb_cl_model.pth")
     print("Model saved to tsb_cl_model.pth")
     
-    # --- 5. 绘制图表 (弹出显示) ---
+    # --- 5. 绘制图表 (保存为文件) ---
     plot_metrics(history)
 
 def plot_metrics(history):
     """
-    绘制损失和准确率曲线并弹出显示
+    绘制损失和准确率曲线并保存为文件
     """
     plt.figure(figsize=(12, 5))
     
@@ -183,6 +183,12 @@ def plot_metrics(history):
     plt.ylabel('Accuracy')
     plt.legend()
     plt.grid(True)
+    
+    plt.tight_layout()
+    # 保存图片而不是直接显示
+    plt.savefig('training_plot.png')
+    print("Plot saved to training_plot.png")
+    # plt.show()
     
     plt.tight_layout()
     
