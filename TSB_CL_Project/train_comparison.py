@@ -66,8 +66,11 @@ def evaluate(model, test_data, utils, device, top_k=20):
 
 def run_experiment(enable_biclique, epochs=5, tau=2, epsilon=0.1):
     # --- Config ---
-    DATA_PATH = r"c:\Users\LENOVO\Desktop\论文\Similar-Biclique-Idx-main\datasets\bi_github.txt"
-    MSBE_EXE = r"c:\Users\LENOVO\Desktop\论文\Similar-Biclique-Idx-main\msbe.exe"
+    CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+    PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
+    DATA_PATH = os.path.join(PROJECT_ROOT, "Similar-Biclique-Idx-main", "datasets", "bi_github.txt")
+    exe_name = "msbe.exe" if os.name == 'nt' else "msbe"
+    MSBE_EXE = os.path.join(PROJECT_ROOT, "Similar-Biclique-Idx-main", exe_name)
     EMBEDDING_DIM = 64
     LR = 0.001
     BATCH_SIZE = 2048
