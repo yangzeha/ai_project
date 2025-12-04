@@ -6,7 +6,7 @@ if __name__ == "__main__":
         model_class=BicliqueGCN,
         model_name="Biclique GCN (No CL, No RNN)",
         model_type="biclique_gcn",
-        epochs=5,
+        epochs=30,
         tau=3,
         epsilon=0.1
     )

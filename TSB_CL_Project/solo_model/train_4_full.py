@@ -6,7 +6,7 @@ if __name__ == "__main__":
         model_class=FullTSBCL,
         model_name="Full TSB-CL (Biclique + CL + RNN)",
         model_type="full",
-        epochs=5,
+        epochs=30,
         tau=3,
         epsilon=0.1
     )
