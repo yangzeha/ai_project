@@ -153,39 +153,11 @@ def run_training(model_class, model_name, model_type="full", epochs=5, tau=3, ep
                 neg_items = torch.randint(0, utils.num_items, (len(users),)).to(device)
                 
                 # Forward
-                if model_type == "lightgcn":
-                    u_out, i_out = model(adj_matrix)
-                    loss, _, _ = model.calculate_loss(u_out, i_out, users, pos_items, neg_items)
-                    new_state = None
-                    
-                elif model_type == "biclique_gcn":
-                    u_out, i_out = model(adj_matrix, (H_v, H_u))
-                    loss, _, _ = model.calculate_loss(u_out, i_out, users, pos_items, neg_items)
-                    new_state = None
-                    
-                elif model_type == "biclique_cl":
-                    u_global, u_local, i_out = model(adj_matrix, (H_v, H_u))
-                    loss, _, _ = model.calculate_loss(u_global, u_local, i_out, users, pos_items, neg_items)
-                    new_state = None
-                    
-                else: # full
-                    curr_state = user_history_state.detach() if user_history_state is not None else None
-                    u_global, u_local, new_state, i_out = model(adj_matrix, (H_v, H_u), curr_state)
-                    loss, _, _ = model.calculate_loss(u_global, u_local, i_out, users, pos_items, neg_items)
+                # 注意：DataUtils.load_data 已经将原始 ID 映射为内部 ID (0 ~ num_users-1)
+                # 所以这里的 x[0] 和 x[1] 已经是映射后的 ID，不需要再查 u_map/v_map
+                # 除非我们是在 save_binary_graph 里重新映射了一次，但 load_data 是全局映射
                 
-                loss.backward()
-                optimizer.step()
-                epoch_loss += loss.item()
-                
-                if new_state is not None:
-                    user_history_state = new_state.detach()
-                    
-        # Evaluate
-        recall, ndcg = evaluate(model, test_data, utils, device, model_type)
-        metrics['loss'].append(epoch_loss)
-        metrics['recall'].append(recall)
-        metrics['ndcg'].append(ndcg)
-        
-        print(f"Epoch {epoch+1}/{epochs} | Loss: {epoch_loss:.2f} | Recall: {recall:.4f} | NDCG: {ndcg:.4f} | Time: {time.time()-start_time:.1f}s")
-        
-    return metrics
+                # 修正：直接使用 x[0] 和 x[1]，因为 load_data 已经做了全局映射
+                users = torch.LongTensor([x[0] for x in batch]).to(device)
+                pos_items = torch.LongTensor([x[1] for x in batch]).to(device)
+                neg_items = torch.randint(0, utils.num_items, (len(users),)).to(device)
