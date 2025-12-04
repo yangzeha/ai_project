@@ -24,7 +24,7 @@ def train():
 
     EMBEDDING_DIM = 64
     LR = 0.001
-    EPOCHS = 1  # 训练轮数一轮
+    EPOCHS = 20  # 增加训练轮数到 20，以便观察 Loss 下降曲线
     BATCH_SIZE = 2048 
     NUM_SNAPSHOTS = 1 # 不切分，使用全量数据
     
