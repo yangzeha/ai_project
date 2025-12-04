@@ -92,6 +92,7 @@ def run_training(model_class, model_name, model_type="full", epochs=5, tau=3, ep
     
     metrics_history = {'loss': [], 'recall': [], 'ndcg': []}
     user_history_state = None
+    best_recall = 0.0
     
     for epoch in range(epochs):
         start_time = time.time()
@@ -179,5 +180,12 @@ def run_training(model_class, model_name, model_type="full", epochs=5, tau=3, ep
             metrics_history['recall'].append(recall)
             metrics_history['ndcg'].append(ndcg)
             metrics_history['loss'].append(avg_loss)
+            
+            # Save Best Model
+            if recall > best_recall:
+                best_recall = recall
+                save_path = f"{model_type}_best.pth"
+                torch.save(model.state_dict(), save_path)
+                print(f"  >>> New Best Model Saved to {save_path} (Recall: {best_recall:.4f})")
 
     return metrics_history
