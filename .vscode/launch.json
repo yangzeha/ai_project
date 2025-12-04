@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Train TSB",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/TSB_CL_Project/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

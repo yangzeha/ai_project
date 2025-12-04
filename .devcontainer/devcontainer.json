@@ -1,0 +1,24 @@
+{
+    "name": "AI Project Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/python:3.10",
+    "features": {
+        "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+            "installCudnn": true
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "configureZshAsDefaultShell": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-vscode.cpptools"
+            ]
+        }
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential && pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 && pip install -r TSB_CL_Project/requirements.txt && cd Similar-Biclique-Idx-main && g++ -O3 main.cpp -o msbe"
+}

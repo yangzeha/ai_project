@@ -1,0 +1,16 @@
+start reading graph c:\Users\LENOVO\Desktop\论文\TSB_CL_Project\temp\graph_full_verification.txt
+*	 1st line: n1=56,519, n2=120,867, n=177,386, m (2x edges)=880,474 
+***  NO _PreORDER_ , NO _ORDER_ , _DOM_ , NO _ET_ , NO _SHRINK_ , NO _JSUB_ , _IdxOpt_  ***
+index name : c:\Users\LENOVO\Desktop\论文\TSB_CL_Project\temp\graph_full_verification_0_12_100_30_GRL3.bin
+epsilon = 0.5, tau = 3
+     Deleted 176146 vertices. (remaining 1240).
+[1]. VR time cost = 12,986
+[2]. ReBuild time cost = 1,002
+[3]. Enum time cost = 9,904
+ - - - - - - - - - - - - - - - - - - - - - - - - -  
+| results size = 242
+| min MDBC size = 6
+| max MDBC size = 39
+| Time cost (without I/O) = 23,892
+ - - - - - - - - - - - - - - - - - - - - - - - - -  
+Results : 

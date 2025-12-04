@@ -1,0 +1,12 @@
+start reading graph g_test.txt
+*	 1st line: n1=1,836, n2=28,966, n=30,802, m (2x edges)=200,000 
+***  NO _PreORDER_ , NO _ORDER_ , _DOM_ , NO _ET_ , NO _SHRINK_ , NO _JSUB_ , _IdxOpt_  ***
+index name : g_test_0_12_100_30_GRL3.bin
+epsilon = 0.5, tau = 3
+     Deleted 30802 vertices. (remaining 0).
+[1]. VR time cost = 0
+ - - - - - - - - - - - - - - - - - - - - - - - - -  
+| results size = 0
+| Time cost (without I/O) = 0
+ - - - - - - - - - - - - - - - - - - - - - - - - -  
+Results : 
