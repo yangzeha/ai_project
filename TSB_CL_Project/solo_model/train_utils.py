@@ -23,45 +23,22 @@ LR = 0.001
 NUM_SNAPSHOTS = 4
 TOP_K = 20
 
-def evaluate(model, test_data, utils, device, model_type="full"):
-    model.eval()
+def calculate_metrics(u_emb, i_emb, test_data, k=20):
+    # u_emb, i_emb are tensors
+    u_emb = u_emb.cpu().numpy()
+    i_emb = i_emb.cpu().numpy()
     
-    # 构建测试集的邻接矩阵
-    adj_matrix = utils.build_adj_matrix(test_data).to(device)
-    
-    # 构建空的二团矩阵 (测试阶段通常不重新挖掘，或者使用最后一个快照的二团)
-    # 这里为了简化，传入空矩阵，因为测试集通常只看推荐效果
-    # 注意：对于 BicliqueGCN，如果依赖 u_local，这里可能需要传入真实的二团
-    # 为了公平对比，我们假设测试时使用最后一个训练快照的二团结构，或者不使用（取决于模型依赖）
-    
-    # 简单起见，构造空二团
-    H_v = torch.sparse_coo_tensor(size=(1, utils.num_items)).to(device)
-    H_u = torch.sparse_coo_tensor(size=(utils.num_users, 1)).to(device)
-    
-    with torch.no_grad():
-        # 根据模型类型调用 forward
-        if model_type == "lightgcn":
-            u_emb, i_emb = model(adj_matrix)
-        elif model_type == "biclique_gcn":
-            u_emb, i_emb = model(adj_matrix, (H_v, H_u))
-        elif model_type == "biclique_cl":
-            u_global, u_local, i_emb = model(adj_matrix, (H_v, H_u))
-            u_emb = u_global # 推荐使用 Global 视图
-        else: # full
-            u_global, u_local, _, i_emb = model(adj_matrix, (H_v, H_u))
-            u_emb = u_global
-
-    # 评估逻辑 (简化版，只计算部分用户以节省时间)
     test_users = list(set([u for u, _, _ in test_data]))
-    sample_users = test_users[:1000] # 采样1000个用户进行评估
+    # Sample 1000 users for speed
+    if len(test_users) > 1000:
+        sample_users = random.sample(test_users, 1000)
+    else:
+        sample_users = test_users
     
     hits = 0
     ndcg = 0
     
-    u_emb = u_emb.cpu().numpy()
-    i_emb = i_emb.cpu().numpy()
-    
-    # 构建 Ground Truth
+    # Ground Truth
     user_pos_items = {}
     for u, i, _ in test_data:
         if u not in user_pos_items:
@@ -71,35 +48,28 @@ def evaluate(model, test_data, utils, device, model_type="full"):
     for u in sample_users:
         if u not in user_pos_items: continue
         
-        # 获取用户 u 的 Embedding
-        u_idx = utils.u_map.get(u)
-        if u_idx is None: continue
+        # u is already the index
+        if u >= len(u_emb): continue
         
-        u_vec = u_emb[u_idx]
-        
-        # 计算所有物品的得分
+        u_vec = u_emb[u]
         scores = np.dot(i_emb, u_vec)
         
-        # 排除训练集中的物品 (这里简化，未排除)
+        top_k_items = np.argsort(scores)[::-1][:k]
         
-        # Top-K
-        top_k_items = np.argsort(scores)[::-1][:TOP_K]
+        true_items = user_pos_items[u] # Already indices
         
-        # 真实物品索引
-        true_items = [utils.v_map[i] for i in user_pos_items[u] if i in utils.v_map]
-        
-        # 计算 Recall
+        # Recall
         hit_count = len(set(top_k_items) & set(true_items))
         hits += hit_count / len(true_items) if len(true_items) > 0 else 0
         
-        # 计算 NDCG
+        # NDCG
         dcg = 0
         idcg = 0
         for i, item_idx in enumerate(top_k_items):
             if item_idx in true_items:
                 dcg += 1 / np.log2(i + 2)
         
-        for i in range(min(len(true_items), TOP_K)):
+        for i in range(min(len(true_items), k)):
             idcg += 1 / np.log2(i + 2)
             
         ndcg += dcg / idcg if idcg > 0 else 0
@@ -120,15 +90,18 @@ def run_training(model_class, model_name, model_type="full", epochs=5, tau=3, ep
     model = model_class(utils.num_users, utils.num_items, EMBEDDING_DIM).to(device)
     optimizer = optim.Adam(model.parameters(), lr=LR)
     
-    metrics = {'loss': [], 'recall': [], 'ndcg': []}
+    metrics_history = {'loss': [], 'recall': [], 'ndcg': []}
     user_history_state = None
     
     for epoch in range(epochs):
         start_time = time.time()
         epoch_loss = 0.0
+        steps = 0
         
+        next_history_state = None
+
         for t, snapshot_data in enumerate(train_snapshots):
-            # 1. Mining (仅当模型需要 Biclique 时)
+            # 1. Mining
             if model_type != "lightgcn":
                 biclique_file = utils.run_msbe_mining(snapshot_data, f"solo_{t}", tau=tau, epsilon=epsilon)
                 H_v, H_u = utils.parse_bicliques(biclique_file)
@@ -152,12 +125,59 @@ def run_training(model_class, model_name, model_type="full", epochs=5, tau=3, ep
                 pos_items = torch.LongTensor([x[1] for x in batch]).to(device)
                 neg_items = torch.randint(0, utils.num_items, (len(users),)).to(device)
                 
-                # Forward
-                # 注意：DataUtils.load_data 已经将原始 ID 映射为内部 ID (0 ~ num_users-1)
-                # 所以这里的 x[0] 和 x[1] 已经是映射后的 ID，不需要再查 u_map/v_map
-                # 除非我们是在 save_binary_graph 里重新映射了一次，但 load_data 是全局映射
+                # Forward & Loss
+                if model_type == "lightgcn":
+                    u_out, i_out = model(adj_matrix, (H_v, H_u), user_history_state)
+                    loss, _, _ = model.calculate_loss(u_out, i_out, users, pos_items, neg_items)
+                elif model_type == "biclique_gcn":
+                    u_out, i_out = model(adj_matrix, (H_v, H_u), user_history_state)
+                    loss, _, _ = model.calculate_loss(u_out, i_out, users, pos_items, neg_items)
+                elif model_type == "biclique_cl":
+                    u_global, u_local, i_global = model(adj_matrix, (H_v, H_u), user_history_state)
+                    loss, _, _ = model.calculate_loss(u_global, u_local, i_global, users, pos_items, neg_items)
+                elif model_type == "full":
+                    u_global, u_local, new_state, i_global = model(adj_matrix, (H_v, H_u), user_history_state)
+                    loss, _, _ = model.calculate_loss(u_global, u_local, i_global, users, pos_items, neg_items)
+                    next_history_state = new_state.detach()
+
+                loss.backward()
+                optimizer.step()
                 
-                # 修正：直接使用 x[0] 和 x[1]，因为 load_data 已经做了全局映射
-                users = torch.LongTensor([x[0] for x in batch]).to(device)
-                pos_items = torch.LongTensor([x[1] for x in batch]).to(device)
-                neg_items = torch.randint(0, utils.num_items, (len(users),)).to(device)
+                epoch_loss += loss.item()
+                steps += 1
+        
+        if next_history_state is not None:
+            user_history_state = next_history_state
+
+        avg_loss = epoch_loss / steps if steps > 0 else 0
+        print(f"Epoch {epoch+1}/{epochs}: Loss = {avg_loss:.4f} ({time.time()-start_time:.2f}s)")
+        
+        # Evaluation
+        model.eval()
+        with torch.no_grad():
+            # Prepare test data
+            if model_type != "lightgcn":
+                biclique_file = utils.run_msbe_mining(test_data, "solo_test", tau=tau, epsilon=epsilon)
+                H_v_test, H_u_test = utils.parse_bicliques(biclique_file)
+                H_v_test, H_u_test = H_v_test.to(device), H_u_test.to(device)
+            else:
+                H_v_test, H_u_test = None, None
+            
+            test_adj = utils.build_adj_matrix(test_data).to(device)
+            
+            if model_type == "lightgcn":
+                u_emb, i_emb = model(test_adj, (H_v_test, H_u_test), user_history_state)
+            elif model_type == "biclique_gcn":
+                u_emb, i_emb = model(test_adj, (H_v_test, H_u_test), user_history_state)
+            elif model_type == "biclique_cl":
+                u_emb, _, i_emb = model(test_adj, (H_v_test, H_u_test), user_history_state)
+            elif model_type == "full":
+                u_emb, _, _, i_emb = model(test_adj, (H_v_test, H_u_test), user_history_state)
+            
+            recall, ndcg = calculate_metrics(u_emb, i_emb, test_data, k=20)
+            print(f"  Test Recall@20: {recall:.4f}, NDCG@20: {ndcg:.4f}")
+            metrics_history['recall'].append(recall)
+            metrics_history['ndcg'].append(ndcg)
+            metrics_history['loss'].append(avg_loss)
+
+    return metrics_history
