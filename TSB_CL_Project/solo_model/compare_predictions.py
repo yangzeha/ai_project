@@ -78,8 +78,14 @@ def compare_predictions():
         if u not in user_pos_items: user_pos_items[u] = []
         user_pos_items[u].append(i)
 
-    found_case = False
-    for u in test_users[:500]: # Check first 500 users
+    found_count = 0
+    target_count = 10  # Find 10 cases
+    
+    print(f"\nSearching for {target_count} cases where Biclique GCN outperforms Baseline...\n")
+    
+    for u in test_users: # Iterate all users
+        if found_count >= target_count: break
+        
         u_idx = utils.u_map.get(u)
         if u_idx is None: continue
         
@@ -94,17 +100,23 @@ def compare_predictions():
         hits_base = len(set(recs_base) & set(true_items))
         hits_bi = len(set(recs_bi) & set(true_items))
         
-        if hits_bi > hits_base:
-            print(f"\n[User ID: {u}] (Internal Index: {u_idx})")
-            print(f"True Items (Internal IDs): {true_items}")
-            print(f"Baseline Hits: {hits_base} | Top 5 Recs: {recs_base[:5]}")
-            print(f"Biclique Hits: {hits_bi}   | Top 5 Recs: {recs_bi[:5]}")
+        # Condition: Biclique wins significantly (e.g., hits >= 1 while base hits == 0, or hits_bi >= hits_base + 2)
+        if hits_bi > hits_base and hits_bi >= 1:
+            print(f"Case #{found_count+1} [User ID: {u}]")
+            print(f"  True Items (Internal IDs): {true_items}")
+            print(f"  Baseline Hits: {hits_base} | Top 5 Recs: {recs_base[:5]}")
+            print(f"  Biclique Hits: {hits_bi} | Top 5 Recs: {recs_bi[:5]}")
+            
+            # Show which items were hit by Biclique but missed by Baseline
+            hit_items_bi = set(recs_bi) & set(true_items)
+            hit_items_base = set(recs_base) & set(true_items)
+            unique_hits = hit_items_bi - hit_items_base
+            print(f"  >>> Unique Hits by Biclique: {list(unique_hits)}")
             print("-" * 50)
-            found_case = True
-            if hits_bi >= 2 and hits_base == 0: # Stop if we find a very clear winner
-                break
+            
+            found_count += 1
     
-    if not found_case:
+    if found_count == 0:
         print("No significant difference found in random sample. Try training longer or adjusting parameters.")
 
 if __name__ == "__main__":
