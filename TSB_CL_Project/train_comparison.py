@@ -222,11 +222,11 @@ def plot_comparison(baseline_metrics, enhanced_metrics):
 if __name__ == "__main__":
     # Run Baseline (No Biclique)
     print("\n=== Running Baseline (LightGCN only) ===")
-    baseline_res = run_experiment(enable_biclique=False, epochs=3)
+    baseline_res = run_experiment(enable_biclique=False, epochs=10)
     
     # Run Enhanced (TSB-CL)
     # Using tau=2, epsilon=0.1 as verified to find bicliques
     print("\n=== Running TSB-CL (Biclique Enhanced) ===")
-    enhanced_res = run_experiment(enable_biclique=True, epochs=3, tau=2, epsilon=0.1)
+    enhanced_res = run_experiment(enable_biclique=True, epochs=10, tau=2, epsilon=0.1)
     
     plot_comparison(baseline_res, enhanced_res)
