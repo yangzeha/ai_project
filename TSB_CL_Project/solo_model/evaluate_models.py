@@ -129,3 +129,9 @@ if __name__ == "__main__":
     
     # Evaluate Biclique GCN
     evaluate_saved_model(BicliqueGCN, "biclique_gcn_best.pth", "biclique_gcn", utils, test_data, device)
+
+    # Evaluate Biclique CL
+    evaluate_saved_model(BicliqueCL, "biclique_cl_best.pth", "biclique_cl", utils, test_data, device)
+
+    # Evaluate Full Model
+    evaluate_saved_model(FullTSBCL, "full_best.pth", "full", utils, test_data, device)
