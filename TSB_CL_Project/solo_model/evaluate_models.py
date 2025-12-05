@@ -3,8 +3,11 @@ import os
 import torch
 import numpy as np
 import random
+
+# 添加项目根目录到路径以导入 data_utils
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from data_utils import DataUtils
-from model_variants import PureLightGCN, BicliqueGCN, BicliqueCL, FullTSBCL
+from solo_model.model_variants import PureLightGCN, BicliqueGCN, BicliqueCL, FullTSBCL
 
 # Configuration
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'Similar-Biclique-Idx-main', 'datasets', 'bi_github.txt')
