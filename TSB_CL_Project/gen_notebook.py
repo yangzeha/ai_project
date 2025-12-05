@@ -33,8 +33,8 @@ def generate_notebook():
         prepare_content = f.read()
         
     source_3 = [
-        "# [3] Create Data Preparation Script\n",
-        "%%writefile TSB_CL_Project/prepare_yelp2018.py\n"
+        "%%writefile TSB_CL_Project/prepare_yelp2018.py\n",
+        "# [3] Create Data Preparation Script\n"
     ] + [line + "\n" for line in prepare_content.splitlines()]
     
     # Cell 4: Run Prepare
@@ -48,8 +48,8 @@ def generate_notebook():
         proof_content = f.read()
         
     source_5 = [
-        "# [5] Create Quick Proof Script\n",
-        "%%writefile TSB_CL_Project/quick_proof_yelp.py\n"
+        "%%writefile TSB_CL_Project/quick_proof_yelp.py\n",
+        "# [5] Create Quick Proof Script\n"
     ] + [line + "\n" for line in proof_content.splitlines()]
     
     # Cell 6: Run Proof
