@@ -13,8 +13,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from data_utils import DataUtils
 
 # 全局配置
-DATA_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'Similar-Biclique-Idx-main', 'datasets', 'bi_github.txt')
-MSBE_EXE = os.path.join(os.path.dirname(__file__), '..', '..', 'Similar-Biclique-Idx-main', 'msbe')
+DATA_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Similar-Biclique-Idx-main', 'datasets', 'bi_github.txt'))
+MSBE_EXE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Similar-Biclique-Idx-main', 'msbe'))
 if os.name == 'nt':
     MSBE_EXE += ".exe"
 
