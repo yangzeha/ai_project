@@ -21,21 +21,33 @@ def generate_notebook():
     # Cell 2: Compile
     source_2 = [
         "# [2] Compile MSBE (C++)\n",
-        "%cd Similar-Biclique-Idx-main\n",
-        "!g++ -O3 main.cpp -o msbe\n",
-        "!chmod +x msbe\n",
-        "%cd ..\n"
+        "!g++ -O3 Similar-Biclique-Idx-main/main.cpp -o Similar-Biclique-Idx-main/msbe\n",
+        "!chmod +x Similar-Biclique-Idx-main/msbe\n"
     ]
     
-    # Cell 3: Prepare Data Script
+    # Cell 3: Prepare Data Script (Using Python write instead of magic)
     # Read local file content
     with open(r"c:\Users\LENOVO\Desktop\论文代码\ai_project\TSB_CL_Project\prepare_yelp2018.py", "r", encoding="utf-8") as f:
         prepare_content = f.read()
-        
+    
+    # Escape backslashes and quotes for python string
+    # We need to be careful not to double escape if we are just putting it in a triple quoted string
+    # But we do need to escape backslashes that might be interpreted as escape sequences
+    # Actually, raw string literal r"""...""" is best, but we are constructing it dynamically.
+    # Let's just use triple quotes and hope the content doesn't have triple quotes.
+    # If it does, we need to escape them.
+    prepare_content = prepare_content.replace('"""', '\\"\\"\\"')
+    
     source_3 = [
-        "%%writefile TSB_CL_Project/prepare_yelp2018.py\n",
-        "# [3] Create Data Preparation Script\n"
-    ] + [line + "\n" for line in prepare_content.splitlines()]
+        "# [3] Create Data Preparation Script\n",
+        "import os\n",
+        "code = \"\"\"\n"
+    ] + [line + "\n" for line in prepare_content.splitlines()] + [
+        "\"\"\"\n",
+        "os.makedirs('TSB_CL_Project', exist_ok=True)\n",
+        "with open('TSB_CL_Project/prepare_yelp2018.py', 'w', encoding='utf-8') as f:\n",
+        "    f.write(code)\n"
+    ]
     
     # Cell 4: Run Prepare
     source_4 = [
@@ -43,14 +55,22 @@ def generate_notebook():
         "!python TSB_CL_Project/prepare_yelp2018.py\n"
     ]
     
-    # Cell 5: Proof Script
+    # Cell 5: Proof Script (Using Python write instead of magic)
     with open(r"c:\Users\LENOVO\Desktop\论文代码\ai_project\TSB_CL_Project\quick_proof_yelp.py", "r", encoding="utf-8") as f:
         proof_content = f.read()
         
+    proof_content = proof_content.replace('"""', '\\"\\"\\"')
+        
     source_5 = [
-        "%%writefile TSB_CL_Project/quick_proof_yelp.py\n",
-        "# [5] Create Quick Proof Script\n"
-    ] + [line + "\n" for line in proof_content.splitlines()]
+        "# [5] Create Quick Proof Script\n",
+        "import os\n",
+        "code = \"\"\"\n"
+    ] + [line + "\n" for line in proof_content.splitlines()] + [
+        "\"\"\"\n",
+        "os.makedirs('TSB_CL_Project', exist_ok=True)\n",
+        "with open('TSB_CL_Project/quick_proof_yelp.py', 'w', encoding='utf-8') as f:\n",
+        "    f.write(code)\n"
+    ]
     
     # Cell 6: Run Proof
     source_6 = [
