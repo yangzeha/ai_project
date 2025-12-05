@@ -6,122 +6,11 @@ import torch.nn.functional as F
 import numpy as np
 from data_utils import DataUtils
 import random
-
-# --- Model Classes from model_variants.py ---
-
-class BicliqueEnhancedEncoder(nn.Module):
-    def __init__(self, embedding_dim):
-        super(BicliqueEnhancedEncoder, self).__init__()
-        self.embedding_dim = embedding_dim
-
-    def forward(self, user_emb, item_emb, biclique_indices):
-        H_v, H_u = biclique_indices
-        # 1. Item -> Biclique
-        biclique_features = torch.sparse.mm(H_v, item_emb)
-        degree_v = torch.sparse.sum(H_v, dim=1).to_dense().view(-1, 1)
-        degree_v[degree_v == 0] = 1.0
-        biclique_features = biclique_features / degree_v
-        
-        # 2. Biclique -> User
-        user_local_view = torch.sparse.mm(H_u, biclique_features)
-        degree_u = torch.sparse.sum(H_u, dim=1).to_dense().view(-1, 1)
-        degree_u[degree_u == 0] = 1.0
-        user_local_view = user_local_view / degree_u
-        
-        return user_local_view
-
-class LightGCNEncoder(nn.Module):
-    def __init__(self, num_users, num_items, embedding_dim, n_layers=3):
-        super(LightGCNEncoder, self).__init__()
-        self.n_layers = n_layers
-        
-    def forward(self, user_emb, item_emb, adj_matrix):
-        all_emb = torch.cat([user_emb, item_emb], dim=0)
-        embs = [all_emb]
-        for _ in range(self.n_layers):
-            all_emb = torch.sparse.mm(adj_matrix, all_emb)
-            embs.append(all_emb)
-        embs = torch.stack(embs, dim=1)
-        final_emb = torch.mean(embs, dim=1)
-        users, items = torch.split(final_emb, [user_emb.shape[0], item_emb.shape[0]])
-        return users, items
-
-class PureLightGCN(nn.Module):
-    def __init__(self, num_users, num_items, embedding_dim=64, n_layers=3):
-        super(PureLightGCN, self).__init__()
-        self.user_embedding = nn.Embedding(num_users, embedding_dim)
-        self.item_embedding = nn.Embedding(num_items, embedding_dim)
-        self.global_encoder = LightGCNEncoder(num_users, num_items, embedding_dim, n_layers)
-        nn.init.xavier_uniform_(self.user_embedding.weight)
-        nn.init.xavier_uniform_(self.item_embedding.weight)
-
-    def forward(self, adj_matrix, biclique_matrices=None, user_history_state=None):
-        u_emb = self.user_embedding.weight
-        i_emb = self.item_embedding.weight
-        u_global, i_global = self.global_encoder(u_emb, i_emb, adj_matrix)
-        return u_global, i_global
-
-class BicliqueGCN(nn.Module):
-    def __init__(self, num_users, num_items, embedding_dim=64, n_layers=3):
-        super(BicliqueGCN, self).__init__()
-        self.user_embedding = nn.Embedding(num_users, embedding_dim)
-        self.item_embedding = nn.Embedding(num_items, embedding_dim)
-        self.global_encoder = LightGCNEncoder(num_users, num_items, embedding_dim, n_layers)
-        self.local_encoder = BicliqueEnhancedEncoder(embedding_dim)
-        nn.init.xavier_uniform_(self.user_embedding.weight)
-        nn.init.xavier_uniform_(self.item_embedding.weight)
-
-    def forward(self, adj_matrix, biclique_matrices, user_history_state=None):
-        u_emb = self.user_embedding.weight
-        i_emb = self.item_embedding.weight
-        u_global, i_global = self.global_encoder(u_emb, i_emb, adj_matrix)
-        u_local = self.local_encoder(u_emb, i_emb, biclique_matrices)
-        u_final = u_global + u_local 
-        return u_final, i_global
-
-class BicliqueCL(nn.Module):
-    def __init__(self, num_users, num_items, embedding_dim=64, n_layers=3, tau=0.2):
-        super(BicliqueCL, self).__init__()
-        self.tau = tau
-        self.user_embedding = nn.Embedding(num_users, embedding_dim)
-        self.item_embedding = nn.Embedding(num_items, embedding_dim)
-        self.global_encoder = LightGCNEncoder(num_users, num_items, embedding_dim, n_layers)
-        self.local_encoder = BicliqueEnhancedEncoder(embedding_dim)
-        nn.init.xavier_uniform_(self.user_embedding.weight)
-        nn.init.xavier_uniform_(self.item_embedding.weight)
-
-    def forward(self, adj_matrix, biclique_matrices, user_history_state=None):
-        u_emb = self.user_embedding.weight
-        i_emb = self.item_embedding.weight
-        u_global, i_global = self.global_encoder(u_emb, i_emb, adj_matrix)
-        u_local = self.local_encoder(u_emb, i_emb, biclique_matrices)
-        return u_global, u_local, i_global
-
-class FullTSBCL(nn.Module):
-    def __init__(self, num_users, num_items, embedding_dim=64, n_layers=3, tau=0.2):
-        super(FullTSBCL, self).__init__()
-        self.tau = tau
-        self.user_embedding = nn.Embedding(num_users, embedding_dim)
-        self.item_embedding = nn.Embedding(num_items, embedding_dim)
-        self.global_encoder = LightGCNEncoder(num_users, num_items, embedding_dim, n_layers)
-        self.local_encoder = BicliqueEnhancedEncoder(embedding_dim)
-        self.user_gru = nn.GRUCell(embedding_dim, embedding_dim)
-        nn.init.xavier_uniform_(self.user_embedding.weight)
-        nn.init.xavier_uniform_(self.item_embedding.weight)
-
-    def forward(self, adj_matrix, biclique_matrices, user_history_state=None):
-        u_emb = self.user_embedding.weight
-        i_emb = self.item_embedding.weight
-        u_global, i_global = self.global_encoder(u_emb, i_emb, adj_matrix)
-        u_local = self.local_encoder(u_emb, i_emb, biclique_matrices)
-        if user_history_state is None:
-            user_history_state = torch.zeros_like(u_emb)
-        new_user_state = self.user_gru(u_global, user_history_state)
-        return u_global, u_local, new_user_state, i_global
+from solo_model.model_variants import PureLightGCN, BicliqueGCN, BicliqueCL, FullTSBCL
 
 # --- Evaluation Logic ---
 
-def evaluate_model(model, test_data, utils, device, model_type, biclique_matrices, top_k=20):
+def evaluate_model(model, test_data, utils, device, model_type, biclique_matrices, top_k=20, user_history_state=None):
     model.eval()
     
     adj_matrix = utils.build_adj_matrix(test_data).to(device)
@@ -146,7 +35,8 @@ def evaluate_model(model, test_data, utils, device, model_type, biclique_matrice
         elif model_type == "BicliqueCL":
             u_out, _, i_out = model(adj_matrix, (H_v, H_u))
         elif model_type == "FullTSBCL":
-            u_out, _, _, i_out = model(adj_matrix, (H_v, H_u))
+            # Pass the history state here
+            u_out, _, _, i_out = model(adj_matrix, (H_v, H_u), user_history_state)
         
         all_item_emb = i_out
         
@@ -232,8 +122,27 @@ def main():
             print(f"{model_name:<25} | Error loading: {e}")
             continue
             
+        # Warmup for FullTSBCL (Compute RNN State)
+        user_history_state = None
+        if model_type == "FullTSBCL":
+            # print(f"  > Warming up RNN state for {model_name}...")
+            train_snapshots = snapshots[:-1]
+            with torch.no_grad():
+                for t, snapshot_data in enumerate(train_snapshots):
+                    # Mine/Load Bicliques for history snapshots
+                    # Note: Using same tau/eps as training is ideal. Assuming tau=2, eps=0.1 here.
+                    biclique_file_warm = utils.run_msbe_mining(snapshot_data, f"warmup_{t}", tau=2, epsilon=0.1)
+                    H_v_warm, H_u_warm = utils.parse_bicliques(biclique_file_warm)
+                    H_v_warm, H_u_warm = H_v_warm.to(device), H_u_warm.to(device)
+                    
+                    adj_warm = utils.build_adj_matrix(snapshot_data).to(device)
+                    
+                    # Forward pass to update state
+                    _, _, new_state, _ = model(adj_warm, (H_v_warm, H_u_warm), user_history_state)
+                    user_history_state = new_state.detach()
+
         # Evaluate
-        recall, ndcg = evaluate_model(model, test_data, utils, device, model_type, (H_v, H_u))
+        recall, ndcg = evaluate_model(model, test_data, utils, device, model_type, (H_v, H_u), user_history_state=user_history_state)
         
         print(f"{model_name:<25} | {recall:.4f}     | {ndcg:.4f}")
         

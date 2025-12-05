@@ -92,7 +92,6 @@ def run_training(model_class, model_name, model_type="full", epochs=5, tau=3, ep
     optimizer = optim.Adam(model.parameters(), lr=LR)
     
     metrics_history = {'loss': [], 'recall': [], 'ndcg': []}
-    user_history_state = None
     best_recall = 0.0
     
     for epoch in range(epochs):
@@ -100,9 +99,12 @@ def run_training(model_class, model_name, model_type="full", epochs=5, tau=3, ep
         epoch_loss = 0.0
         steps = 0
         
-        next_history_state = None
+        # Reset history state at the start of each epoch for sequential training
+        user_history_state = None
 
         for t, snapshot_data in enumerate(train_snapshots):
+            next_history_state = None
+            
             # 1. Mining
             if model_type != "lightgcn":
                 biclique_file = utils.run_msbe_mining(snapshot_data, f"solo_{t}", tau=tau, epsilon=epsilon)
@@ -147,10 +149,11 @@ def run_training(model_class, model_name, model_type="full", epochs=5, tau=3, ep
                 
                 epoch_loss += loss.item()
                 steps += 1
+            
+            # Update history state after each snapshot
+            if next_history_state is not None:
+                user_history_state = next_history_state.detach()
         
-        if next_history_state is not None:
-            user_history_state = next_history_state
-
         avg_loss = epoch_loss / steps if steps > 0 else 0
         print(f"Epoch {epoch+1}/{epochs}: Loss = {avg_loss:.4f} ({time.time()-start_time:.2f}s)")
         

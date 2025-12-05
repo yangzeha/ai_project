@@ -164,7 +164,11 @@ class FullTSBCL(nn.Module):
             user_history_state = torch.zeros_like(u_emb)
         new_user_state = self.user_gru(u_global, user_history_state)
         
-        return new_user_state, u_local, new_user_state, i_global
+        # [FIX] Residual Connection: Add RNN state to Global embedding
+        # This ensures the model retains the strong static features from LightGCN
+        u_final = u_global + new_user_state
+        
+        return u_final, u_local, new_user_state, i_global
 
     def calculate_loss(self, u_global, u_local, i_global, users, pos_items, neg_items):
         # 同 BicliqueCL
