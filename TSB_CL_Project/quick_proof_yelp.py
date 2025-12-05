@@ -6,13 +6,14 @@ import torch.optim as optim
 import numpy as np
 import random
 import time
+import matplotlib.pyplot as plt
 from model import TSB_CL
 from data_utils import DataUtils
 
 # --- Configuration ---
 LR = 0.001
 BATCH_SIZE = 2048
-EPOCHS = 20
+EPOCHS = 50
 EMBEDDING_DIM = 64
 TAU = 2
 EPSILON = 0.1
@@ -27,7 +28,7 @@ def set_seed(seed):
 set_seed(2024)
 
 def run_quick_proof():
-    print("=== Running Quick Proof on Yelp2018 ===")
+    print("=== Running Quick Proof on Yelp2018 (Full Data) ===")
     
     # 1. Setup Paths
     CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -58,10 +59,9 @@ def run_quick_proof():
     all_data = utils.load_data()
     
     # 3. Split Data
-    # OPTIMIZATION: Sample 10% of data to make mining faster for "Quick Proof"
-    print("Sampling 10% of data for rapid verification...")
-    random.shuffle(all_data)
-    all_data = all_data[:int(len(all_data) * 0.1)]
+    # Use Full Data (No Sampling)
+    print("Using Full Dataset...")
+    # random.shuffle(all_data) # Shuffle is good, but let's keep it consistent
     
     split_idx = int(len(all_data) * 0.8)
     train_data = all_data[:split_idx]
@@ -74,7 +74,7 @@ def run_quick_proof():
     adj_matrix = utils.build_adj_matrix(train_data).to(device)
     
     print("Mining Bicliques from Training Data...")
-    biclique_file = utils.run_msbe_mining(train_data, "yelp_train_sample", tau=TAU, epsilon=EPSILON)
+    biclique_file = utils.run_msbe_mining(train_data, "yelp_train_full", tau=TAU, epsilon=EPSILON)
     H_v, H_u = utils.parse_bicliques(biclique_file)
     H_v = H_v.to(device)
     H_u = H_u.to(device)
@@ -93,6 +93,7 @@ def run_quick_proof():
     
     # 6. Evaluation Function
     test_users = list(set([x[0] for x in test_data]))
+    # Evaluate on 1000 users for speed during training, full eval at end if needed
     if len(test_users) > 1000:
         eval_users = random.sample(test_users, 1000)
     else:
@@ -108,7 +109,7 @@ def run_quick_proof():
         if u not in train_user_items: train_user_items[u] = set()
         train_user_items[u].add(i)
 
-    def evaluate(model, use_biclique, model_name):
+    def evaluate(model, use_biclique):
         model.eval()
         with torch.no_grad():
             if use_biclique:
@@ -160,6 +161,17 @@ def run_quick_proof():
     users_np = np.array([x[0] for x in train_data])
     items_np = np.array([x[1] for x in train_data])
     num_batches = len(train_data) // BATCH_SIZE
+    
+    # History for plotting
+    history = {
+        'epoch': [],
+        'loss_tsb': [],
+        'loss_base': [],
+        'recall_tsb': [],
+        'recall_base': [],
+        'ndcg_tsb': [],
+        'ndcg_base': []
+    }
     
     for epoch in range(EPOCHS):
         # Shuffle
@@ -225,20 +237,82 @@ def run_quick_proof():
             opt_base.step()
             total_loss_base += loss_base.item()
             
+        # Record Loss
+        history['epoch'].append(epoch + 1)
+        history['loss_tsb'].append(total_loss_tsb)
+        history['loss_base'].append(total_loss_base)
+        
+        # Evaluate every 5 epochs
         if (epoch + 1) % 5 == 0:
+            r_tsb, n_tsb = evaluate(model_tsb, True)
+            r_base, n_base = evaluate(model_base, False)
+            
+            history['recall_tsb'].append(r_tsb)
+            history['recall_base'].append(r_base)
+            history['ndcg_tsb'].append(n_tsb)
+            history['ndcg_base'].append(n_base)
+            
             print(f"Epoch {epoch+1}/{EPOCHS} | Loss TSB: {total_loss_tsb:.4f} | Loss Base: {total_loss_base:.4f}")
+            print(f"    TSB-CL   -> Recall: {r_tsb:.4f} | NDCG: {n_tsb:.4f}")
+            print(f"    Baseline -> Recall: {r_base:.4f} | NDCG: {n_base:.4f}")
+        else:
+            # Fill with previous value or None for plotting consistency if needed, 
+            # but for scatter/line plot we can just plot the points we have.
+            pass
 
     print("\n=== Final Evaluation (Recall@20) ===")
-    recall_tsb, ndcg_tsb = evaluate(model_tsb, True, "TSB-CL")
-    recall_base, ndcg_base = evaluate(model_base, False, "Baseline")
-    
-    print(f"TSB-CL   -> Recall: {recall_tsb:.4f} | NDCG: {ndcg_tsb:.4f}")
-    print(f"Baseline -> Recall: {recall_base:.4f} | NDCG: {ndcg_base:.4f}")
-    
-    if recall_tsb > recall_base:
-        print(f"\nSUCCESS: TSB-CL outperforms Baseline by +{(recall_tsb - recall_base)*100:.2f}%")
+    # Ensure we have the final metrics
+    if (EPOCHS) % 5 != 0:
+        r_tsb, n_tsb = evaluate(model_tsb, True)
+        r_base, n_base = evaluate(model_base, False)
+        history['recall_tsb'].append(r_tsb)
+        history['recall_base'].append(r_base)
+        history['ndcg_tsb'].append(n_tsb)
+        history['ndcg_base'].append(n_base)
+        print(f"TSB-CL   -> Recall: {r_tsb:.4f} | NDCG: {n_tsb:.4f}")
+        print(f"Baseline -> Recall: {r_base:.4f} | NDCG: {n_base:.4f}")
     else:
-        print("\nResult is close. Try tuning tau/epsilon for sparse data.")
+        # Already printed in loop
+        pass
+    
+    # --- Plotting ---
+    print("Generating Plots...")
+    plt.figure(figsize=(12, 5))
+    
+    # Plot Loss
+    plt.subplot(1, 2, 1)
+    plt.plot(history['epoch'], history['loss_tsb'], label='TSB-CL Loss')
+    plt.plot(history['epoch'], history['loss_base'], label='Baseline Loss')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.title('Training Loss Comparison')
+    plt.legend()
+    plt.grid(True)
+    
+    # Plot Recall
+    plt.subplot(1, 2, 2)
+    # Filter epochs where we have evaluation data
+    # We collected data every 5 epochs.
+    # Let's construct the x-axis for recall points.
+    # If we have N points, they correspond to 5, 10, 15...
+    eval_epochs_x = [(i+1) * 5 for i in range(len(history['recall_tsb']))]
+    
+    # If the last epoch was not a multiple of 5, we added one more point at EPOCHS
+    if len(eval_epochs_x) > 0 and eval_epochs_x[-1] > EPOCHS:
+         eval_epochs_x[-1] = EPOCHS
+         
+    plt.plot(eval_epochs_x, history['recall_tsb'], marker='o', label='TSB-CL Recall@20')
+    plt.plot(eval_epochs_x, history['recall_base'], marker='x', label='Baseline Recall@20')
+    plt.xlabel('Epochs')
+    plt.ylabel('Recall@20')
+    plt.title('Test Recall Comparison')
+    plt.legend()
+    plt.grid(True)
+    
+    plt.tight_layout()
+    plt.savefig('training_results.png')
+    plt.show()
+    print("Plots saved to training_results.png")
 
 if __name__ == "__main__":
     run_quick_proof()
