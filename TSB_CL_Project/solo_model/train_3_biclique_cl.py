@@ -6,8 +6,8 @@ if __name__ == "__main__":
         model_class=BicliqueCL,
         model_name="Biclique + CL (No RNN)",
         model_type="biclique_cl",
-        epochs=30,
-        tau=3,
+        epochs=50,
+        tau=2,
         epsilon=0.1
     )
     print("\nFinal Metrics:", metrics)

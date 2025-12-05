@@ -6,6 +6,6 @@ if __name__ == "__main__":
         model_class=PureLightGCN,
         model_name="Pure LightGCN (Baseline)",
         model_type="lightgcn",
-        epochs=30
+        epochs=50
     )
     print("\nFinal Metrics:", metrics)
