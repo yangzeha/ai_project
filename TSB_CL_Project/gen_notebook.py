@@ -30,12 +30,9 @@ def generate_notebook():
     with open(r"c:\Users\LENOVO\Desktop\论文代码\ai_project\TSB_CL_Project\prepare_yelp2018.py", "r", encoding="utf-8") as f:
         prepare_content = f.read()
     
-    # Escape backslashes and quotes for python string
-    # We need to be careful not to double escape if we are just putting it in a triple quoted string
-    # But we do need to escape backslashes that might be interpreted as escape sequences
-    # Actually, raw string literal r"""...""" is best, but we are constructing it dynamically.
-    # Let's just use triple quotes and hope the content doesn't have triple quotes.
-    # If it does, we need to escape them.
+    # Escape backslashes to prevent them from being interpreted as escape sequences in the python string
+    prepare_content = prepare_content.replace('\\', '\\\\')
+    # Escape triple quotes
     prepare_content = prepare_content.replace('"""', '\\"\\"\\"')
     
     source_3 = [
@@ -59,6 +56,9 @@ def generate_notebook():
     with open(r"c:\Users\LENOVO\Desktop\论文代码\ai_project\TSB_CL_Project\quick_proof_yelp.py", "r", encoding="utf-8") as f:
         proof_content = f.read()
         
+    # Escape backslashes
+    proof_content = proof_content.replace('\\', '\\\\')
+    # Escape triple quotes
     proof_content = proof_content.replace('"""', '\\"\\"\\"')
         
     source_5 = [
