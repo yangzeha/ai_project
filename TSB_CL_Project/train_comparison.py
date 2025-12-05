@@ -104,7 +104,7 @@ def run_experiment(enable_biclique, epochs=5, tau=2, epsilon=0.1):
         'time': []
     }
     
-    user_history_state = None
+    # user_history_state = None # Removed for static version
     
     print(f"--- Starting Experiment: Biclique={'Enabled' if enable_biclique else 'Disabled'} ---")
     
@@ -145,14 +145,9 @@ def run_experiment(enable_biclique, epochs=5, tau=2, epsilon=0.1):
                 pos_items = torch.LongTensor([x[1] for x in batch_samples]).to(device)
                 neg_items = torch.randint(0, utils.num_items, (len(users),)).to(device)
                 
-                if user_history_state is not None:
-                    current_history_state = user_history_state.detach().to(device)
-                else:
-                    current_history_state = None
-                    
-                # Forward pass
-                u_global, u_local, new_state, i_global = model(
-                    adj_matrix, (H_v, H_u), current_history_state
+                # Forward pass (Static)
+                u_global, u_local, u_final, i_global = model(
+                    adj_matrix, (H_v, H_u), None
                 )
                 
                 # Calculate loss
@@ -166,9 +161,7 @@ def run_experiment(enable_biclique, epochs=5, tau=2, epsilon=0.1):
                 
                 epoch_loss += loss.item()
                 
-                # Detach state for next step to avoid backprop through time indefinitely
-                if new_state is not None:
-                    user_history_state = new_state.detach()
+                # No history state update needed
         
         epoch_time = time.time() - epoch_start_time
         metrics['time'].append(epoch_time)

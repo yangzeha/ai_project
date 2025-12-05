@@ -84,7 +84,7 @@ class LightGCNEncoder(nn.Module):
 
 class TSB_CL(nn.Module):
     """
-    TSB-CL: 基于最大相似二团增强的时序图神经网络推荐算法
+    TSB-CL: 基于最大相似二团增强的图神经网络推荐算法 (Static Version)
     """
     def __init__(self, num_users, num_items, embedding_dim=64, n_layers=3, tau=0.2):
         super(TSB_CL, self).__init__()
@@ -101,20 +101,15 @@ class TSB_CL(nn.Module):
         self.global_encoder = LightGCNEncoder(num_users, num_items, embedding_dim, n_layers)
         self.local_encoder = BicliqueEnhancedEncoder(embedding_dim)
         
-        # 时序演化模块 (GRU)
-        # 用于更新用户Embedding，捕捉兴趣漂移
-        self.user_gru = nn.GRUCell(embedding_dim, embedding_dim)
-        
         # 初始化权重
         nn.init.xavier_uniform_(self.user_embedding.weight)
         nn.init.xavier_uniform_(self.item_embedding.weight)
 
-    def forward(self, adj_matrix, biclique_matrices, user_history_state=None):
+    def forward(self, adj_matrix, biclique_matrices):
         """
-        前向传播 (针对一个时间片)
+        前向传播
         :param adj_matrix: 全局交互图邻接矩阵
         :param biclique_matrices: (H_v, H_u) 二团超图关联矩阵
-        :param user_history_state: 上一时刻的用户状态 (Hidden State)
         """
         # 1. 获取当前的基础Embedding
         u_emb = self.user_embedding.weight
@@ -124,18 +119,15 @@ class TSB_CL(nn.Module):
         u_global, i_global = self.global_encoder(u_emb, i_emb, adj_matrix)
         
         # 3. 局部二团视图编码 (Biclique Encoder)
-        # 注意：这里只增强用户表示，因为二团代表用户社群
         u_local = self.local_encoder(u_emb, i_emb, biclique_matrices)
         
-        # 4. 时序演化 (Temporal Evolution)
-        # 将全局视图特征融合进GRU状态
-        if user_history_state is None:
-            user_history_state = torch.zeros_like(u_emb)
-            
-        # GRU Update: h_t = GRU(input=u_global, hidden=h_{t-1})
-        new_user_state = self.user_gru(u_global, user_history_state)
+        # 4. Static Representation
+        # Just use global embedding as the final user representation
+        # The improvement comes from Contrastive Loss optimizing the embeddings
+        u_final = u_global
         
-        return new_user_state, u_local, new_user_state, i_global
+        # Return format: u_global (for CL), u_local (for CL), u_final (for pred), i_global (for pred)
+        return u_global, u_local, u_final, i_global
 
     def calculate_loss(self, u_global, u_local, i_global, users, pos_items, neg_items):
         """
