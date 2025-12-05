@@ -1,0 +1,2001 @@
+Time
+#
+Log Message
+6.8s	1	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.8s	2	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.8s	3	0.00s - to python to disable frozen modules.
+6.8s	4	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.3s	5	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.3s	6	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.3s	7	0.00s - to python to disable frozen modules.
+7.3s	8	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+9.6s	9	>>> [1/5] 清理环境...
+9.8s	10	>>> [2/5] 克隆仓库...
+9.8s	11	Cloning into 'ai_project'...
+10.3s	12	remote: Enumerating objects: 202, done.[K
+10.3s	13	remote: Counting objects:  20% (1/5)[K
+remote: Counting objects:  40% (2/5)[K
+remote: Counting objects:  60% (3/5)[K
+remote: Counting objects:  80% (4/5)[K
+remote: Counting objects: 100% (5/5)[K
+remote: Counting objects: 100% (5/5), done.[K
+10.3s	14	remote: Compressing objects:  20% (1/5)[K
+remote: Compressing objects:  40% (2/5)[K
+remote: Compressing objects:  60% (3/5)[K
+remote: Compressing objects:  80% (4/5)[K
+remote: Compressing objects: 100% (5/5)[K
+remote: Compressing objects: 100% (5/5), done.[K
+13.8s	15	Receiving objects:   0% (1/202)
+Receiving objects:   1% (3/202)
+Receiving objects:   2% (5/202)
+Receiving objects:   2% (6/202), 41.68 MiB | 41.68 MiB/s
+Receiving objects:   3% (7/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:   4% (9/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:   5% (11/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:   6% (13/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:   7% (15/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:   8% (17/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:   9% (19/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  10% (21/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  11% (23/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  12% (25/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  13% (27/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  14% (29/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  15% (31/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  16% (33/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  17% (35/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  18% (37/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  19% (39/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  20% (41/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  21% (43/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  22% (45/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  23% (47/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  24% (49/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  25% (51/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  26% (53/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  27% (55/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  28% (57/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  29% (59/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  30% (61/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  31% (63/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  32% (65/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  33% (67/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  34% (69/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  35% (71/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  36% (73/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  37% (75/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  38% (77/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  39% (79/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  40% (81/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  41% (83/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  42% (85/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  43% (87/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  44% (89/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  45% (91/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  46% (93/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  47% (95/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  48% (97/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  49% (99/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  50% (101/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  51% (104/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  52% (106/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  53% (108/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  54% (110/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  55% (112/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  56% (114/202), 63.41 MiB | 42.27 MiB/s
+Receiving objects:  56% (114/202), 86.07 MiB | 43.03 MiB/s
+Receiving objects:  57% (116/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  58% (118/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  59% (120/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  60% (122/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  61% (124/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  62% (126/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  63% (128/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  64% (130/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  65% (132/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  66% (134/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  67% (136/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  68% (138/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  69% (140/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  70% (142/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  71% (144/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  72% (146/202), 111.20 MiB | 44.48 MiB/s
+Receiving objects:  72% (146/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  73% (148/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  74% (150/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  75% (152/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  76% (154/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  77% (156/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  78% (158/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  79% (160/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  80% (162/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  81% (164/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  82% (166/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  83% (168/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  84% (170/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  85% (172/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  86% (174/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  87% (176/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  88% (178/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  89% (180/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  90% (182/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  91% (184/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  92% (186/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  93% (188/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  94% (190/202), 129.76 MiB | 43.25 MiB/s
+remote: Total 202 (delta 0), reused 1 (delta 0), pack-reused 197 (from 1)[K
+13.8s	16	Receiving objects:  95% (192/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  96% (194/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  97% (196/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  98% (198/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects:  99% (200/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects: 100% (202/202), 129.76 MiB | 43.25 MiB/s
+Receiving objects: 100% (202/202), 142.07 MiB | 40.96 MiB/s, done.
+13.8s	17	Resolving deltas:   0% (0/90)
+Resolving deltas:   1% (1/90)
+Resolving deltas:   2% (2/90)
+Resolving deltas:   3% (3/90)
+Resolving deltas:   4% (4/90)
+Resolving deltas:   5% (5/90)
+Resolving deltas:   6% (6/90)
+Resolving deltas:   7% (7/90)
+Resolving deltas:   8% (8/90)
+Resolving deltas:  10% (9/90)
+Resolving deltas:  11% (10/90)
+Resolving deltas:  13% (12/90)
+Resolving deltas:  14% (13/90)
+Resolving deltas:  15% (14/90)
+Resolving deltas:  16% (15/90)
+Resolving deltas:  17% (16/90)
+Resolving deltas:  18% (17/90)
+Resolving deltas:  20% (18/90)
+Resolving deltas:  21% (19/90)
+Resolving deltas:  22% (20/90)
+Resolving deltas:  23% (21/90)
+Resolving deltas:  24% (22/90)
+Resolving deltas:  25% (23/90)
+Resolving deltas:  26% (24/90)
+Resolving deltas:  27% (25/90)
+Resolving deltas:  28% (26/90)
+Resolving deltas:  30% (27/90)
+Resolving deltas:  31% (28/90)
+Resolving deltas:  32% (29/90)
+Resolving deltas:  33% (30/90)
+Resolving deltas:  34% (31/90)
+Resolving deltas:  35% (32/90)
+Resolving deltas:  36% (33/90)
+Resolving deltas:  37% (34/90)
+Resolving deltas:  38% (35/90)
+Resolving deltas:  40% (36/90)
+Resolving deltas:  41% (37/90)
+Resolving deltas:  42% (38/90)
+Resolving deltas:  43% (39/90)
+Resolving deltas:  44% (40/90)
+Resolving deltas:  45% (41/90)
+Resolving deltas:  46% (42/90)
+Resolving deltas:  48% (44/90)
+Resolving deltas:  50% (45/90)
+Resolving deltas:  51% (46/90)
+Resolving deltas:  52% (47/90)
+Resolving deltas:  53% (48/90)
+Resolving deltas:  54% (49/90)
+Resolving deltas:  55% (50/90)
+Resolving deltas:  56% (51/90)
+Resolving deltas:  57% (52/90)
+Resolving deltas:  58% (53/90)
+Resolving deltas:  60% (54/90)
+Resolving deltas:  61% (55/90)
+Resolving deltas:  62% (56/90)
+Resolving deltas:  63% (57/90)
+Resolving deltas:  64% (58/90)
+Resolving deltas:  65% (59/90)
+Resolving deltas:  66% (60/90)
+Resolving deltas:  67% (61/90)
+Resolving deltas:  68% (62/90)
+Resolving deltas:  70% (63/90)
+Resolving deltas:  71% (64/90)
+Resolving deltas:  72% (65/90)
+Resolving deltas:  73% (66/90)
+Resolving deltas:  74% (67/90)
+Resolving deltas:  75% (68/90)
+Resolving deltas:  76% (69/90)
+Resolving deltas:  77% (70/90)
+Resolving deltas:  78% (71/90)
+Resolving deltas:  80% (72/90)
+Resolving deltas:  81% (73/90)
+Resolving deltas:  82% (74/90)
+Resolving deltas:  83% (75/90)
+Resolving deltas:  84% (76/90)
+Resolving deltas:  85% (77/90)
+Resolving deltas:  86% (78/90)
+Resolving deltas:  87% (79/90)
+Resolving deltas:  88% (80/90)
+Resolving deltas:  90% (81/90)
+Resolving deltas:  91% (82/90)
+Resolving deltas:  92% (83/90)
+Resolving deltas:  93% (84/90)
+Resolving deltas:  94% (85/90)
+Resolving deltas:  95% (86/90)
+Resolving deltas:  96% (87/90)
+Resolving deltas:  97% (88/90)
+Resolving deltas:  98% (89/90)
+Resolving deltas: 100% (90/90)
+Resolving deltas: 100% (90/90), done.
+15.7s	18	Updating files:  92% (53/57)
+Updating files:  94% (54/57)
+Updating files:  96% (55/57)
+Updating files:  98% (56/57)
+Updating files: 100% (57/57)
+Updating files: 100% (57/57), done.
+15.9s	19	✅ 克隆成功
+15.9s	20	/kaggle/working/ai_project
+15.9s	21	>>> [3/5] 安装依赖...
+18.0s	22	Requirement already satisfied: numpy in /usr/local/lib/python3.11/dist-packages (from -r TSB_CL_Project/requirements.txt (line 1)) (1.26.4)
+18.0s	23	Requirement already satisfied: matplotlib in /usr/local/lib/python3.11/dist-packages (from -r TSB_CL_Project/requirements.txt (line 2)) (3.7.2)
+18.0s	24	Requirement already satisfied: scipy in /usr/local/lib/python3.11/dist-packages (from -r TSB_CL_Project/requirements.txt (line 3)) (1.15.3)
+18.0s	25	Requirement already satisfied: mkl_fft in /usr/local/lib/python3.11/dist-packages (from numpy->-r TSB_CL_Project/requirements.txt (line 1)) (1.3.8)
+18.0s	26	Requirement already satisfied: mkl_random in /usr/local/lib/python3.11/dist-packages (from numpy->-r TSB_CL_Project/requirements.txt (line 1)) (1.2.4)
+18.0s	27	Requirement already satisfied: mkl_umath in /usr/local/lib/python3.11/dist-packages (from numpy->-r TSB_CL_Project/requirements.txt (line 1)) (0.1.1)
+18.0s	28	Requirement already satisfied: mkl in /usr/local/lib/python3.11/dist-packages (from numpy->-r TSB_CL_Project/requirements.txt (line 1)) (2025.3.0)
+18.0s	29	Requirement already satisfied: tbb4py in /usr/local/lib/python3.11/dist-packages (from numpy->-r TSB_CL_Project/requirements.txt (line 1)) (2022.3.0)
+18.0s	30	Requirement already satisfied: mkl-service in /usr/local/lib/python3.11/dist-packages (from numpy->-r TSB_CL_Project/requirements.txt (line 1)) (2.4.1)
+18.0s	31	Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.11/dist-packages (from matplotlib->-r TSB_CL_Project/requirements.txt (line 2)) (1.3.2)
+18.0s	32	Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.11/dist-packages (from matplotlib->-r TSB_CL_Project/requirements.txt (line 2)) (0.12.1)
+18.0s	33	Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.11/dist-packages (from matplotlib->-r TSB_CL_Project/requirements.txt (line 2)) (4.59.0)
+18.0s	34	Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.11/dist-packages (from matplotlib->-r TSB_CL_Project/requirements.txt (line 2)) (1.4.8)
+18.0s	35	Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/dist-packages (from matplotlib->-r TSB_CL_Project/requirements.txt (line 2)) (25.0)
+18.0s	36	Requirement already satisfied: pillow>=6.2.0 in /usr/local/lib/python3.11/dist-packages (from matplotlib->-r TSB_CL_Project/requirements.txt (line 2)) (11.3.0)
+18.0s	37	Requirement already satisfied: pyparsing<3.1,>=2.3.1 in /usr/local/lib/python3.11/dist-packages (from matplotlib->-r TSB_CL_Project/requirements.txt (line 2)) (3.0.9)
+18.0s	38	Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.11/dist-packages (from matplotlib->-r TSB_CL_Project/requirements.txt (line 2)) (2.9.0.post0)
+18.1s	39	Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/dist-packages (from python-dateutil>=2.7->matplotlib->-r TSB_CL_Project/requirements.txt (line 2)) (1.17.0)
+18.1s	40	Requirement already satisfied: onemkl-license==2025.3.0 in /usr/local/lib/python3.11/dist-packages (from mkl->numpy->-r TSB_CL_Project/requirements.txt (line 1)) (2025.3.0)
+18.1s	41	Requirement already satisfied: intel-openmp<2026,>=2024 in /usr/local/lib/python3.11/dist-packages (from mkl->numpy->-r TSB_CL_Project/requirements.txt (line 1)) (2024.2.0)
+18.1s	42	Requirement already satisfied: tbb==2022.* in /usr/local/lib/python3.11/dist-packages (from mkl->numpy->-r TSB_CL_Project/requirements.txt (line 1)) (2022.3.0)
+18.1s	43	Requirement already satisfied: tcmlib==1.* in /usr/local/lib/python3.11/dist-packages (from tbb==2022.*->mkl->numpy->-r TSB_CL_Project/requirements.txt (line 1)) (1.4.0)
+18.1s	44	Requirement already satisfied: intel-cmplr-lib-rt in /usr/local/lib/python3.11/dist-packages (from mkl_umath->numpy->-r TSB_CL_Project/requirements.txt (line 1)) (2024.2.0)
+18.1s	45	Requirement already satisfied: intel-cmplr-lib-ur==2024.2.0 in /usr/local/lib/python3.11/dist-packages (from intel-openmp<2026,>=2024->mkl->numpy->-r TSB_CL_Project/requirements.txt (line 1)) (2024.2.0)
+20.2s	46	
+0% [Working]
+            
+Get:1 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  InRelease [1,581 B]
+20.2s	47	
+0% [Waiting for headers] [Waiting for headers] [Connecting to cloud.r-project.o
+0% [Waiting for headers] [Waiting for headers] [Connecting to cloud.r-project.o
+                                                                               
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+20.2s	48	
+0% [Waiting for headers] [2 InRelease 14.2 kB/129 kB 11%] [Connecting to cloud.
+                                                                               
+Hit:3 http://archive.ubuntu.com/ubuntu jammy InRelease
+20.3s	49	
+0% [2 InRelease 14.2 kB/129 kB 11%] [Connecting to cloud.r-project.org] [Connec
+0% [Waiting for headers] [2 InRelease 14.2 kB/129 kB 11%] [Connecting to cloud.
+                                                                               
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+20.3s	50	
+0% [4 InRelease 8,380 B/128 kB 7%] [2 InRelease 20.0 kB/129 kB 15%] [Connecting
+                                                                               
+Get:5 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  Packages [2,196 kB]
+20.4s	51	
+0% [4 InRelease 15.6 kB/128 kB 12%] [2 InRelease 28.7 kB/129 kB 22%] [Connectin
+                                                                               
+Get:6 https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ InRelease [3,632 B]
+20.4s	52	
+0% [4 InRelease 21.4 kB/128 kB 17%] [2 InRelease 54.7 kB/129 kB 42%] [6 InRelea
+0% [4 InRelease 21.4 kB/128 kB 17%] [2 InRelease 54.7 kB/129 kB 42%] [Waiting f
+0% [4 InRelease 38.8 kB/128 kB 30%] [2 InRelease 75.0 kB/129 kB 58%] [Waiting f
+0% [5 Packages store 0 B] [4 InRelease 38.8 kB/128 kB 30%] [2 InRelease 75.0 kB
+0% [5 Packages store 0 B] [4 InRelease 53.3 kB/128 kB 42%] [2 InRelease 104 kB/
+                                                                               
+Get:7 https://r2u.stat.illinois.edu/ubuntu jammy InRelease [6,555 B]
+20.5s	53	
+0% [5 Packages store 0 B] [4 InRelease 53.3 kB/128 kB 42%] [2 InRelease 107 kB/
+0% [5 Packages store 0 B] [4 InRelease 53.3 kB/128 kB 42%] [2 InRelease 107 kB/
+0% [5 Packages store 0 B] [4 InRelease 67.7 kB/128 kB 53%] [Waiting for headers
+                                                                               
+0% [5 Packages store 3,556 kB] [Waiting for headers] [Waiting for headers]
+                                                                          
+0% [Waiting for headers] [Waiting for headers]
+0% [Waiting for headers] [Waiting for headers]
+                                              
+Get:8 https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ Packages [83.6 kB]
+20.6s	54	
+0% [Waiting for headers] [8 Packages 15.8 kB/83.6 kB 19%] [Waiting for headers]
+                                                                               
+0% [Waiting for headers] [Waiting for headers]
+0% [8 Packages store 0 B] [Waiting for headers] [Waiting for headers]
+                                                                     
+0% [Waiting for headers] [Waiting for headers]
+                                              
+Get:9 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+20.8s	55	
+0% [9 InRelease 2,588 B/127 kB 2%] [Waiting for headers]
+                                                        
+0% [Waiting for headers]
+0% [Waiting for headers]
+0% [Waiting for headers] [Waiting for headers]
+                                              
+Get:10 https://r2u.stat.illinois.edu/ubuntu jammy/main amd64 Packages [2,842 kB]
+20.8s	56	
+0% [Waiting for headers] [10 Packages 16.0 kB/2,842 kB 1%] [Waiting for headers
+                                                                               
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [6,081 kB]
+20.8s	57	
+0% [11 Packages 2,655 B/6,081 kB 0%] [10 Packages 32.4 kB/2,842 kB 1%] [Waiting
+                                                                               
+Get:12 https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu jammy InRelease [18.1 kB]
+20.9s	58	
+0% [11 Packages 17.1 kB/6,081 kB 0%] [10 Packages 32.4 kB/2,842 kB 1%] [12 InRe
+                                                                               
+0% [11 Packages 49.0 kB/6,081 kB 1%] [10 Packages 32.4 kB/2,842 kB 1%]
+0% [11 Packages 140 kB/6,081 kB 2%] [10 Packages 97.9 kB/2,842 kB 3%] [Waiting 
+                                                                               
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,598 kB]
+20.9s	59	
+0% [13 Packages 2,655 B/1,598 kB 0%] [11 Packages 301 kB/6,081 kB 5%] [10 Packa
+                                                                               
+Hit:14 https://ppa.launchpadcontent.net/graphics-drivers/ppa/ubuntu jammy InRelease
+21.1s	60	
+0% [13 Packages 114 kB/1,598 kB 7%] [11 Packages 486 kB/6,081 kB 8%] [10 Packag
+0% [13 Packages 211 kB/1,598 kB 13%] [11 Packages 685 kB/6,081 kB 11%] [10 Pack
+                                                                               
+Hit:15 https://ppa.launchpadcontent.net/ubuntugis/ppa/ubuntu jammy InRelease
+21.3s	61	
+0% [13 Packages 782 kB/1,598 kB 49%] [11 Packages 2,227 kB/6,081 kB 37%] [10 Pa
+0% [13 Packages 1,131 kB/1,598 kB 71%] [11 Packages 3,401 kB/6,081 kB 56%] [10 
+0% [11 Packages 4,851 kB/6,081 kB 80%] [10 Packages 1,835 kB/2,842 kB 65%] [Wai
+0% [13 Packages store 0 B] [Waiting for headers] [11 Packages 4,916 kB/6,081 kB
+0% [13 Packages store 0 B] [Waiting for headers] [10 Packages 2,483 kB/2,842 kB
+0% [13 Packages store 0 B] [Waiting for headers] [Waiting for headers] [Waiting
+                                                                               
+Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [6,281 kB]
+21.3s	62	
+0% [13 Packages store 0 B] [16 Packages 45.7 kB/6,281 kB 1%] [Waiting for heade
+                                                                               
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [3,571 kB]
+21.3s	63	
+0% [13 Packages store 0 B] [16 Packages 1,121 kB/6,281 kB 18%] [17 Packages 196
+                                                                               
+Get:18 https://r2u.stat.illinois.edu/ubuntu jammy/main all Packages [9,508 kB]
+21.3s	64	
+0% [13 Packages store 0 B] [16 Packages 1,483 kB/6,281 kB 24%] [17 Packages 782
+                                                                               
+Get:19 https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu jammy/main amd64 Packages [38.8 kB]
+21.3s	65	
+0% [13 Packages store 0 B] [16 Packages 1,679 kB/6,281 kB 27%] [17 Packages 1,6
+                                                                               
+Get:20 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1,286 kB]
+21.4s	66	
+0% [16 Packages 2,405 kB/6,281 kB 38%] [20 Packages 245 kB/1,286 kB 19%] [18 Pa
+0% [11 Packages store 0 B] [16 Packages 2,434 kB/6,281 kB 39%] [20 Packages 389
+0% [11 Packages store 0 B] [16 Packages 3,096 kB/6,281 kB 49%] [18 Packages 2,7
+0% [11 Packages store 0 B] [16 Packages 4,179 kB/6,281 kB 67%] [18 Packages 4,0
+0% [11 Packages store 0 B] [Waiting for headers] [18 Packages 4,964 kB/9,508 kB
+                                                                               
+Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [3,901 kB]
+23.0s	67	
+0% [11 Packages store 0 B] [21 Packages 16.4 kB/3,901 kB 0%] [18 Packages 4,964
+0% [11 Packages store 0 B] [21 Packages 56.3 kB/3,901 kB 1%] [18 Packages 4,964
+                                                                               
+0% [11 Packages store 0 B] [18 Packages 6,553 kB/9,508 kB 69%]
+96% [11 Packages store 0 B] [18 Packages 8,814 kB/9,508 kB 93%]
+                                                               
+97% [11 Packages store 0 B]
+                           
+97% [Working]
+97% [10 Packages store 0 B]
+                           
+98% [Working]
+98% [17 Packages store 0 B]
+                           
+98% [Working]
+98% [20 Packages store 0 B]
+                           
+98% [Working]
+98% [16 Packages store 0 B]
+                           
+99% [Working]
+99% [19 Packages store 0 B]
+                           
+99% [Working]
+99% [21 Packages store 0 B]
+                           
+100% [Working]
+100% [18 Packages store 0 B]
+                            
+100% [Working]
+              
+Fetched 37.8 MB in 3s (12.7 MB/s)
+24.8s	68	
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 2%
+
+Reading package lists... 2%
+
+Reading package lists... 3%
+
+Reading package lists... 3%
+
+Reading package lists... 31%
+
+Reading package lists... 31%
+
+Reading package lists... 32%
+
+Reading package lists... 32%
+
+Reading package lists... 39%
+
+Reading package lists... 39%
+
+Reading package lists... 41%
+
+Reading package lists... 52%
+
+Reading package lists... 52%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 63%
+
+Reading package lists... 63%
+
+Reading package lists... 76%
+
+Reading package lists... 76%
+
+Reading package lists... 78%
+
+Reading package lists... 78%
+
+Reading package lists... 78%
+
+Reading package lists... 78%
+
+Reading package lists... 79%
+
+Reading package lists... 79%
+
+Reading package lists... 82%
+
+Reading package lists... 82%
+
+Reading package lists... 94%
+
+Reading package lists... 94%
+
+Reading package lists... 97%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... Done
+
+24.8s	69	W: Skipping acquire of configured file 'main/source/Sources' as repository 'https://r2u.stat.illinois.edu/ubuntu jammy InRelease' does not seem to provide it (sources.list entry misspelt?)
+26.4s	70	
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 2%
+
+Reading package lists... 2%
+
+Reading package lists... 3%
+
+Reading package lists... 3%
+
+Reading package lists... 31%
+
+Reading package lists... 31%
+
+Reading package lists... 32%
+
+Reading package lists... 32%
+
+Reading package lists... 39%
+
+Reading package lists... 39%
+
+Reading package lists... 41%
+
+Reading package lists... 52%
+
+Reading package lists... 52%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 63%
+
+Reading package lists... 63%
+
+Reading package lists... 76%
+
+Reading package lists... 76%
+
+Reading package lists... 78%
+
+Reading package lists... 78%
+
+Reading package lists... 78%
+
+Reading package lists... 78%
+
+Reading package lists... 79%
+
+Reading package lists... 79%
+
+Reading package lists... 82%
+
+Reading package lists... 82%
+
+Reading package lists... 94%
+
+Reading package lists... 94%
+
+Reading package lists... 97%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... Done
+
+26.9s	71	
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+
+Building dependency tree... Done
+
+26.9s	72	
+Reading state information... 0% 
+
+Reading state information... 0%
+
+Reading state information... Done
+
+27.2s	73	The following NEW packages will be installed:
+27.2s	74	  libsparsehash-dev
+27.2s	75	0 upgraded, 1 newly installed, 0 to remove and 182 not upgraded.
+27.2s	76	Need to get 71.7 kB of archives.
+27.2s	77	After this operation, 589 kB of additional disk space will be used.
+27.5s	78	
+0% [Working]
+            
+Get:1 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libsparsehash-dev all 2.0.3-2 [71.7 kB]
+27.9s	79	
+16% [1 libsparsehash-dev 14.2 kB/71.7 kB 20%]
+                                             
+100% [Working]
+              
+Fetched 71.7 kB in 1s (103 kB/s)
+30.0s	80	Selecting previously unselected package libsparsehash-dev.
+30.6s	81	(Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 128639 files and directories currently installed.)
+30.6s	82	Preparing to unpack .../libsparsehash-dev_2.0.3-2_all.deb ...
+30.6s	83	Unpacking libsparsehash-dev (2.0.3-2) ...
+30.7s	84	Setting up libsparsehash-dev (2.0.3-2) ...
+30.9s	85	>>> [4/5] 编译 C++ 核心...
+30.9s	86	/kaggle/working/ai_project/Similar-Biclique-Idx-main
+32.5s	87	[01m[Kmain.cpp:[m[K In function ‘[01m[Kvoid load_graph_binary(std::string)[m[K’:
+32.5s	88	[01m[Kmain.cpp:230:10:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	89	  230 |     [01;35m[Kfread(&tt, sizeof(ui), 1, f)[m[K;
+32.5s	90	      |     [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	91	[01m[Kmain.cpp:236:10:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	92	  236 |     [01;35m[Kfread(&n1, sizeof(ui), 1, f)[m[K;
+32.5s	93	      |     [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	94	[01m[Kmain.cpp:237:10:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	95	  237 |     [01;35m[Kfread(&n2, sizeof(ui), 1, f)[m[K;
+32.5s	96	      |     [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	97	[01m[Kmain.cpp:239:10:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	98	  239 |     [01;35m[Kfread(&m, sizeof(ui), 1, f)[m[K;
+32.5s	99	      |     [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	100	[01m[Kmain.cpp:244:10:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	101	  244 |     [01;35m[Kfread(deg, sizeof(ui), n, f)[m[K;
+32.5s	102	      |     [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	103	[01m[Kmain.cpp:267:29:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	104	  267 |         if(deg[i] > 0) [01;35m[Kfread(edges+pstart[i], sizeof(ui), deg[i], f)[m[K;
+32.5s	105	      |                        [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	106	[01m[Kmain.cpp:[m[K In function ‘[01m[Kvoid load_index_LG(std::string)[m[K’:
+32.5s	107	[01m[Kmain.cpp:372:14:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	108	  372 |         [01;35m[Kfread(&numofI, sizeof(int), 1, f)[m[K;
+32.5s	109	      |         [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	110	[01m[Kmain.cpp:378:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	111	  378 |                 [01;35m[Kfread(&s_vid, sizeof(ui), 1, f)[m[K;
+32.5s	112	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	113	[01m[Kmain.cpp:379:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	114	  379 |                 [01;35m[Kfread(&e_vid, sizeof(ui), 1, f)[m[K;
+32.5s	115	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	116	[01m[Kmain.cpp:380:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	117	  380 |                 [01;35m[Kfread(&minS, sizeof(char), 1, f)[m[K;
+32.5s	118	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	119	[01m[Kmain.cpp:381:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	120	  381 |                 [01;35m[Kfread(&maxS, sizeof(char), 1, f)[m[K;
+32.5s	121	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	122	[01m[Kmain.cpp:382:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	123	  382 |                 [01;35m[Kfread(&cnt, sizeof(int), 1, f)[m[K;
+32.5s	124	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	125	[01m[Kmain.cpp:392:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	126	  392 |                 [01;35m[Kfread(&s_vid, sizeof(ui), 1, f)[m[K;
+32.5s	127	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	128	[01m[Kmain.cpp:393:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	129	  393 |                 [01;35m[Kfread(&minS, sizeof(char), 1, f)[m[K;
+32.5s	130	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	131	[01m[Kmain.cpp:[m[K In function ‘[01m[Kvoid load_index_LGf(std::string)[m[K’:
+32.5s	132	[01m[Kmain.cpp:484:14:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	133	  484 |         [01;35m[Kfread(&numofI, sizeof(int), 1, f)[m[K;
+32.5s	134	      |         [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	135	[01m[Kmain.cpp:490:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	136	  490 |                 [01;35m[Kfread(&s_vid, sizeof(ui), 1, f)[m[K;
+32.5s	137	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	138	[01m[Kmain.cpp:491:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	139	  491 |                 [01;35m[Kfread(&e_vid, sizeof(ui), 1, f)[m[K;
+32.5s	140	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	141	[01m[Kmain.cpp:492:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	142	  492 |                 [01;35m[Kfread(&minS, sizeof(char), 1, f)[m[K;
+32.5s	143	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	144	[01m[Kmain.cpp:493:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	145	  493 |                 [01;35m[Kfread(&maxS, sizeof(char), 1, f)[m[K;
+32.5s	146	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	147	[01m[Kmain.cpp:494:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	148	  494 |                 [01;35m[Kfread(&cnt, sizeof(int), 1, f)[m[K;
+32.5s	149	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	150	[01m[Kmain.cpp:504:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	151	  504 |                 [01;35m[Kfread(&s_vid, sizeof(ui), 1, f)[m[K;
+32.5s	152	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	153	[01m[Kmain.cpp:505:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	154	  505 |                 [01;35m[Kfread(&minS, sizeof(char), 1, f)[m[K;
+32.5s	155	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	156	[01m[Kmain.cpp:[m[K In function ‘[01m[Kvoid load_index_GRL2(std::string)[m[K’:
+32.5s	157	[01m[Kmain.cpp:635:14:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	158	  635 |         [01;35m[Kfread(&numofI, sizeof(int), 1, f)[m[K;
+32.5s	159	      |         [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	160	[01m[Kmain.cpp:641:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	161	  641 |                 [01;35m[Kfread(&s_vid, sizeof(ui), 1, f)[m[K;
+32.5s	162	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	163	[01m[Kmain.cpp:642:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	164	  642 |                 [01;35m[Kfread(&e_vid, sizeof(ui), 1, f)[m[K;
+32.5s	165	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	166	[01m[Kmain.cpp:643:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	167	  643 |                 [01;35m[Kfread(&minS, sizeof(char), 1, f)[m[K;
+32.5s	168	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	169	[01m[Kmain.cpp:644:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	170	  644 |                 [01;35m[Kfread(&maxS, sizeof(char), 1, f)[m[K;
+32.5s	171	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	172	[01m[Kmain.cpp:645:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	173	  645 |                 [01;35m[Kfread(&cnt, sizeof(int), 1, f)[m[K;
+32.5s	174	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	175	[01m[Kmain.cpp:655:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	176	  655 |                 [01;35m[Kfread(&s_vid, sizeof(ui), 1, f)[m[K;
+32.5s	177	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	178	[01m[Kmain.cpp:656:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	179	  656 |                 [01;35m[Kfread(&minS, sizeof(char), 1, f)[m[K;
+32.5s	180	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	181	[01m[Kmain.cpp:[m[K In function ‘[01m[Kvoid load_index_GRL3(std::string)[m[K’:
+32.5s	182	[01m[Kmain.cpp:724:14:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	183	  724 |         [01;35m[Kfread(&numofI, sizeof(int), 1, f)[m[K;
+32.5s	184	      |         [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	185	[01m[Kmain.cpp:730:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	186	  730 |                 [01;35m[Kfread(&s_vid, sizeof(ui), 1, f)[m[K;
+32.5s	187	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	188	[01m[Kmain.cpp:731:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	189	  731 |                 [01;35m[Kfread(&e_vid, sizeof(ui), 1, f)[m[K;
+32.5s	190	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	191	[01m[Kmain.cpp:732:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	192	  732 |                 [01;35m[Kfread(&minS, sizeof(char), 1, f)[m[K;
+32.5s	193	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	194	[01m[Kmain.cpp:733:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	195	  733 |                 [01;35m[Kfread(&maxS, sizeof(char), 1, f)[m[K;
+32.5s	196	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	197	[01m[Kmain.cpp:734:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	198	  734 |                 [01;35m[Kfread(&cnt, sizeof(int), 1, f)[m[K;
+32.5s	199	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	200	[01m[Kmain.cpp:744:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	201	  744 |                 [01;35m[Kfread(&s_vid, sizeof(ui), 1, f)[m[K;
+32.5s	202	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+32.5s	203	[01m[Kmain.cpp:745:22:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Ksize_t fread(void*, size_t, size_t, FILE*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+32.5s	204	  745 |                 [01;35m[Kfread(&minS, sizeof(char), 1, f)[m[K;
+32.5s	205	      |                 [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+41.5s	206	/kaggle/working/ai_project
+41.5s	207	>>> [5/5] 开始消融实验 (Baseline vs BicliqueGCN)...
+41.5s	208	/kaggle/working/ai_project/TSB_CL_Project
+41.5s	209	
+41.5s	210	========================================
+41.5s	211	--- 1. 运行 Baseline (纯 LightGCN, 50 Epochs) ---
+41.5s	212	========================================
+45.6s	213	
+45.6s	214	==================== Running Pure LightGCN (Baseline) ====================
+45.7s	215	Device: cuda
+45.7s	216	Loading data from /kaggle/working/ai_project/TSB_CL_Project/solo_model/../../Similar-Biclique-Idx-main/datasets/bi_github.txt...
+46.1s	217	Loaded 440237 interactions. Users: 56519, Items: 120867
+50.9s	218	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:355: RuntimeWarning: divide by zero encountered in power
+50.9s	219	  d_inv_sqrt = np.power(rowsum, -0.5).flatten()
+51.0s	220	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:363: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:254.)
+51.0s	221	  indices = torch.LongTensor([coo.row, coo.col])
+57.2s	222	Epoch 1/50: Loss = 0.5714 (6.38s)
+63.1s	223	  Test Recall@20: 0.0508, NDCG@20: 0.0362
+63.2s	224	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0508)
+68.9s	225	Epoch 2/50: Loss = 0.2810 (5.68s)
+75.0s	226	  Test Recall@20: 0.0348, NDCG@20: 0.0241
+80.6s	227	Epoch 3/50: Loss = 0.2109 (5.67s)
+86.6s	228	  Test Recall@20: 0.0434, NDCG@20: 0.0294
+92.2s	229	Epoch 4/50: Loss = 0.1874 (5.66s)
+98.4s	230	  Test Recall@20: 0.0379, NDCG@20: 0.0257
+104.1s	231	Epoch 5/50: Loss = 0.1757 (5.67s)
+110.1s	232	  Test Recall@20: 0.0502, NDCG@20: 0.0323
+115.8s	233	Epoch 6/50: Loss = 0.1680 (5.67s)
+121.9s	234	  Test Recall@20: 0.0438, NDCG@20: 0.0285
+127.5s	235	Epoch 7/50: Loss = 0.1640 (5.65s)
+133.5s	236	  Test Recall@20: 0.0398, NDCG@20: 0.0253
+139.2s	237	Epoch 8/50: Loss = 0.1587 (5.67s)
+145.2s	238	  Test Recall@20: 0.0398, NDCG@20: 0.0316
+150.9s	239	Epoch 9/50: Loss = 0.1532 (5.66s)
+156.9s	240	  Test Recall@20: 0.0481, NDCG@20: 0.0325
+162.6s	241	Epoch 10/50: Loss = 0.1517 (5.67s)
+168.6s	242	  Test Recall@20: 0.0378, NDCG@20: 0.0256
+174.2s	243	Epoch 11/50: Loss = 0.1483 (5.67s)
+180.2s	244	  Test Recall@20: 0.0558, NDCG@20: 0.0345
+180.3s	245	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0558)
+186.0s	246	Epoch 12/50: Loss = 0.1462 (5.69s)
+191.9s	247	  Test Recall@20: 0.0460, NDCG@20: 0.0290
+197.6s	248	Epoch 13/50: Loss = 0.1416 (5.67s)
+203.8s	249	  Test Recall@20: 0.0488, NDCG@20: 0.0366
+209.5s	250	Epoch 14/50: Loss = 0.1406 (5.67s)
+215.4s	251	  Test Recall@20: 0.0415, NDCG@20: 0.0308
+221.1s	252	Epoch 15/50: Loss = 0.1367 (5.66s)
+227.3s	253	  Test Recall@20: 0.0497, NDCG@20: 0.0343
+232.9s	254	Epoch 16/50: Loss = 0.1380 (5.68s)
+238.9s	255	  Test Recall@20: 0.0476, NDCG@20: 0.0340
+244.6s	256	Epoch 17/50: Loss = 0.1323 (5.69s)
+250.7s	257	  Test Recall@20: 0.0548, NDCG@20: 0.0428
+256.4s	258	Epoch 18/50: Loss = 0.1320 (5.67s)
+262.6s	259	  Test Recall@20: 0.0573, NDCG@20: 0.0426
+262.7s	260	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0573)
+268.4s	261	Epoch 19/50: Loss = 0.1291 (5.68s)
+274.5s	262	  Test Recall@20: 0.0511, NDCG@20: 0.0377
+280.1s	263	Epoch 20/50: Loss = 0.1257 (5.65s)
+286.2s	264	  Test Recall@20: 0.0501, NDCG@20: 0.0341
+291.9s	265	Epoch 21/50: Loss = 0.1230 (5.67s)
+298.0s	266	  Test Recall@20: 0.0558, NDCG@20: 0.0332
+303.7s	267	Epoch 22/50: Loss = 0.1223 (5.66s)
+309.6s	268	  Test Recall@20: 0.0515, NDCG@20: 0.0323
+315.2s	269	Epoch 23/50: Loss = 0.1197 (5.67s)
+321.3s	270	  Test Recall@20: 0.0584, NDCG@20: 0.0313
+321.4s	271	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0584)
+327.1s	272	Epoch 24/50: Loss = 0.1196 (5.66s)
+333.1s	273	  Test Recall@20: 0.0403, NDCG@20: 0.0259
+338.8s	274	Epoch 25/50: Loss = 0.1150 (5.68s)
+344.7s	275	  Test Recall@20: 0.0484, NDCG@20: 0.0298
+350.4s	276	Epoch 26/50: Loss = 0.1135 (5.68s)
+356.7s	277	  Test Recall@20: 0.0404, NDCG@20: 0.0273
+362.3s	278	Epoch 27/50: Loss = 0.1118 (5.67s)
+368.3s	279	  Test Recall@20: 0.0440, NDCG@20: 0.0296
+374.0s	280	Epoch 28/50: Loss = 0.1076 (5.66s)
+380.0s	281	  Test Recall@20: 0.0425, NDCG@20: 0.0277
+385.6s	282	Epoch 29/50: Loss = 0.1080 (5.66s)
+391.5s	283	  Test Recall@20: 0.0378, NDCG@20: 0.0265
+397.2s	284	Epoch 30/50: Loss = 0.1047 (5.68s)
+403.2s	285	  Test Recall@20: 0.0488, NDCG@20: 0.0289
+408.9s	286	Epoch 31/50: Loss = 0.1022 (5.65s)
+414.8s	287	  Test Recall@20: 0.0456, NDCG@20: 0.0311
+420.4s	288	Epoch 32/50: Loss = 0.1006 (5.66s)
+426.5s	289	  Test Recall@20: 0.0483, NDCG@20: 0.0313
+432.1s	290	Epoch 33/50: Loss = 0.0998 (5.65s)
+438.0s	291	  Test Recall@20: 0.0497, NDCG@20: 0.0340
+443.7s	292	Epoch 34/50: Loss = 0.0979 (5.69s)
+449.5s	293	  Test Recall@20: 0.0655, NDCG@20: 0.0490
+449.6s	294	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0655)
+455.2s	295	Epoch 35/50: Loss = 0.0944 (5.66s)
+461.3s	296	  Test Recall@20: 0.0650, NDCG@20: 0.0397
+466.9s	297	Epoch 36/50: Loss = 0.0926 (5.66s)
+472.7s	298	  Test Recall@20: 0.0550, NDCG@20: 0.0367
+478.4s	299	Epoch 37/50: Loss = 0.0907 (5.66s)
+484.5s	300	  Test Recall@20: 0.0649, NDCG@20: 0.0383
+490.2s	301	Epoch 38/50: Loss = 0.0879 (5.67s)
+496.4s	302	  Test Recall@20: 0.0573, NDCG@20: 0.0408
+502.1s	303	Epoch 39/50: Loss = 0.0870 (5.70s)
+508.1s	304	  Test Recall@20: 0.0693, NDCG@20: 0.0356
+508.2s	305	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0693)
+513.8s	306	Epoch 40/50: Loss = 0.0845 (5.66s)
+519.7s	307	  Test Recall@20: 0.0700, NDCG@20: 0.0458
+519.7s	308	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0700)
+525.4s	309	Epoch 41/50: Loss = 0.0819 (5.67s)
+531.5s	310	  Test Recall@20: 0.0654, NDCG@20: 0.0394
+537.1s	311	Epoch 42/50: Loss = 0.0806 (5.65s)
+543.0s	312	  Test Recall@20: 0.0818, NDCG@20: 0.0592
+543.1s	313	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0818)
+548.8s	314	Epoch 43/50: Loss = 0.0785 (5.66s)
+554.8s	315	  Test Recall@20: 0.0786, NDCG@20: 0.0516
+560.4s	316	Epoch 44/50: Loss = 0.0761 (5.64s)
+566.0s	317	  Test Recall@20: 0.0746, NDCG@20: 0.0454
+571.6s	318	Epoch 45/50: Loss = 0.0737 (5.62s)
+577.2s	319	  Test Recall@20: 0.0746, NDCG@20: 0.0476
+582.8s	320	Epoch 46/50: Loss = 0.0730 (5.62s)
+588.4s	321	  Test Recall@20: 0.0924, NDCG@20: 0.0579
+588.4s	322	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0924)
+594.1s	323	Epoch 47/50: Loss = 0.0703 (5.63s)
+599.9s	324	  Test Recall@20: 0.0796, NDCG@20: 0.0490
+605.6s	325	Epoch 48/50: Loss = 0.0682 (5.68s)
+611.5s	326	  Test Recall@20: 0.0904, NDCG@20: 0.0560
+617.2s	327	Epoch 49/50: Loss = 0.0681 (5.66s)
+622.8s	328	  Test Recall@20: 0.0868, NDCG@20: 0.0549
+628.5s	329	Epoch 50/50: Loss = 0.0651 (5.63s)
+634.2s	330	  Test Recall@20: 0.0961, NDCG@20: 0.0637
+634.3s	331	  >>> New Best Model Saved to lightgcn_best.pth (Recall: 0.0961)
+634.3s	332	
+634.3s	333	Final Metrics: {'loss': [0.5713642785946528, 0.28097056606669485, 0.2108846840299206, 0.18739738407326334, 0.1757274029523502, 0.16802977857950294, 0.1639608498432754, 0.15872557452063502, 0.1532234548602575, 0.1516760859500479, 0.1482950083359524, 0.14615999323166448, 0.1416126738451881, 0.14059960947912417, 0.13665934182979442, 0.13796580329905322, 0.13226154529386097, 0.13201126736807234, 0.12913273440466988, 0.12569801996887467, 0.12300567618674701, 0.12234293812035042, 0.11968126773466299, 0.11960184555730702, 0.11501708350799701, 0.11351136702262325, 0.11178300377947313, 0.10758038821779652, 0.1080286635292901, 0.10467260064166269, 0.1021880948525152, 0.10063673008555248, 0.099808524236267, 0.09794389010395532, 0.09443471378382341, 0.09256713267093823, 0.09067451392794833, 0.08788597390607551, 0.08698526627303642, 0.08445284478826287, 0.08186025264454477, 0.08061061029172974, 0.07852958361215798, 0.07610988320299873, 0.07371418233270999, 0.07295744417718163, 0.07027205558102807, 0.06823355295223954, 0.06812771168295984, 0.0650872023385248], 'recall': [0.050827098903275386, 0.034796366504819445, 0.043372925411741196, 0.037897925819700015, 0.05016873142941023, 0.043772816072816086, 0.03979872193561914, 0.03980541418935382, 0.04813728077478079, 0.03782256288946692, 0.05578811321117825, 0.045974357264534235, 0.04882067381325693, 0.04148170448832212, 0.049738076980805186, 0.047592793652162735, 0.0547755206180129, 0.057280521997089266, 0.051135930994978325, 0.050082416068716405, 0.05580662956606164, 0.051507639479543524, 0.058371041921041936, 0.04029484126984127, 0.04841352813852815, 0.04035702075702076, 0.044030176767676774, 0.04247976190476191, 0.037817399267399264, 0.04877738095238096, 0.04555391963109355, 0.04831010101010101, 0.049654198579198595, 0.06552191697191698, 0.0650413863913864, 0.054952838827838836, 0.06489815323565323, 0.057295670995671, 0.06928208180708183, 0.07004706127206128, 0.0654386446886447, 0.08182064553803685, 0.07855650656814452, 0.07457382756132756, 0.07463444610944613, 0.09236456043956044, 0.07959070048309179, 0.09044272059639706, 0.08682851037851042, 0.09612843545343541], 'ndcg': [0.036209924524160324, 0.024140193164963006, 0.029438926620099008, 0.025713071100098503, 0.032347655816105436, 0.028466114075244242, 0.025303555563278, 0.031598873944232116, 0.0324580831378543, 0.025550764448758888, 0.03446331974046664, 0.028961214907177086, 0.03660330285845391, 0.030790527014030414, 0.03426278440087024, 0.034007229139902305, 0.04282832969865087, 0.04257018807428405, 0.037713522721657185, 0.03407344761759976, 0.03317281644594197, 0.032293878632789666, 0.03130727228200279, 0.025897755009819955, 0.02975046882607304, 0.027290097109889083, 0.02963351995554221, 0.02769296662041903, 0.026452276372020612, 0.0288837306950913, 0.031145289579178483, 0.0312592373821615, 0.0340440760226721, 0.04901947470475701, 0.03965036152953798, 0.03668545263651559, 0.03833299478637445, 0.040822005612689546, 0.03562694834287977, 0.0458136234882514, 0.0394243469253983, 0.059150361067237554, 0.051591163556581845, 0.0454268891835065, 0.04762836521358691, 0.057855298309477006, 0.04902472103525246, 0.05601746660840251, 0.05489417776341846, 0.0637058345581625]}
+635.5s	334	
+635.5s	335	========================================
+635.5s	336	--- 2. 运行 Biclique GCN (最大相似二团增强, tau=2, 50 Epochs) ---
+635.5s	337	========================================
+637.5s	338	
+637.5s	339	==================== Running Biclique GCN (No CL, No RNN) ====================
+637.5s	340	Device: cuda
+637.5s	341	Loading data from /kaggle/working/ai_project/TSB_CL_Project/solo_model/../../Similar-Biclique-Idx-main/datasets/bi_github.txt...
+637.9s	342	Loaded 440237 interactions. Users: 56519, Items: 120867
+639.3s	343	Snapshot solo_0: Building Index...
+640.7s	344	Snapshot solo_0: Enumerating Bicliques (tau=2, epsilon=0.1)...
+641.8s	345	Snapshot solo_0: Found 15203 bicliques.
+642.0s	346	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:355: RuntimeWarning: divide by zero encountered in power
+642.0s	347	  d_inv_sqrt = np.power(rowsum, -0.5).flatten()
+642.1s	348	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:363: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:254.)
+642.1s	349	  indices = torch.LongTensor([coo.row, coo.col])
+644.6s	350	Snapshot solo_1: Building Index...
+645.4s	351	Snapshot solo_1: Enumerating Bicliques (tau=2, epsilon=0.1)...
+647.1s	352	Snapshot solo_1: Found 13488 bicliques.
+649.5s	353	Snapshot solo_2: Building Index...
+650.1s	354	Snapshot solo_2: Enumerating Bicliques (tau=2, epsilon=0.1)...
+664.4s	355	Snapshot solo_2: Found 133367 bicliques.
+670.8s	356	Epoch 1/50: Loss = 0.5315 (31.60s)
+671.0s	357	Snapshot solo_test: Building Index...
+671.5s	358	Snapshot solo_test: Enumerating Bicliques (tau=2, epsilon=0.1)...
+693.7s	359	Snapshot solo_test: Found 20613 bicliques.
+699.9s	360	  Test Recall@20: 0.0424, NDCG@20: 0.0281
+700.0s	361	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0424)
+700.1s	362	Snapshot solo_0: Biclique file already exists. Skipping mining.
+702.7s	363	Snapshot solo_1: Biclique file already exists. Skipping mining.
+705.2s	364	Snapshot solo_2: Biclique file already exists. Skipping mining.
+711.6s	365	Epoch 2/50: Loss = 0.2599 (11.60s)
+711.9s	366	Snapshot solo_test: Biclique file already exists. Skipping mining.
+718.1s	367	  Test Recall@20: 0.0411, NDCG@20: 0.0305
+718.2s	368	Snapshot solo_0: Biclique file already exists. Skipping mining.
+720.7s	369	Snapshot solo_1: Biclique file already exists. Skipping mining.
+723.1s	370	Snapshot solo_2: Biclique file already exists. Skipping mining.
+729.8s	371	Epoch 3/50: Loss = 0.2051 (11.68s)
+730.1s	372	Snapshot solo_test: Biclique file already exists. Skipping mining.
+736.1s	373	  Test Recall@20: 0.0470, NDCG@20: 0.0340
+736.2s	374	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0470)
+736.3s	375	Snapshot solo_0: Biclique file already exists. Skipping mining.
+738.9s	376	Snapshot solo_1: Biclique file already exists. Skipping mining.
+741.2s	377	Snapshot solo_2: Biclique file already exists. Skipping mining.
+747.7s	378	Epoch 4/50: Loss = 0.1857 (11.50s)
+748.0s	379	Snapshot solo_test: Biclique file already exists. Skipping mining.
+754.2s	380	  Test Recall@20: 0.0412, NDCG@20: 0.0281
+754.3s	381	Snapshot solo_0: Biclique file already exists. Skipping mining.
+756.9s	382	Snapshot solo_1: Biclique file already exists. Skipping mining.
+759.4s	383	Snapshot solo_2: Biclique file already exists. Skipping mining.
+765.8s	384	Epoch 5/50: Loss = 0.1750 (11.61s)
+766.1s	385	Snapshot solo_test: Biclique file already exists. Skipping mining.
+772.2s	386	  Test Recall@20: 0.0344, NDCG@20: 0.0230
+772.2s	387	Snapshot solo_0: Biclique file already exists. Skipping mining.
+774.9s	388	Snapshot solo_1: Biclique file already exists. Skipping mining.
+777.2s	389	Snapshot solo_2: Biclique file already exists. Skipping mining.
+783.7s	390	Epoch 6/50: Loss = 0.1679 (11.50s)
+783.9s	391	Snapshot solo_test: Biclique file already exists. Skipping mining.
+790.1s	392	  Test Recall@20: 0.0466, NDCG@20: 0.0315
+790.1s	393	Snapshot solo_0: Biclique file already exists. Skipping mining.
+792.7s	394	Snapshot solo_1: Biclique file already exists. Skipping mining.
+795.3s	395	Snapshot solo_2: Biclique file already exists. Skipping mining.
+801.7s	396	Epoch 7/50: Loss = 0.1606 (11.58s)
+802.0s	397	Snapshot solo_test: Biclique file already exists. Skipping mining.
+808.0s	398	  Test Recall@20: 0.0502, NDCG@20: 0.0370
+808.1s	399	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0502)
+808.2s	400	Snapshot solo_0: Biclique file already exists. Skipping mining.
+810.7s	401	Snapshot solo_1: Biclique file already exists. Skipping mining.
+813.1s	402	Snapshot solo_2: Biclique file already exists. Skipping mining.
+819.6s	403	Epoch 8/50: Loss = 0.1569 (11.46s)
+819.8s	404	Snapshot solo_test: Biclique file already exists. Skipping mining.
+826.1s	405	  Test Recall@20: 0.0445, NDCG@20: 0.0323
+826.2s	406	Snapshot solo_0: Biclique file already exists. Skipping mining.
+828.8s	407	Snapshot solo_1: Biclique file already exists. Skipping mining.
+831.3s	408	Snapshot solo_2: Biclique file already exists. Skipping mining.
+837.8s	409	Epoch 9/50: Loss = 0.1538 (11.62s)
+838.0s	410	Snapshot solo_test: Biclique file already exists. Skipping mining.
+844.0s	411	  Test Recall@20: 0.0472, NDCG@20: 0.0321
+844.1s	412	Snapshot solo_0: Biclique file already exists. Skipping mining.
+846.7s	413	Snapshot solo_1: Biclique file already exists. Skipping mining.
+849.1s	414	Snapshot solo_2: Biclique file already exists. Skipping mining.
+855.5s	415	Epoch 10/50: Loss = 0.1475 (11.45s)
+855.8s	416	Snapshot solo_test: Biclique file already exists. Skipping mining.
+861.9s	417	  Test Recall@20: 0.0475, NDCG@20: 0.0335
+862.0s	418	Snapshot solo_0: Biclique file already exists. Skipping mining.
+864.5s	419	Snapshot solo_1: Biclique file already exists. Skipping mining.
+867.1s	420	Snapshot solo_2: Biclique file already exists. Skipping mining.
+873.5s	421	Epoch 11/50: Loss = 0.1448 (11.58s)
+873.8s	422	Snapshot solo_test: Biclique file already exists. Skipping mining.
+879.8s	423	  Test Recall@20: 0.0423, NDCG@20: 0.0285
+879.9s	424	Snapshot solo_0: Biclique file already exists. Skipping mining.
+882.5s	425	Snapshot solo_1: Biclique file already exists. Skipping mining.
+884.9s	426	Snapshot solo_2: Biclique file already exists. Skipping mining.
+891.3s	427	Epoch 12/50: Loss = 0.1415 (11.46s)
+891.6s	428	Snapshot solo_test: Biclique file already exists. Skipping mining.
+897.6s	429	  Test Recall@20: 0.0489, NDCG@20: 0.0319
+897.7s	430	Snapshot solo_0: Biclique file already exists. Skipping mining.
+900.3s	431	Snapshot solo_1: Biclique file already exists. Skipping mining.
+902.8s	432	Snapshot solo_2: Biclique file already exists. Skipping mining.
+909.2s	433	Epoch 13/50: Loss = 0.1400 (11.58s)
+909.5s	434	Snapshot solo_test: Biclique file already exists. Skipping mining.
+915.7s	435	  Test Recall@20: 0.0397, NDCG@20: 0.0300
+915.8s	436	Snapshot solo_0: Biclique file already exists. Skipping mining.
+918.4s	437	Snapshot solo_1: Biclique file already exists. Skipping mining.
+920.8s	438	Snapshot solo_2: Biclique file already exists. Skipping mining.
+927.1s	439	Epoch 14/50: Loss = 0.1343 (11.46s)
+927.4s	440	Snapshot solo_test: Biclique file already exists. Skipping mining.
+933.2s	441	  Test Recall@20: 0.0528, NDCG@20: 0.0432
+933.3s	442	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0528)
+933.3s	443	Snapshot solo_0: Biclique file already exists. Skipping mining.
+935.9s	444	Snapshot solo_1: Biclique file already exists. Skipping mining.
+938.4s	445	Snapshot solo_2: Biclique file already exists. Skipping mining.
+944.8s	446	Epoch 15/50: Loss = 0.1326 (11.55s)
+945.1s	447	Snapshot solo_test: Biclique file already exists. Skipping mining.
+951.2s	448	  Test Recall@20: 0.0446, NDCG@20: 0.0385
+951.3s	449	Snapshot solo_0: Biclique file already exists. Skipping mining.
+953.9s	450	Snapshot solo_1: Biclique file already exists. Skipping mining.
+956.3s	451	Snapshot solo_2: Biclique file already exists. Skipping mining.
+962.7s	452	Epoch 16/50: Loss = 0.1297 (11.47s)
+963.0s	453	Snapshot solo_test: Biclique file already exists. Skipping mining.
+968.9s	454	  Test Recall@20: 0.0416, NDCG@20: 0.0374
+969.0s	455	Snapshot solo_0: Biclique file already exists. Skipping mining.
+971.5s	456	Snapshot solo_1: Biclique file already exists. Skipping mining.
+974.0s	457	Snapshot solo_2: Biclique file already exists. Skipping mining.
+980.4s	458	Epoch 17/50: Loss = 0.1280 (11.48s)
+980.7s	459	Snapshot solo_test: Biclique file already exists. Skipping mining.
+986.8s	460	  Test Recall@20: 0.0522, NDCG@20: 0.0377
+986.8s	461	Snapshot solo_0: Biclique file already exists. Skipping mining.
+989.4s	462	Snapshot solo_1: Biclique file already exists. Skipping mining.
+991.8s	463	Snapshot solo_2: Biclique file already exists. Skipping mining.
+998.2s	464	Epoch 18/50: Loss = 0.1247 (11.46s)
+998.5s	465	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1004.7s	466	  Test Recall@20: 0.0532, NDCG@20: 0.0380
+1004.8s	467	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0532)
+1004.9s	468	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1007.5s	469	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1009.9s	470	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1016.3s	471	Epoch 19/50: Loss = 0.1211 (11.52s)
+1016.6s	472	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1022.7s	473	  Test Recall@20: 0.0674, NDCG@20: 0.0460
+1022.7s	474	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0674)
+1022.8s	475	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1025.3s	476	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1027.8s	477	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1034.2s	478	Epoch 20/50: Loss = 0.1184 (11.45s)
+1034.4s	479	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1040.5s	480	  Test Recall@20: 0.0465, NDCG@20: 0.0328
+1040.5s	481	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1043.1s	482	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1045.7s	483	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1052.1s	484	Epoch 21/50: Loss = 0.1150 (11.58s)
+1052.4s	485	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1058.3s	486	  Test Recall@20: 0.0675, NDCG@20: 0.0458
+1058.4s	487	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0675)
+1058.5s	488	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1061.0s	489	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1063.5s	490	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1069.9s	491	Epoch 22/50: Loss = 0.1145 (11.48s)
+1070.1s	492	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1076.3s	493	  Test Recall@20: 0.0599, NDCG@20: 0.0397
+1076.4s	494	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1079.0s	495	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1081.5s	496	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1087.9s	497	Epoch 23/50: Loss = 0.1118 (11.58s)
+1088.2s	498	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1094.3s	499	  Test Recall@20: 0.0639, NDCG@20: 0.0438
+1094.3s	500	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1096.9s	501	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1099.3s	502	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1105.8s	503	Epoch 24/50: Loss = 0.1075 (11.47s)
+1106.0s	504	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1112.1s	505	  Test Recall@20: 0.0734, NDCG@20: 0.0508
+1112.2s	506	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0734)
+1112.2s	507	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1114.8s	508	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1117.3s	509	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1123.7s	510	Epoch 25/50: Loss = 0.1071 (11.50s)
+1124.0s	511	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1129.8s	512	  Test Recall@20: 0.0618, NDCG@20: 0.0468
+1129.8s	513	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1132.4s	514	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1134.8s	515	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1141.2s	516	Epoch 26/50: Loss = 0.1025 (11.44s)
+1141.5s	517	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1147.5s	518	  Test Recall@20: 0.0657, NDCG@20: 0.0431
+1147.6s	519	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1150.1s	520	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1152.6s	521	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1159.1s	522	Epoch 27/50: Loss = 0.1017 (11.51s)
+1159.3s	523	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1165.0s	524	  Test Recall@20: 0.0741, NDCG@20: 0.0535
+1165.1s	525	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0741)
+1165.2s	526	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1167.7s	527	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1170.1s	528	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1176.5s	529	Epoch 28/50: Loss = 0.0981 (11.42s)
+1176.8s	530	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1182.7s	531	  Test Recall@20: 0.0664, NDCG@20: 0.0446
+1182.7s	532	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1185.3s	533	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1187.8s	534	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1194.2s	535	Epoch 29/50: Loss = 0.0970 (11.49s)
+1194.4s	536	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1200.2s	537	  Test Recall@20: 0.0727, NDCG@20: 0.0532
+1200.3s	538	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1202.9s	539	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1205.2s	540	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1211.6s	541	Epoch 30/50: Loss = 0.0945 (11.37s)
+1211.9s	542	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1217.8s	543	  Test Recall@20: 0.0741, NDCG@20: 0.0513
+1217.9s	544	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0741)
+1217.9s	545	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1220.5s	546	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1223.0s	547	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1229.4s	548	Epoch 31/50: Loss = 0.0922 (11.48s)
+1229.6s	549	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1235.3s	550	  Test Recall@20: 0.0950, NDCG@20: 0.0677
+1235.4s	551	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.0950)
+1235.4s	552	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1238.0s	553	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1240.3s	554	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1246.7s	555	Epoch 32/50: Loss = 0.0893 (11.38s)
+1247.0s	556	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1253.0s	557	  Test Recall@20: 0.0928, NDCG@20: 0.0649
+1253.1s	558	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1255.7s	559	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1258.2s	560	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1264.6s	561	Epoch 33/50: Loss = 0.0869 (11.51s)
+1264.8s	562	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1270.3s	563	  Test Recall@20: 0.1014, NDCG@20: 0.0767
+1270.4s	564	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.1014)
+1270.5s	565	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1273.1s	566	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1275.4s	567	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1281.8s	568	Epoch 34/50: Loss = 0.0845 (11.34s)
+1282.0s	569	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1287.8s	570	  Test Recall@20: 0.1120, NDCG@20: 0.0786
+1287.9s	571	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.1120)
+1287.9s	572	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1290.4s	573	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1292.9s	574	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1299.3s	575	Epoch 35/50: Loss = 0.0823 (11.47s)
+1299.6s	576	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1305.1s	577	  Test Recall@20: 0.0970, NDCG@20: 0.0683
+1305.2s	578	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1307.7s	579	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1310.0s	580	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1316.4s	581	Epoch 36/50: Loss = 0.0794 (11.35s)
+1316.7s	582	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1322.4s	583	  Test Recall@20: 0.1088, NDCG@20: 0.0796
+1322.5s	584	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1325.0s	585	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1327.5s	586	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1333.8s	587	Epoch 37/50: Loss = 0.0777 (11.43s)
+1334.1s	588	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1339.6s	589	  Test Recall@20: 0.0951, NDCG@20: 0.0707
+1339.7s	590	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1342.2s	591	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1344.6s	592	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1350.9s	593	Epoch 38/50: Loss = 0.0748 (11.31s)
+1351.2s	594	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1356.9s	595	  Test Recall@20: 0.1123, NDCG@20: 0.0890
+1357.0s	596	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.1123)
+1357.0s	597	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1359.6s	598	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1362.1s	599	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1368.5s	600	Epoch 39/50: Loss = 0.0731 (11.53s)
+1368.7s	601	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1374.4s	602	  Test Recall@20: 0.1076, NDCG@20: 0.0818
+1374.5s	603	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1377.1s	604	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1379.4s	605	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1385.9s	606	Epoch 40/50: Loss = 0.0709 (11.46s)
+1386.1s	607	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1392.1s	608	  Test Recall@20: 0.1169, NDCG@20: 0.0837
+1392.2s	609	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.1169)
+1392.3s	610	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1394.9s	611	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1397.3s	612	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1403.7s	613	Epoch 41/50: Loss = 0.0685 (11.51s)
+1404.0s	614	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1409.7s	615	  Test Recall@20: 0.1235, NDCG@20: 0.0935
+1409.8s	616	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.1235)
+1409.8s	617	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1412.4s	618	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1414.8s	619	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1421.1s	620	Epoch 42/50: Loss = 0.0670 (11.36s)
+1421.4s	621	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1427.5s	622	  Test Recall@20: 0.1286, NDCG@20: 0.0949
+1427.6s	623	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.1286)
+1427.6s	624	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1430.2s	625	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1432.7s	626	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1439.2s	627	Epoch 43/50: Loss = 0.0648 (11.53s)
+1439.4s	628	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1445.3s	629	  Test Recall@20: 0.1256, NDCG@20: 0.0926
+1445.3s	630	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1447.9s	631	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1450.2s	632	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1456.7s	633	Epoch 44/50: Loss = 0.0636 (11.38s)
+1456.9s	634	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1462.7s	635	  Test Recall@20: 0.1165, NDCG@20: 0.0874
+1462.7s	636	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1465.3s	637	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1467.8s	638	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1474.2s	639	Epoch 45/50: Loss = 0.0617 (11.53s)
+1474.5s	640	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1480.1s	641	  Test Recall@20: 0.1222, NDCG@20: 0.0959
+1480.1s	642	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1482.7s	643	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1485.1s	644	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1491.4s	645	Epoch 46/50: Loss = 0.0578 (11.31s)
+1491.7s	646	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1497.4s	647	  Test Recall@20: 0.1248, NDCG@20: 0.0916
+1497.4s	648	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1500.0s	649	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1502.5s	650	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1508.9s	651	Epoch 47/50: Loss = 0.0559 (11.50s)
+1509.1s	652	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1514.8s	653	  Test Recall@20: 0.1417, NDCG@20: 0.1068
+1514.9s	654	  >>> New Best Model Saved to biclique_gcn_best.pth (Recall: 0.1417)
+1514.9s	655	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1517.5s	656	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1519.8s	657	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1526.2s	658	Epoch 48/50: Loss = 0.0558 (11.35s)
+1526.5s	659	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1532.2s	660	  Test Recall@20: 0.1328, NDCG@20: 0.0982
+1532.3s	661	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1534.8s	662	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1537.3s	663	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1543.7s	664	Epoch 49/50: Loss = 0.0542 (11.45s)
+1543.9s	665	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1549.5s	666	  Test Recall@20: 0.1317, NDCG@20: 0.0914
+1549.5s	667	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1552.1s	668	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1554.4s	669	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1560.8s	670	Epoch 50/50: Loss = 0.0522 (11.32s)
+1561.0s	671	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1566.8s	672	  Test Recall@20: 0.1383, NDCG@20: 0.1037
+1566.9s	673	
+1566.9s	674	Final Metrics: {'loss': [0.5315106634372546, 0.25988130896915623, 0.2051305392826045, 0.18565788193617339, 0.17500981789680176, 0.1678900502530145, 0.16057785227894783, 0.15687433837188614, 0.15384782114882528, 0.1475421565550345, 0.1448374257227521, 0.14148055205558552, 0.13995778556039304, 0.1342536087297363, 0.13259636247415602, 0.12965206429362297, 0.12804175025702993, 0.12465599997911925, 0.12107080133792794, 0.11837440411801692, 0.1149839623198833, 0.11449202338670507, 0.11176786636128838, 0.10754998318023151, 0.1071257904447891, 0.10248831038673718, 0.10170268134018522, 0.09809719242247535, 0.09700045288528925, 0.09452455798968856, 0.09223695499477563, 0.08932854782468007, 0.08690288690505205, 0.08448300055331653, 0.08226410412218099, 0.0794411902718338, 0.07765020356502061, 0.07476179023491747, 0.0731191671234958, 0.07089153152924997, 0.0685279687843573, 0.06698691065388697, 0.06482985990558877, 0.06356716448050222, 0.06173752795582936, 0.05779695761516506, 0.05588584344972063, 0.05580832611447499, 0.054243564766682226, 0.05221358116394208], 'recall': [0.04235477690374719, 0.041089103951603964, 0.0470454952852404, 0.041247136627317715, 0.03444252147590248, 0.046560580427484476, 0.050203734062872, 0.0444890421128579, 0.047206603541386165, 0.04746935148185148, 0.04228432179241765, 0.04894595395411559, 0.0396965067099016, 0.052765580334697984, 0.04461750878979982, 0.0415936574754222, 0.0522460353973512, 0.053210771538403125, 0.06744123672165471, 0.04653856979371215, 0.06746254637519346, 0.05987680373313981, 0.06390556194454988, 0.07344653853548663, 0.06182213788963016, 0.0657415015987597, 0.07406440834338976, 0.06644158613512036, 0.07274325467016646, 0.07406492534495467, 0.09501232910091939, 0.0928251368947776, 0.10139554498071233, 0.11197233978885218, 0.09699803784398188, 0.10882363397472096, 0.09513292076636068, 0.1122906282350263, 0.10759170401870174, 0.1168725665015988, 0.12354766377127055, 0.1286232985767816, 0.12558351074861435, 0.11654419352577251, 0.12220164958334451, 0.1248383316515172, 0.14171683932682383, 0.13283624003378217, 0.13174866759487502, 0.13833728397206665], 'ndcg': [0.028139084563342746, 0.030527107276484257, 0.03397733964191582, 0.02812490442799008, 0.022955853945757526, 0.03154067897904842, 0.03695594077041983, 0.0323477305654897, 0.03208130624763842, 0.03349523324264592, 0.028450993130191296, 0.0319353532516327, 0.0300042434883698, 0.04324182558712293, 0.038518387876643, 0.03744240629396446, 0.03769547039343606, 0.03802883785238189, 0.04603609094259094, 0.03277727404927669, 0.04575318767093044, 0.039655303828471024, 0.04379178091844987, 0.050830750190752325, 0.04675204327714767, 0.043123751799616604, 0.05354887868078239, 0.044634790194243275, 0.05316429990071104, 0.051315199671962915, 0.06771230958543761, 0.06487774731362256, 0.07667956478280184, 0.07861347044477424, 0.06829175188488318, 0.07962712452559868, 0.07073472763795438, 0.0889500566206125, 0.08178309827982598, 0.08369900738696268, 0.09348027248035128, 0.09492083316493251, 0.0926110228792066, 0.08740001784549047, 0.09585559795590701, 0.09161354087775488, 0.10679958228906597, 0.09824850501723285, 0.09141556510374883, 0.10365228743606558]}
+1567.6s	675	
+1567.6s	676	========================================
+1567.6s	677	--- 3. 运行 Biclique CL (对比学习增强, tau=2, 50 Epochs) ---
+1567.6s	678	========================================
+1569.6s	679	
+1569.6s	680	==================== Running Biclique + CL (No RNN) ====================
+1569.6s	681	Device: cuda
+1569.6s	682	Loading data from /kaggle/working/ai_project/TSB_CL_Project/solo_model/../../Similar-Biclique-Idx-main/datasets/bi_github.txt...
+1570.0s	683	Loaded 440237 interactions. Users: 56519, Items: 120867
+1571.5s	684	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1571.7s	685	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:355: RuntimeWarning: divide by zero encountered in power
+1571.7s	686	  d_inv_sqrt = np.power(rowsum, -0.5).flatten()
+1571.8s	687	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:363: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:254.)
+1571.8s	688	  indices = torch.LongTensor([coo.row, coo.col])
+1574.7s	689	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1577.1s	690	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1583.5s	691	Epoch 1/50: Loss = 1.2148 (12.16s)
+1583.8s	692	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1589.5s	693	  Test Recall@20: 0.5148, NDCG@20: 0.3851
+1589.5s	694	  >>> New Best Model Saved to biclique_cl_best.pth (Recall: 0.5148)
+1589.6s	695	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1592.2s	696	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1594.6s	697	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1601.3s	698	Epoch 2/50: Loss = 1.1888 (11.74s)
+1601.6s	699	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1607.1s	700	  Test Recall@20: 0.2048, NDCG@20: 0.1271
+1607.2s	701	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1609.8s	702	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1612.2s	703	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1618.6s	704	Epoch 3/50: Loss = 1.1824 (11.53s)
+1618.9s	705	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1624.7s	706	  Test Recall@20: 0.0691, NDCG@20: 0.0403
+1624.7s	707	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1627.4s	708	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1629.9s	709	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1636.4s	710	Epoch 4/50: Loss = 1.1747 (11.73s)
+1636.7s	711	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1642.3s	712	  Test Recall@20: 0.0428, NDCG@20: 0.0241
+1642.4s	713	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1645.0s	714	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1647.4s	715	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1654.0s	716	Epoch 5/50: Loss = 1.1648 (11.70s)
+1654.2s	717	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1659.8s	718	  Test Recall@20: 0.0500, NDCG@20: 0.0269
+1659.8s	719	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1662.5s	720	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1664.8s	721	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1671.3s	722	Epoch 6/50: Loss = 1.1521 (11.54s)
+1671.6s	723	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1677.3s	724	  Test Recall@20: 0.0354, NDCG@20: 0.0249
+1677.3s	725	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1680.0s	726	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1682.5s	727	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1689.0s	728	Epoch 7/50: Loss = 1.1357 (11.72s)
+1689.3s	729	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1694.9s	730	  Test Recall@20: 0.0430, NDCG@20: 0.0252
+1695.0s	731	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1697.6s	732	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1700.0s	733	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1706.6s	734	Epoch 8/50: Loss = 1.1145 (11.73s)
+1706.9s	735	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1712.6s	736	  Test Recall@20: 0.0507, NDCG@20: 0.0326
+1712.6s	737	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1715.3s	738	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1717.7s	739	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1724.1s	740	Epoch 9/50: Loss = 1.0892 (11.60s)
+1724.4s	741	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1730.1s	742	  Test Recall@20: 0.0470, NDCG@20: 0.0289
+1730.1s	743	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1732.8s	744	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1735.3s	745	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1741.8s	746	Epoch 10/50: Loss = 1.0613 (11.69s)
+1742.0s	747	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1747.5s	748	  Test Recall@20: 0.0582, NDCG@20: 0.0381
+1747.5s	749	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1750.2s	750	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1752.6s	751	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1759.2s	752	Epoch 11/50: Loss = 1.0334 (11.70s)
+1759.4s	753	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1765.0s	754	  Test Recall@20: 0.0577, NDCG@20: 0.0376
+1765.0s	755	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1767.6s	756	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1770.0s	757	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1776.5s	758	Epoch 12/50: Loss = 1.0063 (11.57s)
+1776.8s	759	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1782.4s	760	  Test Recall@20: 0.0654, NDCG@20: 0.0381
+1782.4s	761	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1785.1s	762	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1787.6s	763	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1794.1s	764	Epoch 13/50: Loss = 0.9798 (11.70s)
+1794.4s	765	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1799.9s	766	  Test Recall@20: 0.0751, NDCG@20: 0.0468
+1799.9s	767	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1802.5s	768	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1805.0s	769	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1811.6s	770	Epoch 14/50: Loss = 0.9541 (11.71s)
+1811.9s	771	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1817.4s	772	  Test Recall@20: 0.0791, NDCG@20: 0.0501
+1817.4s	773	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1820.1s	774	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1822.5s	775	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1829.0s	776	Epoch 15/50: Loss = 0.9292 (11.56s)
+1829.2s	777	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1834.9s	778	  Test Recall@20: 0.0866, NDCG@20: 0.0534
+1835.0s	779	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1837.6s	780	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1840.2s	781	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1846.6s	782	Epoch 16/50: Loss = 0.9054 (11.71s)
+1846.9s	783	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1852.6s	784	  Test Recall@20: 0.1027, NDCG@20: 0.0601
+1852.6s	785	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1855.2s	786	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1857.6s	787	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1864.3s	788	Epoch 17/50: Loss = 0.8820 (11.71s)
+1864.5s	789	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1870.1s	790	  Test Recall@20: 0.1205, NDCG@20: 0.0759
+1870.2s	791	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1872.8s	792	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1875.2s	793	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1881.7s	794	Epoch 18/50: Loss = 0.8588 (11.57s)
+1881.9s	795	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1887.6s	796	  Test Recall@20: 0.1201, NDCG@20: 0.0690
+1887.6s	797	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1890.3s	798	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1892.8s	799	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1899.3s	800	Epoch 19/50: Loss = 0.8344 (11.70s)
+1899.6s	801	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1905.2s	802	  Test Recall@20: 0.1391, NDCG@20: 0.0869
+1905.2s	803	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1907.9s	804	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1910.3s	805	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1917.0s	806	Epoch 20/50: Loss = 0.8093 (11.76s)
+1917.2s	807	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1922.8s	808	  Test Recall@20: 0.1620, NDCG@20: 0.1006
+1922.9s	809	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1925.5s	810	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1927.9s	811	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1934.3s	812	Epoch 21/50: Loss = 0.7826 (11.53s)
+1934.6s	813	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1940.3s	814	  Test Recall@20: 0.1702, NDCG@20: 0.1050
+1940.4s	815	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1943.0s	816	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1945.5s	817	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1952.0s	818	Epoch 22/50: Loss = 0.7559 (11.70s)
+1952.3s	819	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1957.8s	820	  Test Recall@20: 0.1728, NDCG@20: 0.1082
+1957.9s	821	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1960.5s	822	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1962.9s	823	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1969.5s	824	Epoch 23/50: Loss = 0.7297 (11.72s)
+1969.8s	825	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1975.5s	826	  Test Recall@20: 0.1765, NDCG@20: 0.1161
+1975.5s	827	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1978.1s	828	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1980.6s	829	Snapshot solo_2: Biclique file already exists. Skipping mining.
+1987.0s	830	Epoch 24/50: Loss = 0.7074 (11.59s)
+1987.3s	831	Snapshot solo_test: Biclique file already exists. Skipping mining.
+1993.1s	832	  Test Recall@20: 0.1947, NDCG@20: 0.1218
+1993.1s	833	Snapshot solo_0: Biclique file already exists. Skipping mining.
+1995.7s	834	Snapshot solo_1: Biclique file already exists. Skipping mining.
+1998.2s	835	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2004.7s	836	Epoch 25/50: Loss = 0.6873 (11.71s)
+2005.0s	837	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2010.5s	838	  Test Recall@20: 0.1999, NDCG@20: 0.1274
+2010.6s	839	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2013.2s	840	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2015.6s	841	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2022.2s	842	Epoch 26/50: Loss = 0.6715 (11.70s)
+2022.5s	843	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2028.0s	844	  Test Recall@20: 0.2086, NDCG@20: 0.1386
+2028.1s	845	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2030.7s	846	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2033.1s	847	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2039.6s	848	Epoch 27/50: Loss = 0.6567 (11.57s)
+2039.8s	849	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2045.6s	850	  Test Recall@20: 0.2271, NDCG@20: 0.1612
+2045.6s	851	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2048.3s	852	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2050.8s	853	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2057.3s	854	Epoch 28/50: Loss = 0.6453 (11.73s)
+2057.6s	855	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2063.2s	856	  Test Recall@20: 0.2323, NDCG@20: 0.1507
+2063.2s	857	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2065.8s	858	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2068.2s	859	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2074.9s	860	Epoch 29/50: Loss = 0.6343 (11.72s)
+2075.1s	861	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2080.7s	862	  Test Recall@20: 0.2270, NDCG@20: 0.1494
+2080.8s	863	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2083.4s	864	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2085.8s	865	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2092.2s	866	Epoch 30/50: Loss = 0.6266 (11.54s)
+2092.5s	867	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2098.3s	868	  Test Recall@20: 0.2299, NDCG@20: 0.1586
+2098.3s	869	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2101.0s	870	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2103.5s	871	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2110.0s	872	Epoch 31/50: Loss = 0.6172 (11.73s)
+2110.3s	873	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2115.8s	874	  Test Recall@20: 0.2242, NDCG@20: 0.1570
+2115.9s	875	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2118.5s	876	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2120.9s	877	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2127.6s	878	Epoch 32/50: Loss = 0.6113 (11.76s)
+2127.9s	879	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2133.5s	880	  Test Recall@20: 0.2384, NDCG@20: 0.1748
+2133.5s	881	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2136.1s	882	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2138.5s	883	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2145.0s	884	Epoch 33/50: Loss = 0.6045 (11.57s)
+2145.2s	885	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2151.0s	886	  Test Recall@20: 0.2566, NDCG@20: 0.1716
+2151.1s	887	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2153.7s	888	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2156.3s	889	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2162.7s	890	Epoch 34/50: Loss = 0.5986 (11.71s)
+2163.0s	891	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2168.6s	892	  Test Recall@20: 0.2611, NDCG@20: 0.1845
+2168.6s	893	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2171.3s	894	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2173.6s	895	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2180.3s	896	Epoch 35/50: Loss = 0.5939 (11.72s)
+2180.5s	897	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2186.1s	898	  Test Recall@20: 0.2330, NDCG@20: 0.1570
+2186.2s	899	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2188.7s	900	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2191.2s	901	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2197.6s	902	Epoch 36/50: Loss = 0.5897 (11.57s)
+2197.9s	903	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2203.8s	904	  Test Recall@20: 0.2550, NDCG@20: 0.1768
+2203.9s	905	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2206.5s	906	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2209.0s	907	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2215.5s	908	Epoch 37/50: Loss = 0.5850 (11.73s)
+2215.8s	909	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2221.6s	910	  Test Recall@20: 0.2712, NDCG@20: 0.1935
+2221.7s	911	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2224.4s	912	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2226.8s	913	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2233.4s	914	Epoch 38/50: Loss = 0.5816 (11.75s)
+2233.7s	915	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2239.4s	916	  Test Recall@20: 0.2655, NDCG@20: 0.1845
+2239.5s	917	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2242.1s	918	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2244.6s	919	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2251.0s	920	Epoch 39/50: Loss = 0.5777 (11.58s)
+2251.3s	921	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2257.1s	922	  Test Recall@20: 0.2566, NDCG@20: 0.1814
+2257.1s	923	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2259.8s	924	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2262.4s	925	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2268.8s	926	Epoch 40/50: Loss = 0.5741 (11.73s)
+2269.1s	927	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2274.9s	928	  Test Recall@20: 0.2855, NDCG@20: 0.1986
+2274.9s	929	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2277.6s	930	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2280.0s	931	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2286.7s	932	Epoch 41/50: Loss = 0.5714 (11.80s)
+2286.9s	933	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2292.7s	934	  Test Recall@20: 0.2600, NDCG@20: 0.1857
+2292.7s	935	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2295.4s	936	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2297.8s	937	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2304.3s	938	Epoch 42/50: Loss = 0.5687 (11.62s)
+2304.6s	939	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2310.4s	940	  Test Recall@20: 0.2707, NDCG@20: 0.1990
+2310.5s	941	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2313.1s	942	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2315.7s	943	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2322.1s	944	Epoch 43/50: Loss = 0.5654 (11.73s)
+2322.4s	945	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2328.2s	946	  Test Recall@20: 0.2604, NDCG@20: 0.1869
+2328.2s	947	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2330.9s	948	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2333.3s	949	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2340.0s	950	Epoch 44/50: Loss = 0.5628 (11.81s)
+2340.3s	951	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2346.1s	952	  Test Recall@20: 0.2656, NDCG@20: 0.1919
+2346.1s	953	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2348.7s	954	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2351.1s	955	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2357.6s	956	Epoch 45/50: Loss = 0.5621 (11.59s)
+2357.9s	957	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2363.9s	958	  Test Recall@20: 0.2603, NDCG@20: 0.1849
+2364.0s	959	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2366.7s	960	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2369.2s	961	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2375.9s	962	Epoch 46/50: Loss = 0.5593 (11.97s)
+2376.2s	963	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2382.1s	964	  Test Recall@20: 0.2738, NDCG@20: 0.1799
+2382.2s	965	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2384.9s	966	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2387.4s	967	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2394.1s	968	Epoch 47/50: Loss = 0.5575 (11.95s)
+2394.4s	969	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2400.4s	970	  Test Recall@20: 0.2871, NDCG@20: 0.1958
+2400.5s	971	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2403.2s	972	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2405.6s	973	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2412.1s	974	Epoch 48/50: Loss = 0.5558 (11.63s)
+2412.3s	975	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2418.5s	976	  Test Recall@20: 0.2638, NDCG@20: 0.1747
+2418.5s	977	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2421.2s	978	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2423.8s	979	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2430.2s	980	Epoch 49/50: Loss = 0.5538 (11.78s)
+2430.5s	981	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2436.5s	982	  Test Recall@20: 0.2808, NDCG@20: 0.1962
+2436.6s	983	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2439.3s	984	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2441.7s	985	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2448.4s	986	Epoch 50/50: Loss = 0.5524 (11.81s)
+2448.6s	987	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2454.7s	988	  Test Recall@20: 0.2756, NDCG@20: 0.2014
+2454.7s	989	
+2454.7s	990	Final Metrics: {'loss': [1.2147514783305886, 1.1887773827270225, 1.1823819993454734, 1.1746695093166681, 1.1647652409694813, 1.1520667061393643, 1.1356722859688748, 1.1144788728819952, 1.0892099075847201, 1.0612677225360163, 1.0334407495863644, 1.0062608648965388, 0.97978315198863, 0.9540685680177476, 0.9292176023677543, 0.9053573431792082, 0.8820278872678309, 0.8588068017989029, 0.8343715763386385, 0.8093080814973808, 0.7825691324693186, 0.7558881989967676, 0.729738485298039, 0.7074057595965303, 0.6872784366578232, 0.6714821557203928, 0.6566706888469649, 0.6452702850471308, 0.6342871836674067, 0.6265639184433737, 0.6171526529906709, 0.6112767814854045, 0.6044725407788782, 0.5985576543543074, 0.5939479326760327, 0.5896949201454351, 0.584979118756306, 0.5815601175949897, 0.5777486036589117, 0.5740564277878514, 0.5713637581578007, 0.5687418914871452, 0.5654172168837653, 0.5628332534322033, 0.5620962315135531, 0.5592719011100722, 0.5575007034672631, 0.555783799768966, 0.5538370769332956, 0.55241579019729], 'recall': [0.514766435198788, 0.20475714285714286, 0.06908203463203465, 0.042798558341776434, 0.04998095238095239, 0.0353624724463288, 0.043004929298591656, 0.050682404646674166, 0.04703617950676777, 0.05818824016563147, 0.057666467639687455, 0.06536472688531515, 0.0751471939895853, 0.07908458159487573, 0.08655190965475593, 0.10271718503231661, 0.12045712487569266, 0.1200605431118589, 0.13906774297635957, 0.16201352567444116, 0.17017857755271554, 0.1728170190920191, 0.1764873650070912, 0.1947178312173023, 0.19990498112998123, 0.2085664122427281, 0.22712555543871335, 0.23231317936449503, 0.2269835131856872, 0.2299088809939216, 0.22422947591624062, 0.2383835270387805, 0.2566001026751027, 0.2611322880550823, 0.23301341719426083, 0.2549928340976965, 0.2711990721696605, 0.2654964140061193, 0.25664181531237373, 0.28546042820492945, 0.26003420272537914, 0.27066603396884836, 0.26043667631998907, 0.26562865355509546, 0.2603259584368012, 0.27382125764118415, 0.28712599057110316, 0.2637853511684394, 0.28079249463761846, 0.2755658809599986], 'ndcg': [0.3851466215145728, 0.12705003760090483, 0.04030551876694432, 0.024135996192346482, 0.026919608387160173, 0.02491782727337194, 0.02517036565316189, 0.03256332986748709, 0.028879780293371023, 0.03805587928854013, 0.03759923711737107, 0.038134473114493306, 0.04680565811347051, 0.05012978914941436, 0.05336920511736093, 0.060137657097432365, 0.0759236905509604, 0.06900305047933399, 0.08686310257722943, 0.10059413206814816, 0.10504241336340187, 0.1081681018596542, 0.11612648850610206, 0.12182954401472851, 0.12742282238563432, 0.13855304386264905, 0.1611801019104218, 0.15069078994379365, 0.14935924202798456, 0.15860544158545237, 0.15696883601542544, 0.17482904630663632, 0.17162043468350113, 0.18445422509073447, 0.15704231917114111, 0.17682929480499693, 0.19350157590015157, 0.18446295896528245, 0.18138573838147604, 0.19858870166577144, 0.18571403089125202, 0.19895055295397499, 0.18691986542427694, 0.1919018817350687, 0.18494037216671105, 0.17992820624818298, 0.19579144208417554, 0.1746882966093045, 0.19618533083877732, 0.20135287986659162]}
+2455.5s	991	
+2455.5s	992	========================================
+2455.5s	993	--- 4. 运行 Full TSB-CL (完整模型, tau=2, 50 Epochs) ---
+2455.5s	994	========================================
+2457.6s	995	
+2457.6s	996	==================== Running Full TSB-CL (Biclique + CL + RNN) ====================
+2457.6s	997	Device: cuda
+2457.6s	998	Loading data from /kaggle/working/ai_project/TSB_CL_Project/solo_model/../../Similar-Biclique-Idx-main/datasets/bi_github.txt...
+2458.0s	999	Loaded 440237 interactions. Users: 56519, Items: 120867
+2459.3s	1000	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2459.6s	1001	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:355: RuntimeWarning: divide by zero encountered in power
+2459.6s	1002	  d_inv_sqrt = np.power(rowsum, -0.5).flatten()
+2459.6s	1003	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:363: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:254.)
+2459.6s	1004	  indices = torch.LongTensor([coo.row, coo.col])
+2462.5s	1005	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2464.9s	1006	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2471.5s	1007	Epoch 1/50: Loss = 1.2151 (12.22s)
+2471.7s	1008	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2477.8s	1009	  Test Recall@20: 0.4925, NDCG@20: 0.3554
+2477.8s	1010	  >>> New Best Model Saved to full_best.pth (Recall: 0.4925)
+2477.9s	1011	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2480.6s	1012	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2483.0s	1013	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2489.6s	1014	Epoch 2/50: Loss = 1.1888 (11.86s)
+2490.0s	1015	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2495.7s	1016	  Test Recall@20: 0.2022, NDCG@20: 0.1353
+2495.8s	1017	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2498.4s	1018	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2500.9s	1019	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2507.4s	1020	Epoch 3/50: Loss = 1.1824 (11.74s)
+2507.7s	1021	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2513.8s	1022	  Test Recall@20: 0.0727, NDCG@20: 0.0401
+2513.9s	1023	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2516.5s	1024	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2519.1s	1025	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2525.6s	1026	Epoch 4/50: Loss = 1.1749 (11.83s)
+2525.9s	1027	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2531.7s	1028	  Test Recall@20: 0.0446, NDCG@20: 0.0267
+2531.8s	1029	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2534.5s	1030	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2537.0s	1031	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2543.6s	1032	Epoch 5/50: Loss = 1.1654 (11.90s)
+2544.0s	1033	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2549.6s	1034	  Test Recall@20: 0.0375, NDCG@20: 0.0220
+2549.7s	1035	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2552.4s	1036	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2554.8s	1037	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2561.3s	1038	Epoch 6/50: Loss = 1.1530 (11.70s)
+2561.6s	1039	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2567.4s	1040	  Test Recall@20: 0.0460, NDCG@20: 0.0275
+2567.4s	1041	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2570.1s	1042	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2572.7s	1043	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2579.2s	1044	Epoch 7/50: Loss = 1.1367 (11.85s)
+2579.5s	1045	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2585.2s	1046	  Test Recall@20: 0.0382, NDCG@20: 0.0272
+2585.3s	1047	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2588.0s	1048	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2590.4s	1049	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2597.1s	1050	Epoch 8/50: Loss = 1.1156 (11.87s)
+2597.4s	1051	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2603.3s	1052	  Test Recall@20: 0.0446, NDCG@20: 0.0298
+2603.4s	1053	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2606.1s	1054	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2608.5s	1055	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2615.0s	1056	Epoch 9/50: Loss = 1.0905 (11.67s)
+2615.3s	1057	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2621.0s	1058	  Test Recall@20: 0.0529, NDCG@20: 0.0377
+2621.1s	1059	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2623.8s	1060	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2626.4s	1061	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2632.9s	1062	Epoch 10/50: Loss = 1.0632 (11.86s)
+2633.1s	1063	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2639.0s	1064	  Test Recall@20: 0.0466, NDCG@20: 0.0322
+2639.1s	1065	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2641.8s	1066	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2644.2s	1067	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2651.0s	1068	Epoch 11/50: Loss = 1.0351 (11.89s)
+2651.2s	1069	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2656.9s	1070	  Test Recall@20: 0.0493, NDCG@20: 0.0331
+2657.0s	1071	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2659.6s	1072	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2662.1s	1073	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2668.6s	1074	Epoch 12/50: Loss = 1.0084 (11.67s)
+2668.9s	1075	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2674.7s	1076	  Test Recall@20: 0.0639, NDCG@20: 0.0425
+2674.7s	1077	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2677.4s	1078	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2680.0s	1079	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2686.6s	1080	Epoch 13/50: Loss = 0.9819 (11.83s)
+2686.8s	1081	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2692.6s	1082	  Test Recall@20: 0.0571, NDCG@20: 0.0332
+2692.7s	1083	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2695.4s	1084	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2697.8s	1085	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2704.5s	1086	Epoch 14/50: Loss = 0.9555 (11.86s)
+2704.7s	1087	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2710.5s	1088	  Test Recall@20: 0.0878, NDCG@20: 0.0547
+2710.6s	1089	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2713.2s	1090	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2715.7s	1091	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2722.2s	1092	Epoch 15/50: Loss = 0.9308 (11.67s)
+2722.5s	1093	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2728.3s	1094	  Test Recall@20: 0.0915, NDCG@20: 0.0575
+2728.4s	1095	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2731.1s	1096	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2733.7s	1097	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2740.2s	1098	Epoch 16/50: Loss = 0.9067 (11.86s)
+2740.5s	1099	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2746.2s	1100	  Test Recall@20: 0.0938, NDCG@20: 0.0604
+2746.3s	1101	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2749.0s	1102	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2751.4s	1103	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2758.1s	1104	Epoch 17/50: Loss = 0.8830 (11.84s)
+2758.3s	1105	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2764.2s	1106	  Test Recall@20: 0.1186, NDCG@20: 0.0700
+2764.3s	1107	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2766.9s	1108	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2769.4s	1109	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2775.9s	1110	Epoch 18/50: Loss = 0.8592 (11.68s)
+2776.2s	1111	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2782.0s	1112	  Test Recall@20: 0.1279, NDCG@20: 0.0782
+2782.1s	1113	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2784.8s	1114	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2787.4s	1115	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2793.9s	1116	Epoch 19/50: Loss = 0.8346 (11.83s)
+2794.1s	1117	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2799.8s	1118	  Test Recall@20: 0.1410, NDCG@20: 0.0928
+2799.9s	1119	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2802.6s	1120	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2805.0s	1121	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2811.7s	1122	Epoch 20/50: Loss = 0.8092 (11.83s)
+2811.9s	1123	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2817.6s	1124	  Test Recall@20: 0.1453, NDCG@20: 0.0991
+2817.7s	1125	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2820.3s	1126	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2822.8s	1127	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2829.3s	1128	Epoch 21/50: Loss = 0.7828 (11.68s)
+2829.5s	1129	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2835.4s	1130	  Test Recall@20: 0.1536, NDCG@20: 0.0946
+2835.5s	1131	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2838.2s	1132	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2840.8s	1133	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2847.3s	1134	Epoch 22/50: Loss = 0.7554 (11.86s)
+2847.6s	1135	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2853.4s	1136	  Test Recall@20: 0.1708, NDCG@20: 0.1053
+2853.4s	1137	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2856.1s	1138	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2858.6s	1139	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2865.3s	1140	Epoch 23/50: Loss = 0.7298 (11.85s)
+2865.5s	1141	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2871.3s	1142	  Test Recall@20: 0.1806, NDCG@20: 0.1225
+2871.3s	1143	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2874.0s	1144	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2876.4s	1145	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2882.9s	1146	Epoch 24/50: Loss = 0.7066 (11.72s)
+2883.2s	1147	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2889.1s	1148	  Test Recall@20: 0.1890, NDCG@20: 0.1282
+2889.1s	1149	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2891.8s	1150	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2894.4s	1151	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2901.0s	1152	Epoch 25/50: Loss = 0.6873 (11.83s)
+2901.2s	1153	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2907.0s	1154	  Test Recall@20: 0.1945, NDCG@20: 0.1233
+2907.1s	1155	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2909.7s	1156	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2912.2s	1157	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2918.8s	1158	Epoch 26/50: Loss = 0.6705 (11.85s)
+2919.2s	1159	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2924.9s	1160	  Test Recall@20: 0.2227, NDCG@20: 0.1541
+2925.0s	1161	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2927.7s	1162	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2930.2s	1163	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2936.7s	1164	Epoch 27/50: Loss = 0.6569 (11.74s)
+2937.0s	1165	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2942.9s	1166	  Test Recall@20: 0.1909, NDCG@20: 0.1278
+2943.0s	1167	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2945.6s	1168	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2948.2s	1169	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2954.7s	1170	Epoch 28/50: Loss = 0.6441 (11.82s)
+2955.0s	1171	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2960.7s	1172	  Test Recall@20: 0.2178, NDCG@20: 0.1537
+2960.8s	1173	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2963.5s	1174	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2965.9s	1175	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2972.6s	1176	Epoch 29/50: Loss = 0.6347 (11.86s)
+2972.8s	1177	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2978.5s	1178	  Test Recall@20: 0.2699, NDCG@20: 0.1744
+2978.6s	1179	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2981.3s	1180	Snapshot solo_1: Biclique file already exists. Skipping mining.
+2983.8s	1181	Snapshot solo_2: Biclique file already exists. Skipping mining.
+2990.3s	1182	Epoch 30/50: Loss = 0.6258 (11.71s)
+2990.5s	1183	Snapshot solo_test: Biclique file already exists. Skipping mining.
+2996.3s	1184	  Test Recall@20: 0.2322, NDCG@20: 0.1629
+2996.4s	1185	Snapshot solo_0: Biclique file already exists. Skipping mining.
+2999.1s	1186	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3001.7s	1187	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3008.2s	1188	Epoch 31/50: Loss = 0.6181 (11.82s)
+3008.4s	1189	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3014.2s	1190	  Test Recall@20: 0.2295, NDCG@20: 0.1554
+3014.3s	1191	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3017.0s	1192	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3019.4s	1193	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3026.1s	1194	Epoch 32/50: Loss = 0.6106 (11.87s)
+3026.4s	1195	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3032.1s	1196	  Test Recall@20: 0.2530, NDCG@20: 0.1754
+3032.2s	1197	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3034.8s	1198	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3037.3s	1199	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3043.8s	1200	Epoch 33/50: Loss = 0.6044 (11.66s)
+3044.1s	1201	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3049.9s	1202	  Test Recall@20: 0.2353, NDCG@20: 0.1598
+3050.0s	1203	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3052.7s	1204	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3055.3s	1205	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3061.8s	1206	Epoch 34/50: Loss = 0.5991 (11.86s)
+3062.0s	1207	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3067.9s	1208	  Test Recall@20: 0.2440, NDCG@20: 0.1755
+3067.9s	1209	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3070.6s	1210	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3073.1s	1211	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3079.8s	1212	Epoch 35/50: Loss = 0.5935 (11.85s)
+3080.0s	1213	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3085.7s	1214	  Test Recall@20: 0.2495, NDCG@20: 0.1752
+3085.8s	1215	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3088.4s	1216	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3090.9s	1217	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3097.4s	1218	Epoch 36/50: Loss = 0.5885 (11.72s)
+3097.7s	1219	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3103.5s	1220	  Test Recall@20: 0.2759, NDCG@20: 0.1874
+3103.6s	1221	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3106.3s	1222	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3108.9s	1223	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3115.4s	1224	Epoch 37/50: Loss = 0.5840 (11.81s)
+3115.6s	1225	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3121.5s	1226	  Test Recall@20: 0.2627, NDCG@20: 0.1934
+3121.6s	1227	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3124.2s	1228	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3126.7s	1229	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3133.3s	1230	Epoch 38/50: Loss = 0.5801 (11.83s)
+3133.6s	1231	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3139.3s	1232	  Test Recall@20: 0.2621, NDCG@20: 0.1805
+3139.3s	1233	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3142.0s	1234	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3144.5s	1235	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3151.0s	1236	Epoch 39/50: Loss = 0.5775 (11.68s)
+3151.3s	1237	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3157.3s	1238	  Test Recall@20: 0.2381, NDCG@20: 0.1684
+3157.3s	1239	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3160.0s	1240	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3162.6s	1241	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3169.0s	1242	Epoch 40/50: Loss = 0.5734 (11.81s)
+3169.3s	1243	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3175.1s	1244	  Test Recall@20: 0.2668, NDCG@20: 0.1860
+3175.2s	1245	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3177.9s	1246	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3180.3s	1247	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3187.0s	1248	Epoch 41/50: Loss = 0.5706 (11.88s)
+3187.3s	1249	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3193.1s	1250	  Test Recall@20: 0.2707, NDCG@20: 0.1893
+3193.1s	1251	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3195.8s	1252	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3198.3s	1253	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3204.8s	1254	Epoch 42/50: Loss = 0.5677 (11.69s)
+3205.0s	1255	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3210.9s	1256	  Test Recall@20: 0.2889, NDCG@20: 0.2013
+3211.0s	1257	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3213.7s	1258	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3216.3s	1259	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3222.8s	1260	Epoch 43/50: Loss = 0.5655 (11.83s)
+3223.0s	1261	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3228.7s	1262	  Test Recall@20: 0.2795, NDCG@20: 0.1958
+3228.8s	1263	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3231.5s	1264	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3234.0s	1265	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3240.6s	1266	Epoch 44/50: Loss = 0.5633 (11.86s)
+3240.9s	1267	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3246.8s	1268	  Test Recall@20: 0.2768, NDCG@20: 0.1846
+3246.9s	1269	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3249.5s	1270	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3252.0s	1271	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3258.6s	1272	Epoch 45/50: Loss = 0.5606 (11.71s)
+3258.8s	1273	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3264.6s	1274	  Test Recall@20: 0.2677, NDCG@20: 0.1884
+3264.7s	1275	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3267.4s	1276	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3270.0s	1277	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3276.4s	1278	Epoch 46/50: Loss = 0.5590 (11.83s)
+3276.7s	1279	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3282.5s	1280	  Test Recall@20: 0.2937, NDCG@20: 0.2072
+3282.6s	1281	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3285.2s	1282	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3287.7s	1283	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3294.5s	1284	Epoch 47/50: Loss = 0.5561 (11.91s)
+3294.7s	1285	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3300.7s	1286	  Test Recall@20: 0.2810, NDCG@20: 0.1977
+3300.8s	1287	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3303.4s	1288	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3305.9s	1289	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3312.3s	1290	Epoch 48/50: Loss = 0.5551 (11.70s)
+3312.7s	1291	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3318.6s	1292	  Test Recall@20: 0.2639, NDCG@20: 0.1824
+3318.7s	1293	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3321.4s	1294	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3324.0s	1295	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3330.6s	1296	Epoch 49/50: Loss = 0.5530 (11.88s)
+3330.8s	1297	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3336.6s	1298	  Test Recall@20: 0.2613, NDCG@20: 0.1791
+3336.7s	1299	Snapshot solo_0: Biclique file already exists. Skipping mining.
+3339.4s	1300	Snapshot solo_1: Biclique file already exists. Skipping mining.
+3341.8s	1301	Snapshot solo_2: Biclique file already exists. Skipping mining.
+3348.5s	1302	Epoch 50/50: Loss = 0.5518 (11.84s)
+3348.8s	1303	Snapshot solo_test: Biclique file already exists. Skipping mining.
+3354.7s	1304	  Test Recall@20: 0.2961, NDCG@20: 0.2080
+3354.8s	1305	
+3354.8s	1306	Final Metrics: {'loss': [1.2151172617335377, 1.188844747013516, 1.1824475350203338, 1.1749361952145894, 1.1653793020012937, 1.1529818677607877, 1.1367373083844596, 1.115632430270866, 1.0904930844719027, 1.0632318718197904, 1.035098405531895, 1.0084385500278001, 0.9819142461558918, 0.9555238389674529, 0.9308016616621135, 0.9066724917035044, 0.8829947952870969, 0.8591896527343326, 0.834610950431706, 0.8091716416824011, 0.7828296467109963, 0.7553590797347787, 0.7298306984665953, 0.7066139137303388, 0.6872547673590389, 0.6705017546076834, 0.6569287052125107, 0.6440740783273438, 0.6347161888340374, 0.6258187775994525, 0.6181499303123097, 0.6105864257724197, 0.6044171544504754, 0.5990521271287659, 0.5934962461024155, 0.5885496882744777, 0.584018756945928, 0.5801027457655212, 0.5774764896910868, 0.5733972511909626, 0.570578110438806, 0.5677350019967115, 0.5654553590733328, 0.563277460542726, 0.560621675333859, 0.5590208424830142, 0.5561150455916369, 0.5551422852792858, 0.5529573252539576, 0.5518371850988011], 'recall': [0.49253050005549986, 0.20222999222999227, 0.07271111111111112, 0.044551376401376394, 0.037548784548784554, 0.04597054153128938, 0.03815014050277208, 0.044607380507432695, 0.05293250915750916, 0.04657927767467615, 0.049259994771310586, 0.06389040501016309, 0.057060248493336733, 0.08783360193727845, 0.0914995303901415, 0.0937674936449859, 0.11857708778431393, 0.1278531961935442, 0.1409840332081711, 0.1453465498191033, 0.1535910506160506, 0.17075015182477232, 0.18063480904675414, 0.189018796377653, 0.19451279912897557, 0.2227422327185485, 0.19085090150590145, 0.2177603340665283, 0.2698506109086991, 0.23217644529383663, 0.2295382623656537, 0.25304820490677254, 0.23528957431457434, 0.24404128945403078, 0.24948548658577865, 0.27585724557072, 0.262677155065885, 0.26208414472953956, 0.23809059592368412, 0.2667794689073525, 0.27073438212114687, 0.2889307553569383, 0.2795332524450094, 0.27682407775728085, 0.2676903203667677, 0.2937005264017028, 0.2810318749233222, 0.2639029842288236, 0.2613310475313744, 0.2960516324662115], 'ndcg': [0.3554285967703744, 0.13534635277528514, 0.04009750802325469, 0.02667000457257658, 0.022000133099911234, 0.02748326778348897, 0.02716598736292739, 0.029797061901746674, 0.037675664499983566, 0.032150441753736214, 0.03311651277383564, 0.04253339204205509, 0.03321362404057966, 0.05466281471527653, 0.05745855081156097, 0.060402559024997055, 0.07004055578167268, 0.07822872139913632, 0.09284221286685265, 0.09908887043923487, 0.09455575981273678, 0.10526683673156738, 0.12246959133605133, 0.1281606336442745, 0.12331025028008834, 0.15414425877627308, 0.1278278003628778, 0.15369394185684918, 0.17437306816316173, 0.16294591981052636, 0.1554262261044366, 0.17543651321590628, 0.15983616533430045, 0.17553666454272862, 0.17523462684013824, 0.18742054006552156, 0.1934342521180085, 0.18052923002835736, 0.16837227023579288, 0.1860089856355495, 0.18929440329731445, 0.20133747250514483, 0.19580004117074323, 0.18463386301601065, 0.18837081488399787, 0.20719687656771754, 0.1976792529994352, 0.18243805907194433, 0.17906546928233147, 0.20800084387520282]}
+3355.5s	1307	
+3355.5s	1308	========================================
+3355.5s	1309	--- 5. 最终测试 (使用最佳模型在测试集上评估) ---
+3355.5s	1310	========================================
+3357.2s	1311	Device: cuda
+3357.2s	1312	Loading data from /kaggle/working/ai_project/TSB_CL_Project/solo_model/../../Similar-Biclique-Idx-main/datasets/bi_github.txt...
+3357.7s	1313	Loaded 440237 interactions. Users: 56519, Items: 120867
+3357.7s	1314	
+3357.7s	1315	Loading lightgcn from lightgcn_best.pth...
+3358.1s	1316	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:355: RuntimeWarning: divide by zero encountered in power
+3358.1s	1317	  d_inv_sqrt = np.power(rowsum, -0.5).flatten()
+3358.2s	1318	/kaggle/working/ai_project/TSB_CL_Project/data_utils.py:363: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:254.)
+3358.2s	1319	  indices = torch.LongTensor([coo.row, coo.col])
+3358.2s	1320	Calculating metrics...
+3358.3s	1321	Evaluating on 41147 users...
+3358.3s	1322	  Processed 0/41147 users...
+3364.0s	1323	  Processed 1000/41147 users...
+3369.4s	1324	  Processed 2000/41147 users...
+3374.8s	1325	  Processed 3000/41147 users...
+3380.2s	1326	  Processed 4000/41147 users...
+3385.6s	1327	  Processed 5000/41147 users...
+3391.1s	1328	  Processed 6000/41147 users...
+3396.6s	1329	  Processed 7000/41147 users...
+3401.9s	1330	  Processed 8000/41147 users...
+3407.3s	1331	  Processed 9000/41147 users...
+3412.7s	1332	  Processed 10000/41147 users...
+3418.1s	1333	  Processed 11000/41147 users...
+3423.6s	1334	  Processed 12000/41147 users...
+3429.2s	1335	  Processed 13000/41147 users...
+3434.6s	1336	  Processed 14000/41147 users...
+3440.0s	1337	  Processed 15000/41147 users...
+3445.4s	1338	  Processed 16000/41147 users...
+3450.8s	1339	  Processed 17000/41147 users...
+3456.3s	1340	  Processed 18000/41147 users...
+3461.7s	1341	  Processed 19000/41147 users...
+3467.2s	1342	  Processed 20000/41147 users...
+3472.7s	1343	  Processed 21000/41147 users...
+3478.1s	1344	  Processed 22000/41147 users...
+3483.7s	1345	  Processed 23000/41147 users...
+3489.1s	1346	  Processed 24000/41147 users...
+3494.7s	1347	  Processed 25000/41147 users...
+3499.9s	1348	  Processed 26000/41147 users...
+3505.3s	1349	  Processed 27000/41147 users...
+3510.7s	1350	  Processed 28000/41147 users...
+3516.1s	1351	  Processed 29000/41147 users...
+3521.6s	1352	  Processed 30000/41147 users...
+3527.1s	1353	  Processed 31000/41147 users...
+3532.3s	1354	  Processed 32000/41147 users...
+3537.8s	1355	  Processed 33000/41147 users...
+3543.2s	1356	  Processed 34000/41147 users...
+3548.6s	1357	  Processed 35000/41147 users...
+3554.0s	1358	  Processed 36000/41147 users...
+3559.5s	1359	  Processed 37000/41147 users...
+3564.8s	1360	  Processed 38000/41147 users...
+3570.2s	1361	  Processed 39000/41147 users...
+3575.7s	1362	  Processed 40000/41147 users...
+3581.1s	1363	  Processed 41000/41147 users...
+3582.0s	1364	Result for lightgcn: Recall@20 = 0.0924, NDCG@20 = 0.0577
+3582.0s	1365	
+3582.0s	1366	Loading biclique_gcn from biclique_gcn_best.pth...
+3582.2s	1367	Mining bicliques for test data...
+3582.4s	1368	Snapshot solo_test_eval: Building Index...
+3582.9s	1369	Snapshot solo_test_eval: Enumerating Bicliques (tau=2, epsilon=0.1)...
+3605.0s	1370	Snapshot solo_test_eval: Found 20613 bicliques.
+3605.4s	1371	Calculating metrics...
+3605.5s	1372	Evaluating on 41147 users...
+3605.6s	1373	  Processed 0/41147 users...
+3611.0s	1374	  Processed 1000/41147 users...
+3616.4s	1375	  Processed 2000/41147 users...
+3621.9s	1376	  Processed 3000/41147 users...
+3627.2s	1377	  Processed 4000/41147 users...
+3632.6s	1378	  Processed 5000/41147 users...
+3638.1s	1379	  Processed 6000/41147 users...
+3643.4s	1380	  Processed 7000/41147 users...
+3648.9s	1381	  Processed 8000/41147 users...
+3654.3s	1382	  Processed 9000/41147 users...
+3659.8s	1383	  Processed 10000/41147 users...
+3665.2s	1384	  Processed 11000/41147 users...
+3670.6s	1385	  Processed 12000/41147 users...
+3676.0s	1386	  Processed 13000/41147 users...
+3681.4s	1387	  Processed 14000/41147 users...
+3686.8s	1388	  Processed 15000/41147 users...
+3692.2s	1389	  Processed 16000/41147 users...
+3697.6s	1390	  Processed 17000/41147 users...
+3703.1s	1391	  Processed 18000/41147 users...
+3708.3s	1392	  Processed 19000/41147 users...
+3713.7s	1393	  Processed 20000/41147 users...
+3719.1s	1394	  Processed 21000/41147 users...
+3724.6s	1395	  Processed 22000/41147 users...
+3730.0s	1396	  Processed 23000/41147 users...
+3735.5s	1397	  Processed 24000/41147 users...
+3740.7s	1398	  Processed 25000/41147 users...
+3746.1s	1399	  Processed 26000/41147 users...
+3751.5s	1400	  Processed 27000/41147 users...
+3756.8s	1401	  Processed 28000/41147 users...
+3762.2s	1402	  Processed 29000/41147 users...
+3767.6s	1403	  Processed 30000/41147 users...
+3773.0s	1404	  Processed 31000/41147 users...
+3778.4s	1405	  Processed 32000/41147 users...
+3783.8s	1406	  Processed 33000/41147 users...
+3789.1s	1407	  Processed 34000/41147 users...
+3794.5s	1408	  Processed 35000/41147 users...
+3799.9s	1409	  Processed 36000/41147 users...
+3805.2s	1410	  Processed 37000/41147 users...
+3810.6s	1411	  Processed 38000/41147 users...
+3816.1s	1412	  Processed 39000/41147 users...
+3821.4s	1413	  Processed 40000/41147 users...
+3826.9s	1414	  Processed 41000/41147 users...
+3827.7s	1415	Result for biclique_gcn: Recall@20 = 0.1370, NDCG@20 = 0.1016
+3831.7s	1416	/usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+3831.7s	1417	  warn(
+3831.7s	1418	[NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+3832.2s	1419	[NbConvertApp] Writing 131339 bytes to __notebook__.ipynb
+3834.6s	1420	/usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+3834.6s	1421	  warn(
+3834.6s	1422	[NbConvertApp] Converting notebook __notebook__.ipynb to html
+3835.4s	1423	[NbConvertApp] Writing 392544 bytes to __results__.html

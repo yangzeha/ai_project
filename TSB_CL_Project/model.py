@@ -135,7 +135,7 @@ class TSB_CL(nn.Module):
         # GRU Update: h_t = GRU(input=u_global, hidden=h_{t-1})
         new_user_state = self.user_gru(u_global, user_history_state)
         
-        return u_global, u_local, new_user_state, i_global
+        return new_user_state, u_local, new_user_state, i_global
 
     def calculate_loss(self, u_global, u_local, i_global, users, pos_items, neg_items):
         """
