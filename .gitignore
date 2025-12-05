@@ -1,4 +1,12 @@
 __pycache__/
 *.pyc
-.DS_Store
-.ipynb_checkpoints/
+*.pyd
+.Python
+env/
+venv/
+.vscode/
+temp/
+*.exe
+*.dll
+*.so
+*.dylib
