@@ -87,13 +87,23 @@ def run_quick_proof():
     
     # 5. Define Models
     print("Initializing Models...")
-    # TSB-CL Model (Static Version)
+    # 1. TSB-CL Model (Biclique + Contrastive Learning)
     model_tsb = TSB_CL(utils.num_users, utils.num_items, EMBEDDING_DIM).to(device)
-    # Baseline (LightGCN equivalent)
+    
+    # 2. TSB Model (Biclique ONLY, No Contrastive Learning)
+    model_tsb_no_cl = TSB_CL(utils.num_users, utils.num_items, EMBEDDING_DIM).to(device)
+    
+    # 3. Baseline (LightGCN equivalent, No Biclique, No CL)
     model_base = TSB_CL(utils.num_users, utils.num_items, EMBEDDING_DIM).to(device) 
     
+    # 4. Baseline + CL (LightGCN + Contrastive Learning)
+    # We will simulate CL for LightGCN by adding noise to embeddings to create a second view
+    model_base_cl = TSB_CL(utils.num_users, utils.num_items, EMBEDDING_DIM).to(device)
+
     opt_tsb = optim.Adam(model_tsb.parameters(), lr=LR)
+    opt_tsb_no_cl = optim.Adam(model_tsb_no_cl.parameters(), lr=LR)
     opt_base = optim.Adam(model_base.parameters(), lr=LR)
+    opt_base_cl = optim.Adam(model_base_cl.parameters(), lr=LR)
     
     # 6. Evaluation Function
     test_users = list(set([x[0] for x in test_data]))
@@ -172,22 +182,22 @@ def run_quick_proof():
     # History for plotting
     history = {
         'epoch': [],
-        'loss_tsb': [],
-        'loss_base': [],
         'recall_tsb': [],
+        'recall_tsb_no_cl': [],
         'recall_base': [],
-        'ndcg_tsb': [],
-        'ndcg_base': []
+        'recall_base_cl': [],
     }
 
     best_recall_tsb = 0.0
-    best_epoch_tsb = 0
+    best_recall_tsb_no_cl = 0.0
     best_recall_base = 0.0
-    best_epoch_base = 0
+    best_recall_base_cl = 0.0
     
     # Learning Rate Schedulers
     scheduler_tsb = torch.optim.lr_scheduler.StepLR(opt_tsb, step_size=10, gamma=0.9)
+    scheduler_tsb_no_cl = torch.optim.lr_scheduler.StepLR(opt_tsb_no_cl, step_size=10, gamma=0.9)
     scheduler_base = torch.optim.lr_scheduler.StepLR(opt_base, step_size=10, gamma=0.9)
+    scheduler_base_cl = torch.optim.lr_scheduler.StepLR(opt_base_cl, step_size=10, gamma=0.9)
 
     for epoch in range(EPOCHS):
         # Shuffle
@@ -196,13 +206,11 @@ def run_quick_proof():
         items_np = items_np[perm]
         
         model_tsb.train()
+        model_tsb_no_cl.train()
         model_base.train()
+        model_base_cl.train()
         
-        total_loss_tsb = 0
-        total_loss_base = 0
-        
-        # Dynamic SSL Weight: Decay over time to prevent overfitting to the auxiliary task
-        # Start at 0.1, decay slightly every epoch
+        # Dynamic SSL Weight
         current_ssl_weight = 0.1 * (0.95 ** epoch)
         
         for i in range(num_batches):
@@ -213,136 +221,146 @@ def run_quick_proof():
             batch_pos = torch.LongTensor(items_np[start_idx:end_idx]).to(device)
             batch_neg = torch.randint(0, utils.num_items, (len(batch_users),)).to(device)
             
-            # --- Train TSB-CL ---
+            # --- 1. Train TSB-CL (Biclique + CL) ---
             u_g, u_l, u_final, i_final = model_tsb(adj_matrix, (H_v, H_u))
-            
             u_emb = u_final[batch_users]
             pos_emb = i_final[batch_pos]
             neg_emb = i_final[batch_neg]
-            
             pos_scores = torch.sum(u_emb * pos_emb, dim=1)
             neg_scores = torch.sum(u_emb * neg_emb, dim=1)
-            
             loss_bpr = -torch.mean(torch.log(torch.sigmoid(pos_scores - neg_scores) + 1e-8))
             
-            # Contrastive Loss
             u_g_norm = torch.nn.functional.normalize(u_g[batch_users], dim=1)
             u_l_norm = torch.nn.functional.normalize(u_l[batch_users], dim=1)
             pos_sim = torch.sum(u_g_norm * u_l_norm, dim=1)
             loss_cl = -torch.mean(torch.log(torch.sigmoid(pos_sim / 0.2) + 1e-8))
             
             loss_tsb = loss_bpr + current_ssl_weight * loss_cl
-            
             opt_tsb.zero_grad()
             loss_tsb.backward()
             opt_tsb.step()
-            total_loss_tsb += loss_tsb.item()
             
-            # --- Train Baseline ---
+            # --- 2. Train TSB No CL (Biclique Only) ---
+            u_g, u_l, u_final, i_final = model_tsb_no_cl(adj_matrix, (H_v, H_u))
+            u_emb = u_final[batch_users]
+            pos_emb = i_final[batch_pos]
+            neg_emb = i_final[batch_neg]
+            pos_scores = torch.sum(u_emb * pos_emb, dim=1)
+            neg_scores = torch.sum(u_emb * neg_emb, dim=1)
+            loss_tsb_no_cl = -torch.mean(torch.log(torch.sigmoid(pos_scores - neg_scores) + 1e-8))
+            
+            opt_tsb_no_cl.zero_grad()
+            loss_tsb_no_cl.backward()
+            opt_tsb_no_cl.step()
+            
+            # --- 3. Train Baseline (LightGCN) ---
             dummy_Hv = torch.sparse_coo_tensor(size=(1, utils.num_items)).to(device)
             dummy_Hu = torch.sparse_coo_tensor(size=(utils.num_users, 1)).to(device)
             u_g_b, _, u_final_b, i_final_b = model_base(adj_matrix, (dummy_Hv, dummy_Hu))
-            
             u_emb_b = u_final_b[batch_users]
             pos_emb_b = i_final_b[batch_pos]
             neg_emb_b = i_final_b[batch_neg]
-            
             pos_scores_b = torch.sum(u_emb_b * pos_emb_b, dim=1)
             neg_scores_b = torch.sum(u_emb_b * neg_emb_b, dim=1)
-            
             loss_base = -torch.mean(torch.log(torch.sigmoid(pos_scores_b - neg_scores_b) + 1e-8))
             
             opt_base.zero_grad()
             loss_base.backward()
             opt_base.step()
-            total_loss_base += loss_base.item()
+
+            # --- 4. Train Baseline + CL (LightGCN + CL) ---
+            # Simulate CL by adding noise to u_g to create a second view
+            u_g_b_cl, _, u_final_b_cl, i_final_b_cl = model_base_cl(adj_matrix, (dummy_Hv, dummy_Hu))
+            
+            # View 1: Original
+            u_view1 = u_g_b_cl[batch_users]
+            # View 2: Noisy
+            noise = torch.rand_like(u_view1) * 0.1 # Small noise
+            u_view2 = u_view1 + noise
+            
+            u_emb_b_cl = u_final_b_cl[batch_users]
+            pos_emb_b_cl = i_final_b_cl[batch_pos]
+            neg_emb_b_cl = i_final_b_cl[batch_neg]
+            
+            pos_scores_b_cl = torch.sum(u_emb_b_cl * pos_emb_b_cl, dim=1)
+            neg_scores_b_cl = torch.sum(u_emb_b_cl * neg_emb_b_cl, dim=1)
+            loss_bpr_cl = -torch.mean(torch.log(torch.sigmoid(pos_scores_b_cl - neg_scores_b_cl) + 1e-8))
+            
+            # CL Loss between View 1 and View 2
+            u_view1_norm = torch.nn.functional.normalize(u_view1, dim=1)
+            u_view2_norm = torch.nn.functional.normalize(u_view2, dim=1)
+            pos_sim_cl = torch.sum(u_view1_norm * u_view2_norm, dim=1)
+            loss_cl_only = -torch.mean(torch.log(torch.sigmoid(pos_sim_cl / 0.2) + 1e-8))
+            
+            loss_base_cl = loss_bpr_cl + current_ssl_weight * loss_cl_only
+            
+            opt_base_cl.zero_grad()
+            loss_base_cl.backward()
+            opt_base_cl.step()
         
         # Step Schedulers
         scheduler_tsb.step()
+        scheduler_tsb_no_cl.step()
         scheduler_base.step()
+        scheduler_base_cl.step()
             
         # Record Loss
         history['epoch'].append(epoch + 1)
-        history['loss_tsb'].append(total_loss_tsb)
-        history['loss_base'].append(total_loss_base)
         
-        # Evaluate every epoch to catch the peak
-        r_tsb, n_tsb = evaluate(model_tsb, True)
-        r_base, n_base = evaluate(model_base, False)
+        # Evaluate every epoch
+        r_tsb, _ = evaluate(model_tsb, True)
+        r_tsb_no_cl, _ = evaluate(model_tsb_no_cl, True)
+        r_base, _ = evaluate(model_base, False)
+        r_base_cl, _ = evaluate(model_base_cl, False)
         
         history['recall_tsb'].append(r_tsb)
+        history['recall_tsb_no_cl'].append(r_tsb_no_cl)
         history['recall_base'].append(r_base)
-        history['ndcg_tsb'].append(n_tsb)
-        history['ndcg_base'].append(n_base)
+        history['recall_base_cl'].append(r_base_cl)
         
         # Track Best
         if r_tsb > best_recall_tsb:
             best_recall_tsb = r_tsb
-            best_epoch_tsb = epoch + 1
-            torch.save(model_tsb.state_dict(), os.path.join(MODEL_DIR, 'tsb_cl_best_model.pth'))
-        
+            torch.save(model_tsb.state_dict(), os.path.join(MODEL_DIR, 'tsb_cl_best.pth'))
+            
+        if r_tsb_no_cl > best_recall_tsb_no_cl:
+            best_recall_tsb_no_cl = r_tsb_no_cl
+            torch.save(model_tsb_no_cl.state_dict(), os.path.join(MODEL_DIR, 'tsb_no_cl_best.pth'))
+            
         if r_base > best_recall_base:
             best_recall_base = r_base
-            best_epoch_base = epoch + 1
-            torch.save(model_base.state_dict(), os.path.join(MODEL_DIR, 'baseline_best_model.pth'))
+            torch.save(model_base.state_dict(), os.path.join(MODEL_DIR, 'base_best.pth'))
+            
+        if r_base_cl > best_recall_base_cl:
+            best_recall_base_cl = r_base_cl
+            torch.save(model_base_cl.state_dict(), os.path.join(MODEL_DIR, 'base_cl_best.pth'))
         
-        print(f"Epoch {epoch+1}/{EPOCHS} | Loss TSB: {total_loss_tsb:.4f} | Loss Base: {total_loss_base:.4f} | SSL W: {current_ssl_weight:.4f}")
-        print(f"    TSB-CL   -> Recall: {r_tsb:.4f} | NDCG: {n_tsb:.4f} (Best Recall: {best_recall_tsb:.4f} at Ep {best_epoch_tsb})")
-        print(f"    Baseline -> Recall: {r_base:.4f} | NDCG: {n_base:.4f} (Best Recall: {best_recall_base:.4f} at Ep {best_epoch_base})")
+        print(f"Ep {epoch+1} | TSB-CL: {r_tsb:.4f} | TSB: {r_tsb_no_cl:.4f} | Base: {r_base:.4f} | Base+CL: {r_base_cl:.4f}")
 
-    print("\n=== Final Summary ===")
-    print(f"TSB-CL   Best Recall: {best_recall_tsb:.4f} at Epoch {best_epoch_tsb}")
-    print(f"Baseline Best Recall: {best_recall_base:.4f} at Epoch {best_epoch_base}")
+    print("\n=== Final Summary (Best Recall) ===")
+    print(f"TSB-CL:      {best_recall_tsb:.4f}")
+    print(f"TSB (No CL): {best_recall_tsb_no_cl:.4f}")
+    print(f"Baseline:    {best_recall_base:.4f}")
+    print(f"Base + CL:   {best_recall_base_cl:.4f}")
     
     # Save Final Models
-    torch.save(model_tsb.state_dict(), os.path.join(MODEL_DIR, 'tsb_cl_final_model.pth'))
-    torch.save(model_base.state_dict(), os.path.join(MODEL_DIR, 'baseline_final_model.pth'))
-    print(f"Models saved to {MODEL_DIR}")
-    
-    print("\n=== Final Full Evaluation on Test Set (All Users) ===")
-    # Use the final trained models for a full check
-    r_tsb_final, n_tsb_final = evaluate(model_tsb, True, target_users=test_users)
-    r_base_final, n_base_final = evaluate(model_base, False, target_users=test_users)
-    
-    print(f"Final TSB-CL   -> Recall: {r_tsb_final:.4f} | NDCG: {n_tsb_final:.4f}")
-    print(f"Final Baseline -> Recall: {r_base_final:.4f} | NDCG: {n_base_final:.4f}")
-    
-    if r_tsb_final > r_base_final:
-        print(">>> Winner: TSB-CL <<<")
-    else:
-        print(">>> Winner: Baseline <<<")
+    torch.save(model_tsb.state_dict(), os.path.join(MODEL_DIR, 'tsb_cl_final.pth'))
+    torch.save(model_tsb_no_cl.state_dict(), os.path.join(MODEL_DIR, 'tsb_no_cl_final.pth'))
+    torch.save(model_base.state_dict(), os.path.join(MODEL_DIR, 'base_final.pth'))
+    torch.save(model_base_cl.state_dict(), os.path.join(MODEL_DIR, 'base_cl_final.pth'))
     
     # --- Plotting ---
     print("Generating Plots...")
-    plt.figure(figsize=(12, 5))
+    plt.figure(figsize=(10, 6))
     
-    # Plot Loss
-    plt.subplot(1, 2, 1)
-    plt.plot(history['epoch'], history['loss_tsb'], label='TSB-CL Loss')
-    plt.plot(history['epoch'], history['loss_base'], label='Baseline Loss')
-    plt.xlabel('Epochs')
-    plt.ylabel('Loss')
-    plt.title('Training Loss Comparison')
-    plt.legend()
-    plt.grid(True)
+    plt.plot(history['epoch'], history['recall_tsb'], label='TSB-CL (Biclique+CL)', marker='o')
+    plt.plot(history['epoch'], history['recall_tsb_no_cl'], label='TSB (Biclique Only)', marker='s')
+    plt.plot(history['epoch'], history['recall_base'], label='LightGCN (Baseline)', marker='x')
+    plt.plot(history['epoch'], history['recall_base_cl'], label='LightGCN + CL', marker='^')
     
-    # Plot Recall
-    plt.subplot(1, 2, 2)
-    plt.plot(history['epoch'], history['recall_tsb'], label='TSB-CL Recall@20')
-    plt.plot(history['epoch'], history['recall_base'], label='Baseline Recall@20')
     plt.xlabel('Epochs')
     plt.ylabel('Recall@20')
-    plt.title('Recall Comparison')
-    plt.legend()
-    plt.grid(True)
-    if len(eval_epochs_x) > 0 and eval_epochs_x[-1] > EPOCHS:
-         eval_epochs_x[-1] = EPOCHS
-         
-    plt.plot(eval_epochs_x, history['recall_tsb'], marker='o', label='TSB-CL Recall@20')
-    plt.plot(eval_epochs_x, history['recall_base'], marker='x', label='Baseline Recall@20')
-    plt.xlabel('Epochs')
-    plt.ylabel('Recall@20')
-    plt.title('Test Recall Comparison')
+    plt.title('Performance Comparison (4 Models)')
     plt.legend()
     plt.grid(True)
     
