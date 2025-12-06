@@ -1,0 +1,150 @@
+350.5s	225	Epoch 1/50 | Loss TSB: 254.6905 | Loss Base: 184.7123 | SSL W: 0.1000
+350.5s	226	    TSB-CL   -> Recall: 0.0294 | NDCG: 0.0235 (Best Recall: 0.0294 at Ep 1)
+350.5s	227	    Baseline -> Recall: 0.0315 | NDCG: 0.0244 (Best Recall: 0.0315 at Ep 1)
+472.9s	228	Epoch 2/50 | Loss TSB: 129.9516 | Loss Base: 104.0002 | SSL W: 0.0950
+472.9s	229	    TSB-CL   -> Recall: 0.0316 | NDCG: 0.0254 (Best Recall: 0.0316 at Ep 2)
+472.9s	230	    Baseline -> Recall: 0.0313 | NDCG: 0.0249 (Best Recall: 0.0315 at Ep 1)
+595.3s	231	Epoch 3/50 | Loss TSB: 120.0680 | Loss Base: 98.0194 | SSL W: 0.0902
+595.3s	232	    TSB-CL   -> Recall: 0.0310 | NDCG: 0.0253 (Best Recall: 0.0316 at Ep 2)
+595.3s	233	    Baseline -> Recall: 0.0333 | NDCG: 0.0258 (Best Recall: 0.0333 at Ep 3)
+717.8s	234	Epoch 4/50 | Loss TSB: 113.7910 | Loss Base: 93.5239 | SSL W: 0.0857
+717.8s	235	    TSB-CL   -> Recall: 0.0313 | NDCG: 0.0257 (Best Recall: 0.0316 at Ep 2)
+717.8s	236	    Baseline -> Recall: 0.0326 | NDCG: 0.0260 (Best Recall: 0.0333 at Ep 3)
+840.2s	237	Epoch 5/50 | Loss TSB: 109.4966 | Loss Base: 90.7610 | SSL W: 0.0815
+840.2s	238	    TSB-CL   -> Recall: 0.0335 | NDCG: 0.0268 (Best Recall: 0.0335 at Ep 5)
+840.2s	239	    Baseline -> Recall: 0.0320 | NDCG: 0.0258 (Best Recall: 0.0333 at Ep 3)
+962.6s	240	Epoch 6/50 | Loss TSB: 104.2925 | Loss Base: 87.1114 | SSL W: 0.0774
+962.6s	241	    TSB-CL   -> Recall: 0.0340 | NDCG: 0.0273 (Best Recall: 0.0340 at Ep 6)
+962.6s	242	    Baseline -> Recall: 0.0334 | NDCG: 0.0267 (Best Recall: 0.0334 at Ep 6)
+1085.0s	243	Epoch 7/50 | Loss TSB: 99.5347 | Loss Base: 83.8834 | SSL W: 0.0735
+1085.0s	244	    TSB-CL   -> Recall: 0.0346 | NDCG: 0.0274 (Best Recall: 0.0346 at Ep 7)
+1085.0s	245	    Baseline -> Recall: 0.0341 | NDCG: 0.0273 (Best Recall: 0.0341 at Ep 7)
+1207.3s	246	Epoch 8/50 | Loss TSB: 95.0306 | Loss Base: 80.6903 | SSL W: 0.0698
+1207.3s	247	    TSB-CL   -> Recall: 0.0355 | NDCG: 0.0285 (Best Recall: 0.0355 at Ep 8)
+1207.3s	248	    Baseline -> Recall: 0.0352 | NDCG: 0.0279 (Best Recall: 0.0352 at Ep 8)
+1329.8s	249	Epoch 9/50 | Loss TSB: 90.4925 | Loss Base: 77.2801 | SSL W: 0.0663
+1329.8s	250	    TSB-CL   -> Recall: 0.0355 | NDCG: 0.0289 (Best Recall: 0.0355 at Ep 8)
+1329.8s	251	    Baseline -> Recall: 0.0361 | NDCG: 0.0287 (Best Recall: 0.0361 at Ep 9)
+1452.1s	252	Epoch 10/50 | Loss TSB: 87.1225 | Loss Base: 74.7817 | SSL W: 0.0630
+1452.1s	253	    TSB-CL   -> Recall: 0.0372 | NDCG: 0.0295 (Best Recall: 0.0372 at Ep 10)
+1452.1s	254	    Baseline -> Recall: 0.0384 | NDCG: 0.0297 (Best Recall: 0.0384 at Ep 10)
+1574.6s	255	Epoch 11/50 | Loss TSB: 83.7189 | Loss Base: 71.8657 | SSL W: 0.0599
+1574.6s	256	    TSB-CL   -> Recall: 0.0379 | NDCG: 0.0298 (Best Recall: 0.0379 at Ep 11)
+1574.6s	257	    Baseline -> Recall: 0.0381 | NDCG: 0.0298 (Best Recall: 0.0384 at Ep 10)
+1697.0s	258	Epoch 12/50 | Loss TSB: 81.3250 | Loss Base: 70.0344 | SSL W: 0.0569
+1697.0s	259	    TSB-CL   -> Recall: 0.0381 | NDCG: 0.0301 (Best Recall: 0.0381 at Ep 12)
+1697.0s	260	    Baseline -> Recall: 0.0387 | NDCG: 0.0303 (Best Recall: 0.0387 at Ep 12)
+1819.5s	261	Epoch 13/50 | Loss TSB: 78.5765 | Loss Base: 67.7393 | SSL W: 0.0540
+1819.5s	262	    TSB-CL   -> Recall: 0.0385 | NDCG: 0.0303 (Best Recall: 0.0385 at Ep 13)
+1819.5s	263	    Baseline -> Recall: 0.0386 | NDCG: 0.0305 (Best Recall: 0.0387 at Ep 12)
+1942.1s	264	Epoch 14/50 | Loss TSB: 75.8087 | Loss Base: 65.4786 | SSL W: 0.0513
+1942.1s	265	    TSB-CL   -> Recall: 0.0388 | NDCG: 0.0306 (Best Recall: 0.0388 at Ep 14)
+1942.1s	266	    Baseline -> Recall: 0.0386 | NDCG: 0.0306 (Best Recall: 0.0387 at Ep 12)
+2064.6s	267	Epoch 15/50 | Loss TSB: 74.5702 | Loss Base: 64.8108 | SSL W: 0.0488
+2064.6s	268	    TSB-CL   -> Recall: 0.0394 | NDCG: 0.0311 (Best Recall: 0.0394 at Ep 15)
+2064.6s	269	    Baseline -> Recall: 0.0384 | NDCG: 0.0304 (Best Recall: 0.0387 at Ep 12)
+2187.1s	270	Epoch 16/50 | Loss TSB: 72.7699 | Loss Base: 63.6882 | SSL W: 0.0463
+2187.1s	271	    TSB-CL   -> Recall: 0.0401 | NDCG: 0.0315 (Best Recall: 0.0401 at Ep 16)
+2187.1s	272	    Baseline -> Recall: 0.0387 | NDCG: 0.0310 (Best Recall: 0.0387 at Ep 16)
+2309.5s	273	Epoch 17/50 | Loss TSB: 70.8637 | Loss Base: 62.3216 | SSL W: 0.0440
+2309.5s	274	    TSB-CL   -> Recall: 0.0403 | NDCG: 0.0317 (Best Recall: 0.0403 at Ep 17)
+2309.5s	275	    Baseline -> Recall: 0.0390 | NDCG: 0.0313 (Best Recall: 0.0390 at Ep 17)
+2431.9s	276	Epoch 18/50 | Loss TSB: 68.9203 | Loss Base: 61.0914 | SSL W: 0.0418
+2431.9s	277	    TSB-CL   -> Recall: 0.0403 | NDCG: 0.0319 (Best Recall: 0.0403 at Ep 18)
+2431.9s	278	    Baseline -> Recall: 0.0390 | NDCG: 0.0311 (Best Recall: 0.0390 at Ep 18)
+2554.6s	279	Epoch 19/50 | Loss TSB: 67.4132 | Loss Base: 60.2040 | SSL W: 0.0397
+2554.6s	280	    TSB-CL   -> Recall: 0.0411 | NDCG: 0.0324 (Best Recall: 0.0411 at Ep 19)
+2554.6s	281	    Baseline -> Recall: 0.0391 | NDCG: 0.0316 (Best Recall: 0.0391 at Ep 19)
+2677.4s	282	Epoch 20/50 | Loss TSB: 65.5985 | Loss Base: 58.8961 | SSL W: 0.0377
+2677.4s	283	    TSB-CL   -> Recall: 0.0404 | NDCG: 0.0321 (Best Recall: 0.0411 at Ep 19)
+2677.4s	284	    Baseline -> Recall: 0.0390 | NDCG: 0.0319 (Best Recall: 0.0391 at Ep 19)
+2800.2s	285	Epoch 21/50 | Loss TSB: 64.2632 | Loss Base: 58.1030 | SSL W: 0.0358
+2800.2s	286	    TSB-CL   -> Recall: 0.0412 | NDCG: 0.0325 (Best Recall: 0.0412 at Ep 21)
+2800.2s	287	    Baseline -> Recall: 0.0397 | NDCG: 0.0322 (Best Recall: 0.0397 at Ep 21)
+2923.1s	288	Epoch 22/50 | Loss TSB: 62.8583 | Loss Base: 57.2623 | SSL W: 0.0341
+2923.1s	289	    TSB-CL   -> Recall: 0.0411 | NDCG: 0.0328 (Best Recall: 0.0412 at Ep 21)
+2923.1s	290	    Baseline -> Recall: 0.0401 | NDCG: 0.0325 (Best Recall: 0.0401 at Ep 22)
+3046.0s	291	Epoch 23/50 | Loss TSB: 61.7177 | Loss Base: 56.4388 | SSL W: 0.0324
+3046.0s	292	    TSB-CL   -> Recall: 0.0413 | NDCG: 0.0328 (Best Recall: 0.0413 at Ep 23)
+3046.0s	293	    Baseline -> Recall: 0.0403 | NDCG: 0.0329 (Best Recall: 0.0403 at Ep 23)
+3168.8s	294	Epoch 24/50 | Loss TSB: 60.3919 | Loss Base: 55.5712 | SSL W: 0.0307
+3168.8s	295	    TSB-CL   -> Recall: 0.0425 | NDCG: 0.0337 (Best Recall: 0.0425 at Ep 24)
+3168.8s	296	    Baseline -> Recall: 0.0409 | NDCG: 0.0332 (Best Recall: 0.0409 at Ep 24)
+3291.7s	297	Epoch 25/50 | Loss TSB: 59.1229 | Loss Base: 54.5854 | SSL W: 0.0292
+3291.7s	298	    TSB-CL   -> Recall: 0.0423 | NDCG: 0.0336 (Best Recall: 0.0425 at Ep 24)
+3291.7s	299	    Baseline -> Recall: 0.0404 | NDCG: 0.0334 (Best Recall: 0.0409 at Ep 24)
+3414.6s	300	Epoch 26/50 | Loss TSB: 58.0600 | Loss Base: 53.7921 | SSL W: 0.0277
+3414.6s	301	    TSB-CL   -> Recall: 0.0422 | NDCG: 0.0337 (Best Recall: 0.0425 at Ep 24)
+3414.6s	302	    Baseline -> Recall: 0.0411 | NDCG: 0.0341 (Best Recall: 0.0411 at Ep 26)
+3537.6s	303	Epoch 27/50 | Loss TSB: 57.0613 | Loss Base: 53.0877 | SSL W: 0.0264
+3537.6s	304	    TSB-CL   -> Recall: 0.0423 | NDCG: 0.0338 (Best Recall: 0.0425 at Ep 24)
+3537.6s	305	    Baseline -> Recall: 0.0415 | NDCG: 0.0348 (Best Recall: 0.0415 at Ep 27)
+3660.5s	306	Epoch 28/50 | Loss TSB: 56.0267 | Loss Base: 52.3273 | SSL W: 0.0250
+3660.5s	307	    TSB-CL   -> Recall: 0.0426 | NDCG: 0.0340 (Best Recall: 0.0426 at Ep 28)
+3660.5s	308	    Baseline -> Recall: 0.0414 | NDCG: 0.0347 (Best Recall: 0.0415 at Ep 27)
+3783.4s	309	Epoch 29/50 | Loss TSB: 54.6996 | Loss Base: 51.3006 | SSL W: 0.0238
+3783.4s	310	    TSB-CL   -> Recall: 0.0430 | NDCG: 0.0341 (Best Recall: 0.0430 at Ep 29)
+3783.4s	311	    Baseline -> Recall: 0.0418 | NDCG: 0.0350 (Best Recall: 0.0418 at Ep 29)
+3906.2s	312	Epoch 30/50 | Loss TSB: 53.8755 | Loss Base: 50.7685 | SSL W: 0.0226
+3906.2s	313	    TSB-CL   -> Recall: 0.0431 | NDCG: 0.0346 (Best Recall: 0.0431 at Ep 30)
+3906.2s	314	    Baseline -> Recall: 0.0419 | NDCG: 0.0349 (Best Recall: 0.0419 at Ep 30)
+4029.0s	315	Epoch 31/50 | Loss TSB: 53.0636 | Loss Base: 50.1705 | SSL W: 0.0215
+4029.0s	316	    TSB-CL   -> Recall: 0.0431 | NDCG: 0.0345 (Best Recall: 0.0431 at Ep 30)
+4029.0s	317	    Baseline -> Recall: 0.0427 | NDCG: 0.0351 (Best Recall: 0.0427 at Ep 31)
+4151.8s	318	Epoch 32/50 | Loss TSB: 51.7453 | Loss Base: 49.0373 | SSL W: 0.0204
+4151.8s	319	    TSB-CL   -> Recall: 0.0424 | NDCG: 0.0343 (Best Recall: 0.0431 at Ep 30)
+4151.8s	320	    Baseline -> Recall: 0.0434 | NDCG: 0.0357 (Best Recall: 0.0434 at Ep 32)
+4274.6s	321	Epoch 33/50 | Loss TSB: 51.1217 | Loss Base: 48.6934 | SSL W: 0.0194
+4274.6s	322	    TSB-CL   -> Recall: 0.0427 | NDCG: 0.0346 (Best Recall: 0.0431 at Ep 30)
+4274.6s	323	    Baseline -> Recall: 0.0435 | NDCG: 0.0358 (Best Recall: 0.0435 at Ep 33)
+4397.3s	324	Epoch 34/50 | Loss TSB: 50.8122 | Loss Base: 48.6154 | SSL W: 0.0184
+4397.3s	325	    TSB-CL   -> Recall: 0.0430 | NDCG: 0.0349 (Best Recall: 0.0431 at Ep 30)
+4397.3s	326	    Baseline -> Recall: 0.0435 | NDCG: 0.0359 (Best Recall: 0.0435 at Ep 33)
+4520.0s	327	Epoch 35/50 | Loss TSB: 49.8904 | Loss Base: 47.8044 | SSL W: 0.0175
+4520.0s	328	    TSB-CL   -> Recall: 0.0427 | NDCG: 0.0347 (Best Recall: 0.0431 at Ep 30)
+4520.0s	329	    Baseline -> Recall: 0.0423 | NDCG: 0.0353 (Best Recall: 0.0435 at Ep 33)
+4642.6s	330	Epoch 36/50 | Loss TSB: 49.1750 | Loss Base: 47.3091 | SSL W: 0.0166
+4642.6s	331	    TSB-CL   -> Recall: 0.0433 | NDCG: 0.0351 (Best Recall: 0.0433 at Ep 36)
+4642.6s	332	    Baseline -> Recall: 0.0426 | NDCG: 0.0357 (Best Recall: 0.0435 at Ep 33)
+4765.3s	333	Epoch 37/50 | Loss TSB: 48.3941 | Loss Base: 46.6631 | SSL W: 0.0158
+4765.3s	334	    TSB-CL   -> Recall: 0.0430 | NDCG: 0.0350 (Best Recall: 0.0433 at Ep 36)
+4765.3s	335	    Baseline -> Recall: 0.0440 | NDCG: 0.0360 (Best Recall: 0.0440 at Ep 37)
+4888.1s	336	Epoch 38/50 | Loss TSB: 47.6078 | Loss Base: 46.1298 | SSL W: 0.0150
+4888.1s	337	    TSB-CL   -> Recall: 0.0445 | NDCG: 0.0359 (Best Recall: 0.0445 at Ep 38)
+4888.1s	338	    Baseline -> Recall: 0.0435 | NDCG: 0.0361 (Best Recall: 0.0440 at Ep 37)
+5010.9s	339	Epoch 39/50 | Loss TSB: 47.0666 | Loss Base: 45.7946 | SSL W: 0.0142
+5010.9s	340	    TSB-CL   -> Recall: 0.0446 | NDCG: 0.0359 (Best Recall: 0.0446 at Ep 39)
+5010.9s	341	    Baseline -> Recall: 0.0448 | NDCG: 0.0365 (Best Recall: 0.0448 at Ep 39)
+5133.7s	342	Epoch 40/50 | Loss TSB: 46.6593 | Loss Base: 45.5255 | SSL W: 0.0135
+5133.7s	343	    TSB-CL   -> Recall: 0.0454 | NDCG: 0.0361 (Best Recall: 0.0454 at Ep 40)
+5133.7s	344	    Baseline -> Recall: 0.0453 | NDCG: 0.0365 (Best Recall: 0.0453 at Ep 40)
+5256.5s	345	Epoch 41/50 | Loss TSB: 45.7548 | Loss Base: 44.7897 | SSL W: 0.0129
+5256.5s	346	    TSB-CL   -> Recall: 0.0452 | NDCG: 0.0362 (Best Recall: 0.0454 at Ep 40)
+5256.5s	347	    Baseline -> Recall: 0.0447 | NDCG: 0.0366 (Best Recall: 0.0453 at Ep 40)
+5379.3s	348	Epoch 42/50 | Loss TSB: 45.5842 | Loss Base: 44.7400 | SSL W: 0.0122
+5379.3s	349	    TSB-CL   -> Recall: 0.0460 | NDCG: 0.0368 (Best Recall: 0.0460 at Ep 42)
+5379.3s	350	    Baseline -> Recall: 0.0457 | NDCG: 0.0373 (Best Recall: 0.0457 at Ep 42)
+5502.0s	351	Epoch 43/50 | Loss TSB: 44.7402 | Loss Base: 44.1113 | SSL W: 0.0116
+5502.0s	352	    TSB-CL   -> Recall: 0.0465 | NDCG: 0.0372 (Best Recall: 0.0465 at Ep 43)
+5502.0s	353	    Baseline -> Recall: 0.0465 | NDCG: 0.0376 (Best Recall: 0.0465 at Ep 43)
+5624.8s	354	Epoch 44/50 | Loss TSB: 44.5479 | Loss Base: 43.9372 | SSL W: 0.0110
+5624.8s	355	    TSB-CL   -> Recall: 0.0463 | NDCG: 0.0369 (Best Recall: 0.0465 at Ep 43)
+5624.8s	356	    Baseline -> Recall: 0.0458 | NDCG: 0.0372 (Best Recall: 0.0465 at Ep 43)
+5747.6s	357	Epoch 45/50 | Loss TSB: 43.8740 | Loss Base: 43.4414 | SSL W: 0.0105
+5747.6s	358	    TSB-CL   -> Recall: 0.0462 | NDCG: 0.0370 (Best Recall: 0.0465 at Ep 43)
+5747.6s	359	    Baseline -> Recall: 0.0466 | NDCG: 0.0375 (Best Recall: 0.0466 at Ep 45)
+5870.4s	360	Epoch 46/50 | Loss TSB: 43.5719 | Loss Base: 43.2278 | SSL W: 0.0099
+5870.4s	361	    TSB-CL   -> Recall: 0.0456 | NDCG: 0.0370 (Best Recall: 0.0465 at Ep 43)
+5870.4s	362	    Baseline -> Recall: 0.0458 | NDCG: 0.0376 (Best Recall: 0.0466 at Ep 45)
+5993.2s	363	Epoch 47/50 | Loss TSB: 43.2452 | Loss Base: 43.0235 | SSL W: 0.0094
+5993.2s	364	    TSB-CL   -> Recall: 0.0455 | NDCG: 0.0370 (Best Recall: 0.0465 at Ep 43)
+5993.2s	365	    Baseline -> Recall: 0.0459 | NDCG: 0.0376 (Best Recall: 0.0466 at Ep 45)
+6116.0s	366	Epoch 48/50 | Loss TSB: 42.6874 | Loss Base: 42.5313 | SSL W: 0.0090
+6116.0s	367	    TSB-CL   -> Recall: 0.0453 | NDCG: 0.0368 (Best Recall: 0.0465 at Ep 43)
+6116.0s	368	    Baseline -> Recall: 0.0452 | NDCG: 0.0374 (Best Recall: 0.0466 at Ep 45)
+6238.8s	369	Epoch 49/50 | Loss TSB: 42.3207 | Loss Base: 42.3442 | SSL W: 0.0085
+6238.8s	370	    TSB-CL   -> Recall: 0.0461 | NDCG: 0.0373 (Best Recall: 0.0465 at Ep 43)
+6238.8s	371	    Baseline -> Recall: 0.0450 | NDCG: 0.0372 (Best Recall: 0.0466 at Ep 45)
+6361.7s	372	Epoch 50/50 | Loss TSB: 41.9410 | Loss Base: 42.0213 | SSL W: 0.0081
+6361.7s	373	    TSB-CL   -> Recall: 0.0455 | NDCG: 0.0370 (Best Recall: 0.0465 at Ep 43)
+6361.7s	374	    Baseline -> Recall: 0.0460 | NDCG: 0.0376 (Best Recall: 0.0466 at Ep 45)
