@@ -186,6 +186,10 @@ def run_quick_proof():
         'recall_tsb_no_cl': [],
         'recall_base': [],
         'recall_base_cl': [],
+        'ndcg_tsb': [],
+        'ndcg_tsb_no_cl': [],
+        'ndcg_base': [],
+        'ndcg_base_cl': [],
     }
 
     best_recall_tsb = 0.0
@@ -308,15 +312,20 @@ def run_quick_proof():
         history['epoch'].append(epoch + 1)
         
         # Evaluate every epoch
-        r_tsb, _ = evaluate(model_tsb, True)
-        r_tsb_no_cl, _ = evaluate(model_tsb_no_cl, True)
-        r_base, _ = evaluate(model_base, False)
-        r_base_cl, _ = evaluate(model_base_cl, False)
+        r_tsb, n_tsb = evaluate(model_tsb, True)
+        r_tsb_no_cl, n_tsb_no_cl = evaluate(model_tsb_no_cl, True)
+        r_base, n_base = evaluate(model_base, False)
+        r_base_cl, n_base_cl = evaluate(model_base_cl, False)
         
         history['recall_tsb'].append(r_tsb)
         history['recall_tsb_no_cl'].append(r_tsb_no_cl)
         history['recall_base'].append(r_base)
         history['recall_base_cl'].append(r_base_cl)
+        
+        history['ndcg_tsb'].append(n_tsb)
+        history['ndcg_tsb_no_cl'].append(n_tsb_no_cl)
+        history['ndcg_base'].append(n_base)
+        history['ndcg_base_cl'].append(n_base_cl)
         
         # Track Best
         if r_tsb > best_recall_tsb:
@@ -351,16 +360,29 @@ def run_quick_proof():
     
     # --- Plotting ---
     print("Generating Plots...")
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(15, 6))
     
+    # Subplot 1: Recall
+    plt.subplot(1, 2, 1)
     plt.plot(history['epoch'], history['recall_tsb'], label='TSB-CL (Biclique+CL)', marker='o')
     plt.plot(history['epoch'], history['recall_tsb_no_cl'], label='TSB (Biclique Only)', marker='s')
     plt.plot(history['epoch'], history['recall_base'], label='LightGCN (Baseline)', marker='x')
     plt.plot(history['epoch'], history['recall_base_cl'], label='LightGCN + CL', marker='^')
-    
     plt.xlabel('Epochs')
     plt.ylabel('Recall@20')
-    plt.title('Performance Comparison (4 Models)')
+    plt.title('Recall@20 Comparison')
+    plt.legend()
+    plt.grid(True)
+
+    # Subplot 2: NDCG
+    plt.subplot(1, 2, 2)
+    plt.plot(history['epoch'], history['ndcg_tsb'], label='TSB-CL (Biclique+CL)', marker='o')
+    plt.plot(history['epoch'], history['ndcg_tsb_no_cl'], label='TSB (Biclique Only)', marker='s')
+    plt.plot(history['epoch'], history['ndcg_base'], label='LightGCN (Baseline)', marker='x')
+    plt.plot(history['epoch'], history['ndcg_base_cl'], label='LightGCN + CL', marker='^')
+    plt.xlabel('Epochs')
+    plt.ylabel('NDCG@20')
+    plt.title('NDCG@20 Comparison')
     plt.legend()
     plt.grid(True)
     
