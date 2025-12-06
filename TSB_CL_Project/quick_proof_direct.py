@@ -15,11 +15,10 @@ import sys
 # --- Configuration ---
 LR = 0.001
 BATCH_SIZE = 2048
-EPOCHS = 200
+EPOCHS = 30 
 EMBEDDING_DIM = 64
 TAU = 2
 EPSILON = 0.1
-PATIENCE = 20
 
 def set_seed(seed):
     random.seed(seed)
@@ -34,6 +33,8 @@ set_seed(2024)
 class TSB_Direct(TSB_CL):
     def __init__(self, num_users, num_items, embedding_dim=64):
         super(TSB_Direct, self).__init__(num_users, num_items, embedding_dim)
+        # Learnable fusion weight, initialized to 0.1 to start with a subtle influence
+        self.alpha = nn.Parameter(torch.tensor(0.1))
     
     def forward(self, adj_matrix, biclique_matrices):
         u_emb = self.user_embedding.weight
@@ -45,8 +46,9 @@ class TSB_Direct(TSB_CL):
         # 2. Local View (Biclique)
         u_local = self.local_encoder(u_emb, i_emb, biclique_matrices)
         
-        # 3. FUSION: Directly combine Global and Local views
-        u_final = u_global + u_local 
+        # 3. FUSION: Weighted combination
+        # u_final = u_global + alpha * u_local
+        u_final = u_global + self.alpha * u_local 
         
         return u_global, u_local, u_final, i_global
 
@@ -184,9 +186,6 @@ def run_direct_comparison():
         'ndcg_tsb': [], 'ndcg_base': []
     }
     
-    best_recall_tsb = 0.0
-    patience_counter = 0
-    
     for epoch in range(EPOCHS):
         perm = np.random.permutation(len(train_data))
         users_np = users_np[perm]
@@ -248,18 +247,8 @@ def run_direct_comparison():
         history['ndcg_tsb'].append(n_tsb)
         history['ndcg_base'].append(n_base)
         
-        print(f"Ep {epoch+1} | TSB: R={r_tsb:.4f} N={n_tsb:.4f} L={loss_sum_tsb/num_batches:.4f} | Base: R={r_base:.4f} N={n_base:.4f} L={loss_sum_base/num_batches:.4f}")
-
-        # Early Stopping
-        if r_tsb > best_recall_tsb:
-            best_recall_tsb = r_tsb
-            patience_counter = 0
-        else:
-            patience_counter += 1
-            
-        if patience_counter >= PATIENCE:
-            print(f"Early stopping triggered at epoch {epoch+1}")
-            break
+        current_alpha = model_tsb.alpha.item()
+        print(f"Ep {epoch+1} | Alpha: {current_alpha:.4f} | TSB: R={r_tsb:.4f} N={n_tsb:.4f} L={loss_sum_tsb/num_batches:.4f} | Base: R={r_base:.4f} N={n_base:.4f} L={loss_sum_base/num_batches:.4f}")
 
     # Plotting
     plt.figure(figsize=(18, 6))

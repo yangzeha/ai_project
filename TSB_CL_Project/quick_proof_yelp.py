@@ -13,7 +13,7 @@ from data_utils import DataUtils
 # --- Configuration ---
 LR = 0.001
 BATCH_SIZE = 2048
-EPOCHS = 200
+EPOCHS = 30
 EMBEDDING_DIM = 64
 TAU = 2
 EPSILON = 0.1
@@ -29,6 +29,8 @@ set_seed(2024)
 
 def run_quick_proof():
     print("=== Running Quick Proof on Yelp2018 (Full Data) ===")
+    print("NOTE: This is the Contrastive Learning (CL) model.")
+    print("If you want to run the Direct Fusion model, please run 'quick_proof_direct.py' instead.")
     
     # 1. Setup Paths
     CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
