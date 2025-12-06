@@ -15,10 +15,11 @@ import sys
 # --- Configuration ---
 LR = 0.001
 BATCH_SIZE = 2048
-EPOCHS = 50 
+EPOCHS = 200
 EMBEDDING_DIM = 64
 TAU = 2
 EPSILON = 0.1
+PATIENCE = 20
 
 def set_seed(seed):
     random.seed(seed)
@@ -183,6 +184,9 @@ def run_direct_comparison():
         'ndcg_tsb': [], 'ndcg_base': []
     }
     
+    best_recall_tsb = 0.0
+    patience_counter = 0
+    
     for epoch in range(EPOCHS):
         perm = np.random.permutation(len(train_data))
         users_np = users_np[perm]
@@ -245,6 +249,17 @@ def run_direct_comparison():
         history['ndcg_base'].append(n_base)
         
         print(f"Ep {epoch+1} | TSB: R={r_tsb:.4f} N={n_tsb:.4f} L={loss_sum_tsb/num_batches:.4f} | Base: R={r_base:.4f} N={n_base:.4f} L={loss_sum_base/num_batches:.4f}")
+
+        # Early Stopping
+        if r_tsb > best_recall_tsb:
+            best_recall_tsb = r_tsb
+            patience_counter = 0
+        else:
+            patience_counter += 1
+            
+        if patience_counter >= PATIENCE:
+            print(f"Early stopping triggered at epoch {epoch+1}")
+            break
 
     # Plotting
     plt.figure(figsize=(18, 6))
