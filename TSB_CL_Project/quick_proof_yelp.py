@@ -63,15 +63,9 @@ def run_quick_proof():
     print("Using Full Dataset...")
     # random.shuffle(all_data) # Shuffle is good, but let's keep it consistent
     
-    # User requested to train on the "Test Set" (the smaller partition) to compare performance
-    # Previously: Train 80%, Test 20%
-    # Now: Train 20% (the old test set), Test 80% (the old train set)
-    print("!!! EXPERIMENT: Training on the smaller partition (20%) and Testing on the larger partition (80%) !!!")
-    
     split_idx = int(len(all_data) * 0.8)
-    # SWAPPED:
-    train_data = all_data[split_idx:] # The last 20%
-    test_data = all_data[:split_idx]  # The first 80%
+    train_data = all_data[:split_idx]
+    test_data = all_data[split_idx:]
     
     print(f"Train size: {len(train_data)}, Test size: {len(test_data)}")
     
@@ -101,9 +95,9 @@ def run_quick_proof():
     test_users = list(set([x[0] for x in test_data]))
     # Evaluate on 1000 users for speed during training, full eval at end if needed
     if len(test_users) > 1000:
-        eval_users = random.sample(test_users, 1000)
+        eval_users_subset = random.sample(test_users, 1000)
     else:
-        eval_users = test_users
+        eval_users_subset = test_users
         
     test_user_ground_truth = {}
     for u, i, _ in test_data:
@@ -115,7 +109,10 @@ def run_quick_proof():
         if u not in train_user_items: train_user_items[u] = set()
         train_user_items[u].add(i)
 
-    def evaluate(model, use_biclique):
+    def evaluate(model, use_biclique, target_users=None):
+        if target_users is None:
+            target_users = eval_users_subset
+            
         model.eval()
         with torch.no_grad():
             if use_biclique:
@@ -131,7 +128,7 @@ def run_quick_proof():
             hits = 0
             ndcgs = 0
             
-            for u in eval_users:
+            for u in target_users:
                 if u not in test_user_ground_truth: continue
                 gt = test_user_ground_truth[u]
                 
@@ -159,7 +156,7 @@ def run_quick_proof():
                     idcg += 1.0 / np.log2(i + 2)
                 ndcgs += dcg / idcg if idcg > 0 else 0
                 
-            return hits / len(eval_users), ndcgs / len(eval_users)
+            return hits / len(target_users), ndcgs / len(target_users)
 
     # 7. Training Loop
     print(f"Starting Training for {EPOCHS} epochs...")
@@ -290,6 +287,19 @@ def run_quick_proof():
     print("\n=== Final Summary ===")
     print(f"TSB-CL   Best Recall: {best_recall_tsb:.4f} at Epoch {best_epoch_tsb}")
     print(f"Baseline Best Recall: {best_recall_base:.4f} at Epoch {best_epoch_base}")
+    
+    print("\n=== Final Full Evaluation on Test Set (All Users) ===")
+    # Use the final trained models for a full check
+    r_tsb_final, n_tsb_final = evaluate(model_tsb, True, target_users=test_users)
+    r_base_final, n_base_final = evaluate(model_base, False, target_users=test_users)
+    
+    print(f"Final TSB-CL   -> Recall: {r_tsb_final:.4f} | NDCG: {n_tsb_final:.4f}")
+    print(f"Final Baseline -> Recall: {r_base_final:.4f} | NDCG: {n_base_final:.4f}")
+    
+    if r_tsb_final > r_base_final:
+        print(">>> Winner: TSB-CL <<<")
+    else:
+        print(">>> Winner: Baseline <<<")
     
     # --- Plotting ---
     print("Generating Plots...")
