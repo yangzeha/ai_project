@@ -34,6 +34,10 @@ def run_quick_proof():
     CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
     PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
     
+    # Create model_path directory
+    MODEL_DIR = os.path.join(CURRENT_DIR, "model_path")
+    os.makedirs(MODEL_DIR, exist_ok=True)
+    
     # Path to the newly prepared Yelp2018 dataset
     DATA_PATH = os.path.join(CURRENT_DIR, "datasets", "yelp2018.txt")
     
@@ -275,12 +279,12 @@ def run_quick_proof():
         if r_tsb > best_recall_tsb:
             best_recall_tsb = r_tsb
             best_epoch_tsb = epoch + 1
-            torch.save(model_tsb.state_dict(), 'tsb_cl_best_model.pth')
+            torch.save(model_tsb.state_dict(), os.path.join(MODEL_DIR, 'tsb_cl_best_model.pth'))
         
         if r_base > best_recall_base:
             best_recall_base = r_base
             best_epoch_base = epoch + 1
-            torch.save(model_base.state_dict(), 'baseline_best_model.pth')
+            torch.save(model_base.state_dict(), os.path.join(MODEL_DIR, 'baseline_best_model.pth'))
         
         print(f"Epoch {epoch+1}/{EPOCHS} | Loss TSB: {total_loss_tsb:.4f} | Loss Base: {total_loss_base:.4f} | SSL W: {current_ssl_weight:.4f}")
         print(f"    TSB-CL   -> Recall: {r_tsb:.4f} | NDCG: {n_tsb:.4f} (Best Recall: {best_recall_tsb:.4f} at Ep {best_epoch_tsb})")
@@ -291,9 +295,9 @@ def run_quick_proof():
     print(f"Baseline Best Recall: {best_recall_base:.4f} at Epoch {best_epoch_base}")
     
     # Save Final Models
-    torch.save(model_tsb.state_dict(), 'tsb_cl_final_model.pth')
-    torch.save(model_base.state_dict(), 'baseline_final_model.pth')
-    print("Models saved: tsb_cl_best_model.pth, baseline_best_model.pth, tsb_cl_final_model.pth, baseline_final_model.pth")
+    torch.save(model_tsb.state_dict(), os.path.join(MODEL_DIR, 'tsb_cl_final_model.pth'))
+    torch.save(model_base.state_dict(), os.path.join(MODEL_DIR, 'baseline_final_model.pth'))
+    print(f"Models saved to {MODEL_DIR}")
     
     print("\n=== Final Full Evaluation on Test Set (All Users) ===")
     # Use the final trained models for a full check
