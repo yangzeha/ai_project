@@ -190,6 +190,10 @@ def run_quick_proof():
         'ndcg_tsb_no_cl': [],
         'ndcg_base': [],
         'ndcg_base_cl': [],
+        'loss_tsb': [],
+        'loss_tsb_no_cl': [],
+        'loss_base': [],
+        'loss_base_cl': [],
     }
 
     best_recall_tsb = 0.0
@@ -217,6 +221,11 @@ def run_quick_proof():
         # Dynamic SSL Weight
         current_ssl_weight = 0.1 * (0.95 ** epoch)
         
+        epoch_loss_tsb = 0.0
+        epoch_loss_tsb_no_cl = 0.0
+        epoch_loss_base = 0.0
+        epoch_loss_base_cl = 0.0
+        
         for i in range(num_batches):
             start_idx = i * BATCH_SIZE
             end_idx = min((i + 1) * BATCH_SIZE, len(train_data))
@@ -243,6 +252,7 @@ def run_quick_proof():
             opt_tsb.zero_grad()
             loss_tsb.backward()
             opt_tsb.step()
+            epoch_loss_tsb += loss_tsb.item()
             
             # --- 2. Train TSB No CL (Biclique Only) ---
             u_g, u_l, u_final, i_final = model_tsb_no_cl(adj_matrix, (H_v, H_u))
@@ -256,6 +266,7 @@ def run_quick_proof():
             opt_tsb_no_cl.zero_grad()
             loss_tsb_no_cl.backward()
             opt_tsb_no_cl.step()
+            epoch_loss_tsb_no_cl += loss_tsb_no_cl.item()
             
             # --- 3. Train Baseline (LightGCN) ---
             dummy_Hv = torch.sparse_coo_tensor(size=(1, utils.num_items)).to(device)
@@ -271,6 +282,7 @@ def run_quick_proof():
             opt_base.zero_grad()
             loss_base.backward()
             opt_base.step()
+            epoch_loss_base += loss_base.item()
 
             # --- 4. Train Baseline + CL (LightGCN + CL) ---
             # Simulate CL by adding noise to u_g to create a second view
@@ -301,6 +313,7 @@ def run_quick_proof():
             opt_base_cl.zero_grad()
             loss_base_cl.backward()
             opt_base_cl.step()
+            epoch_loss_base_cl += loss_base_cl.item()
         
         # Step Schedulers
         scheduler_tsb.step()
@@ -326,6 +339,11 @@ def run_quick_proof():
         history['ndcg_tsb_no_cl'].append(n_tsb_no_cl)
         history['ndcg_base'].append(n_base)
         history['ndcg_base_cl'].append(n_base_cl)
+        
+        history['loss_tsb'].append(epoch_loss_tsb / num_batches)
+        history['loss_tsb_no_cl'].append(epoch_loss_tsb_no_cl / num_batches)
+        history['loss_base'].append(epoch_loss_base / num_batches)
+        history['loss_base_cl'].append(epoch_loss_base_cl / num_batches)
         
         # Track Best
         if r_tsb > best_recall_tsb:
@@ -360,31 +378,60 @@ def run_quick_proof():
     
     # --- Plotting ---
     print("Generating Plots...")
-    plt.figure(figsize=(15, 6))
+    plt.figure(figsize=(18, 12))
     
-    # Subplot 1: Recall
-    plt.subplot(1, 2, 1)
-    plt.plot(history['epoch'], history['recall_tsb'], label='TSB-CL (Biclique+CL)', marker='o')
-    plt.plot(history['epoch'], history['recall_tsb_no_cl'], label='TSB (Biclique Only)', marker='s')
-    plt.plot(history['epoch'], history['recall_base'], label='LightGCN (Baseline)', marker='x')
-    plt.plot(history['epoch'], history['recall_base_cl'], label='LightGCN + CL', marker='^')
+    # Subplot 1: Loss
+    plt.subplot(2, 2, 1)
+    plt.plot(history['epoch'], history['loss_tsb'], label='TSB-CL', marker='o')
+    plt.plot(history['epoch'], history['loss_tsb_no_cl'], label='TSB (No CL)', marker='s')
+    plt.plot(history['epoch'], history['loss_base'], label='LightGCN', marker='x')
+    plt.plot(history['epoch'], history['loss_base_cl'], label='LightGCN+CL', marker='^')
     plt.xlabel('Epochs')
-    plt.ylabel('Recall@20')
-    plt.title('Recall@20 Comparison')
+    plt.ylabel('Training Loss')
+    plt.title('Training Loss Comparison')
     plt.legend()
     plt.grid(True)
 
-    # Subplot 2: NDCG
-    plt.subplot(1, 2, 2)
-    plt.plot(history['epoch'], history['ndcg_tsb'], label='TSB-CL (Biclique+CL)', marker='o')
-    plt.plot(history['epoch'], history['ndcg_tsb_no_cl'], label='TSB (Biclique Only)', marker='s')
-    plt.plot(history['epoch'], history['ndcg_base'], label='LightGCN (Baseline)', marker='x')
-    plt.plot(history['epoch'], history['ndcg_base_cl'], label='LightGCN + CL', marker='^')
+    # Subplot 2: Recall
+    plt.subplot(2, 2, 2)
+    plt.plot(history['epoch'], history['recall_tsb'], label='TSB-CL', marker='o')
+    plt.plot(history['epoch'], history['recall_tsb_no_cl'], label='TSB (No CL)', marker='s')
+    plt.plot(history['epoch'], history['recall_base'], label='LightGCN', marker='x')
+    plt.plot(history['epoch'], history['recall_base_cl'], label='LightGCN+CL', marker='^')
     plt.xlabel('Epochs')
-    plt.ylabel('NDCG@20')
-    plt.title('NDCG@20 Comparison')
+    plt.ylabel('Recall@20')
+    plt.title('Test Recall@20 Comparison')
     plt.legend()
     plt.grid(True)
+
+    # Subplot 3: NDCG
+    plt.subplot(2, 2, 3)
+    plt.plot(history['epoch'], history['ndcg_tsb'], label='TSB-CL', marker='o')
+    plt.plot(history['epoch'], history['ndcg_tsb_no_cl'], label='TSB (No CL)', marker='s')
+    plt.plot(history['epoch'], history['ndcg_base'], label='LightGCN', marker='x')
+    plt.plot(history['epoch'], history['ndcg_base_cl'], label='LightGCN+CL', marker='^')
+    plt.xlabel('Epochs')
+    plt.ylabel('NDCG@20')
+    plt.title('Test NDCG@20 Comparison')
+    plt.legend()
+    plt.grid(True)
+    
+    # Subplot 4: Best Performance Bar Chart
+    plt.subplot(2, 2, 4)
+    models = ['TSB-CL', 'TSB (No CL)', 'LightGCN', 'LightGCN+CL']
+    best_recalls = [best_recall_tsb, best_recall_tsb_no_cl, best_recall_base, best_recall_base_cl]
+    colors = ['red', 'orange', 'blue', 'green']
+    bars = plt.bar(models, best_recalls, color=colors)
+    plt.ylabel('Best Recall@20')
+    plt.title('Best Test Performance Comparison')
+    plt.grid(axis='y')
+    
+    # Add value labels on top of bars
+    for bar in bars:
+        height = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width()/2., height,
+                f'{height:.4f}',
+                ha='center', va='bottom')
     
     plt.tight_layout()
     plt.savefig('training_results.png')
