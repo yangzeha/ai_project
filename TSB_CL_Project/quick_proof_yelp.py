@@ -13,7 +13,7 @@ from data_utils import DataUtils
 # --- Configuration ---
 LR = 0.001
 BATCH_SIZE = 2048
-EPOCHS = 50
+EPOCHS = 200
 EMBEDDING_DIM = 64
 TAU = 2
 EPSILON = 0.1
@@ -201,6 +201,8 @@ def run_quick_proof():
     best_recall_base = 0.0
     best_recall_base_cl = 0.0
     
+    patience_counter = 0
+    
     # Learning Rate Schedulers
     scheduler_tsb = torch.optim.lr_scheduler.StepLR(opt_tsb, step_size=10, gamma=0.9)
     scheduler_tsb_no_cl = torch.optim.lr_scheduler.StepLR(opt_tsb_no_cl, step_size=10, gamma=0.9)
@@ -346,21 +348,35 @@ def run_quick_proof():
         history['loss_base_cl'].append(epoch_loss_base_cl / num_batches)
         
         # Track Best
+        improved = False
         if r_tsb > best_recall_tsb:
             best_recall_tsb = r_tsb
             torch.save(model_tsb.state_dict(), os.path.join(MODEL_DIR, 'tsb_cl_best.pth'))
+            improved = True
             
         if r_tsb_no_cl > best_recall_tsb_no_cl:
             best_recall_tsb_no_cl = r_tsb_no_cl
             torch.save(model_tsb_no_cl.state_dict(), os.path.join(MODEL_DIR, 'tsb_no_cl_best.pth'))
+            improved = True
             
         if r_base > best_recall_base:
             best_recall_base = r_base
             torch.save(model_base.state_dict(), os.path.join(MODEL_DIR, 'base_best.pth'))
+            improved = True
             
         if r_base_cl > best_recall_base_cl:
             best_recall_base_cl = r_base_cl
             torch.save(model_base_cl.state_dict(), os.path.join(MODEL_DIR, 'base_cl_best.pth'))
+            improved = True
+        
+        if improved:
+            patience_counter = 0
+        else:
+            patience_counter += 1
+            
+        if patience_counter >= 50:
+            print(f"Early stopping triggered at epoch {epoch+1}")
+            break
         
         print(f"Ep {epoch+1} | TSB-CL: {r_tsb:.4f} | TSB: {r_tsb_no_cl:.4f} | Base: {r_base:.4f} | Base+CL: {r_base_cl:.4f}")
 
