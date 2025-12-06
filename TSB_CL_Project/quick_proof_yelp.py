@@ -275,10 +275,12 @@ def run_quick_proof():
         if r_tsb > best_recall_tsb:
             best_recall_tsb = r_tsb
             best_epoch_tsb = epoch + 1
+            torch.save(model_tsb.state_dict(), 'tsb_cl_best_model.pth')
         
         if r_base > best_recall_base:
             best_recall_base = r_base
             best_epoch_base = epoch + 1
+            torch.save(model_base.state_dict(), 'baseline_best_model.pth')
         
         print(f"Epoch {epoch+1}/{EPOCHS} | Loss TSB: {total_loss_tsb:.4f} | Loss Base: {total_loss_base:.4f} | SSL W: {current_ssl_weight:.4f}")
         print(f"    TSB-CL   -> Recall: {r_tsb:.4f} | NDCG: {n_tsb:.4f} (Best Recall: {best_recall_tsb:.4f} at Ep {best_epoch_tsb})")
@@ -287,6 +289,11 @@ def run_quick_proof():
     print("\n=== Final Summary ===")
     print(f"TSB-CL   Best Recall: {best_recall_tsb:.4f} at Epoch {best_epoch_tsb}")
     print(f"Baseline Best Recall: {best_recall_base:.4f} at Epoch {best_epoch_base}")
+    
+    # Save Final Models
+    torch.save(model_tsb.state_dict(), 'tsb_cl_final_model.pth')
+    torch.save(model_base.state_dict(), 'baseline_final_model.pth')
+    print("Models saved: tsb_cl_best_model.pth, baseline_best_model.pth, tsb_cl_final_model.pth, baseline_final_model.pth")
     
     print("\n=== Final Full Evaluation on Test Set (All Users) ===")
     # Use the final trained models for a full check
