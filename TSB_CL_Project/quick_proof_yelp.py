@@ -63,9 +63,15 @@ def run_quick_proof():
     print("Using Full Dataset...")
     # random.shuffle(all_data) # Shuffle is good, but let's keep it consistent
     
+    # User requested to train on the "Test Set" (the smaller partition) to compare performance
+    # Previously: Train 80%, Test 20%
+    # Now: Train 20% (the old test set), Test 80% (the old train set)
+    print("!!! EXPERIMENT: Training on the smaller partition (20%) and Testing on the larger partition (80%) !!!")
+    
     split_idx = int(len(all_data) * 0.8)
-    train_data = all_data[:split_idx]
-    test_data = all_data[split_idx:]
+    # SWAPPED:
+    train_data = all_data[split_idx:] # The last 20%
+    test_data = all_data[:split_idx]  # The first 80%
     
     print(f"Train size: {len(train_data)}, Test size: {len(test_data)}")
     
