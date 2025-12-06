@@ -172,7 +172,16 @@ def run_quick_proof():
         'ndcg_tsb': [],
         'ndcg_base': []
     }
+
+    best_recall_tsb = 0.0
+    best_epoch_tsb = 0
+    best_recall_base = 0.0
+    best_epoch_base = 0
     
+    # Learning Rate Schedulers
+    scheduler_tsb = torch.optim.lr_scheduler.StepLR(opt_tsb, step_size=10, gamma=0.9)
+    scheduler_base = torch.optim.lr_scheduler.StepLR(opt_base, step_size=10, gamma=0.9)
+
     for epoch in range(EPOCHS):
         # Shuffle
         perm = np.random.permutation(len(train_data))
@@ -184,6 +193,10 @@ def run_quick_proof():
         
         total_loss_tsb = 0
         total_loss_base = 0
+        
+        # Dynamic SSL Weight: Decay over time to prevent overfitting to the auxiliary task
+        # Start at 0.1, decay slightly every epoch
+        current_ssl_weight = 0.1 * (0.95 ** epoch)
         
         for i in range(num_batches):
             start_idx = i * BATCH_SIZE
@@ -211,7 +224,7 @@ def run_quick_proof():
             pos_sim = torch.sum(u_g_norm * u_l_norm, dim=1)
             loss_cl = -torch.mean(torch.log(torch.sigmoid(pos_sim / 0.2) + 1e-8))
             
-            loss_tsb = loss_bpr + 0.1 * loss_cl
+            loss_tsb = loss_bpr + current_ssl_weight * loss_cl
             
             opt_tsb.zero_grad()
             loss_tsb.backward()
@@ -236,44 +249,41 @@ def run_quick_proof():
             loss_base.backward()
             opt_base.step()
             total_loss_base += loss_base.item()
+        
+        # Step Schedulers
+        scheduler_tsb.step()
+        scheduler_base.step()
             
         # Record Loss
         history['epoch'].append(epoch + 1)
         history['loss_tsb'].append(total_loss_tsb)
         history['loss_base'].append(total_loss_base)
         
-        # Evaluate every 5 epochs
-        if (epoch + 1) % 5 == 0:
-            r_tsb, n_tsb = evaluate(model_tsb, True)
-            r_base, n_base = evaluate(model_base, False)
-            
-            history['recall_tsb'].append(r_tsb)
-            history['recall_base'].append(r_base)
-            history['ndcg_tsb'].append(n_tsb)
-            history['ndcg_base'].append(n_base)
-            
-            print(f"Epoch {epoch+1}/{EPOCHS} | Loss TSB: {total_loss_tsb:.4f} | Loss Base: {total_loss_base:.4f}")
-            print(f"    TSB-CL   -> Recall: {r_tsb:.4f} | NDCG: {n_tsb:.4f}")
-            print(f"    Baseline -> Recall: {r_base:.4f} | NDCG: {n_base:.4f}")
-        else:
-            # Fill with previous value or None for plotting consistency if needed, 
-            # but for scatter/line plot we can just plot the points we have.
-            pass
-
-    print("\n=== Final Evaluation (Recall@20) ===")
-    # Ensure we have the final metrics
-    if (EPOCHS) % 5 != 0:
+        # Evaluate every epoch to catch the peak
         r_tsb, n_tsb = evaluate(model_tsb, True)
         r_base, n_base = evaluate(model_base, False)
+        
         history['recall_tsb'].append(r_tsb)
         history['recall_base'].append(r_base)
         history['ndcg_tsb'].append(n_tsb)
         history['ndcg_base'].append(n_base)
-        print(f"TSB-CL   -> Recall: {r_tsb:.4f} | NDCG: {n_tsb:.4f}")
-        print(f"Baseline -> Recall: {r_base:.4f} | NDCG: {n_base:.4f}")
-    else:
-        # Already printed in loop
-        pass
+        
+        # Track Best
+        if r_tsb > best_recall_tsb:
+            best_recall_tsb = r_tsb
+            best_epoch_tsb = epoch + 1
+        
+        if r_base > best_recall_base:
+            best_recall_base = r_base
+            best_epoch_base = epoch + 1
+        
+        print(f"Epoch {epoch+1}/{EPOCHS} | Loss TSB: {total_loss_tsb:.4f} | Loss Base: {total_loss_base:.4f} | SSL W: {current_ssl_weight:.4f}")
+        print(f"    TSB-CL   -> Recall: {r_tsb:.4f} | NDCG: {n_tsb:.4f} (Best Recall: {best_recall_tsb:.4f} at Ep {best_epoch_tsb})")
+        print(f"    Baseline -> Recall: {r_base:.4f} | NDCG: {n_base:.4f} (Best Recall: {best_recall_base:.4f} at Ep {best_epoch_base})")
+
+    print("\n=== Final Summary ===")
+    print(f"TSB-CL   Best Recall: {best_recall_tsb:.4f} at Epoch {best_epoch_tsb}")
+    print(f"Baseline Best Recall: {best_recall_base:.4f} at Epoch {best_epoch_base}")
     
     # --- Plotting ---
     print("Generating Plots...")
@@ -291,13 +301,13 @@ def run_quick_proof():
     
     # Plot Recall
     plt.subplot(1, 2, 2)
-    # Filter epochs where we have evaluation data
-    # We collected data every 5 epochs.
-    # Let's construct the x-axis for recall points.
-    # If we have N points, they correspond to 5, 10, 15...
-    eval_epochs_x = [(i+1) * 5 for i in range(len(history['recall_tsb']))]
-    
-    # If the last epoch was not a multiple of 5, we added one more point at EPOCHS
+    plt.plot(history['epoch'], history['recall_tsb'], label='TSB-CL Recall@20')
+    plt.plot(history['epoch'], history['recall_base'], label='Baseline Recall@20')
+    plt.xlabel('Epochs')
+    plt.ylabel('Recall@20')
+    plt.title('Recall Comparison')
+    plt.legend()
+    plt.grid(True)
     if len(eval_epochs_x) > 0 and eval_epochs_x[-1] > EPOCHS:
          eval_epochs_x[-1] = EPOCHS
          
